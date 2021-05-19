@@ -1,0 +1,46 @@
+.my-custom-class {
+    --background: plum;
+  }
+
+ .range-pin {
+   //transform: none !important;
+ } 
+
+ .range-knob-handle {
+   touch-action: none;
+ }
+
+ ion-range.range-pin {
+    padding: 0 10px 20px;
+  //--knob-size: 20px;
+  //--knob-box-shadow: 0 0 0 2px #3FBDF3;
+
+    --pin-background: none;
+    --pin-color: black;
+      &::part(pin) {
+        position: absolute;
+        font-size: 10px;
+        left: 50%;
+        border-radius: 10%;
+        //transform: translate3d(0, 50px, 0) scale(1) translateX(-50%);
+        transform: translate3d(-16px, 25px, 0) scale(0.75, 0.75);
+        display: flex;
+        &:after {
+          content: "   rating";
+          margin-left: 4px;
+        }
+     }
+}
+
+
+.selected-rating-label {
+   color: orange;
+   font-weight: bold;
+}
+
+.sticky-label {
+  position: absolute;
+  border-radius: 10%;
+  background-color: lightblue;
+  font-size: 10px;
+}

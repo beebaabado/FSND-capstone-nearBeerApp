@@ -1,0 +1,136 @@
+    .banner-image {
+    background-image: url(/assets/imgs/BeerWeatherBeerPageBanner.png);
+    background-size:cover; 
+    width:100%;
+    height: 10%; 
+  }
+
+  ion-header {
+      .header-toolbar1 {
+        --color:lightgray; 
+        --background: clear;
+        --opacity: 0;
+        --min-height: 60px;
+        --padding-top: 0px;
+      }
+      
+      .header-toolbar2 {
+        --background: clear;
+        --opacity: 0;
+        --color: black;
+        --padding-top: 20;
+        --padding-bottom: 10px;
+      }
+  }
+
+  ion-footer {
+      .footer-toolbar {
+        --color:lightgray; 
+        --background: black;
+        --padding-top: 25px;
+      }
+  }
+
+ion-content {
+      
+    ion-grid {
+      padding: 0px;
+    }
+
+    ion-col {
+
+      :hover {
+        color: #FF4500;
+        cursor: pointer;
+      }
+
+      border: 2px solid #aeb7ca;
+      text-align: center;
+      font-size: x-small;
+      font-family: 'roboto';    
+      src: url(/assets/fonts/roboto-light.ttf);
+      
+      ion-label {
+         //background-color: #feecc8;  //for testing purposes keep comment out
+         height: 20px;
+         width: 100%;
+         padding: 2px;
+         position:absolute; 
+
+         span {
+           //background-color: orange; //for testing purposes keep comment out
+           padding-left: 5px;
+           padding-right: 5px;
+          }
+       }   
+    } 
+
+    ion-row:nth-child(even) {     
+         background-color: #f2f2f2;
+    }
+
+
+    ion-row {
+      .column-name-cell {
+        background-color: orange;  
+        height: 45px;
+        padding: 0px;
+        position:relative;
+        font-size: smaller;
+        // for use with icons in header to turn off tooltips
+        // .tooltip{
+        //   display:none;
+        // }  
+     }
+    }
+
+    .header {
+        // Impelents a fixed Header 
+        position: sticky;          
+        top: 0px;
+        z-index: 9999;
+      } 
+}
+// this css for ion fab button does not work?  Not implemented yet documented? 
+ion-fab-button {
+  --border-color: black;
+  --border-width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-border {
+   border: none;
+}
+  
+.center-content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+
+.my-custom-class {
+  --background: plum;
+}
+
+a.beerlink:link {
+      color:black;
+      text-decoration: none;
+    }
+
+a.beerlink:hover {
+      color: red;
+    }
+
+.black-banner {
+  background-color:black;
+}

@@ -1,0 +1,23 @@
+.map {
+    width: 100%;
+    min-height:50vh;
+    height: 0;
+    agm-map {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    border: solid;
+   }
+
+.center{
+   text-align:center;
+}   
+
+ion-button:active {
+      color: orange;
+}

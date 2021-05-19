@@ -1,0 +1,25 @@
+
+<ion-card [hidden]="hideCard">
+  <ion-card-header>
+    <ion-card-subtitle>Beer information</ion-card-subtitle>
+    <ion-card-title>{{beer.name}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item>
+        <ion-label>Venue: {{beer.venue}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Brewery: {{beer.brewery}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Rating: {{beer.rating}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>ABV: {{beer.abv}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last check-in: {{beer.last_seen}}</ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

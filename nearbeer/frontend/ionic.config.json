@@ -1,0 +1,8 @@
+{
+  "name": "Beer Weather",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "073f5d9f"
+}

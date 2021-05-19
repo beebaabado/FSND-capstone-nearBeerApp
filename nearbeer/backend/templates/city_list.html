@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Beer Weather Report - {{ city }}</title>
+    <style>
+       tr:nth-child(even) {background-color: #f2f2f2;}
+       th:hover {
+         background-color: yellow;
+         cursor: pointer;
+      }
+    </style>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <table id="beerListTable"style="width:100%">
+      <!-- <tr> 
+        <th onclick="sortTable(0)">Rating</th>
+        <th onclick="sortTable(1)">Brewery</th>
+        <th onclick="sortTable(2)">Beer</th>
+        <th onclick="sortTable(3)">Variety</th>
+        <th onclick="sortTable(4)">Venue</th>
+        <th onclick="sortTable(5)">ABV</th>
+        <th onclick="sortTable(6)">Last Seen</th>
+      </tr> -->
+
+      <tr> 
+        <th onclick="sortTable(0)">Rating</th>
+        <th onclick="sortTable(1)">Brewery</th>
+        <th onclick="sortTable(2)">Beer</th>
+        <th><a href="/table/variety">Variety</a></th>
+        <th onclick="sortTable(4)">Venue</th>
+        <th onclick="sortTable(5)">ABV</th>
+        <th onclick="sortTable(6)">Last Seen</th>
+      </tr> 
+
+      {% for beer in beers %}
+          <tr>
+            <td>{{ '%.2f'|format(beer['rating_score']) }}</td>
+            <td>{{ beer['brewery_name'] }}</td>
+            <td>{{ beer['beer_name'] }}</td>
+            <td>{{ beer['beer_style'] }} ({{ beer['major_style'] }})</td>
+            <td>{{ venues[beer['venue_id']]['venue_name'] }}</td>
+            <td>{{ beer['beer_abv'] }}</td>
+            <td>{{ beer['last_seen'] }}</td>
+          </tr>
+      {% endfor %}
+    </table> 
+    
+  </body>
+</html>

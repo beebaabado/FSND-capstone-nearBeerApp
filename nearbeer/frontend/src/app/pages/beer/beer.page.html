@@ -1,0 +1,157 @@
+
+<ion-header [translucent] mode="ios" class="banner-image">
+  <ion-toolbar class="header-toolbar1">
+    <ion-title size="large"></ion-title>  
+  </ion-toolbar>
+</ion-header>
+<ion-content #content [fullscreen]="true" [scrollEvents]="true"
+      (ionScroll)="scrollingTriggered($event)">
+  <ion-header collapse="condense">
+    <!-- scrolls with content -->
+    <ion-toolbar>
+      <ion-title  size="small">Beers near you: <span class="ion-text-capitalize">{{ city }}</span></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!--------   Searchbar  ----->
+  <ion-item [hidden]='hideSearchList'>
+    <ion-label>Search Venues</ion-label>
+    <ion-searchbar id="search-bar-1" placeholder="Limit search to venues" autocomplete="on" showCancelButton="always" [(ngModel)]="searchTerm" (ionChange)="filterbyColSearchEventTriggered()" >
+    </ion-searchbar>
+  </ion-item>
+  
+  <!------- select city ------->
+  <ion-item [hidden]='hideSelectCity'>
+    <ion-label>Select Locations</ion-label>
+    <ion-select
+                id="select-city" 
+                [interfaceOptions]="customPopoverOptions" 
+                interface="popover"
+                placeholder="Select City" 
+                value="city"
+                showCancelButton="always" 
+                [(ngModel)]="city" 
+                (ionChange)="setCityEventTriggered($event)">
+      <ion-select-option *ngFor="let city of cityList;" value="{{ city.city_name }}">{{ city.city_name }}</ion-select-option>
+    </ion-select>
+  </ion-item> 
+
+  <!-------- FAB menu with popout menu  ----->
+
+<!-- fab placed to the (vertical) center and end -->
+<ion-fab horizontal="start" vertical="top" slot="fixed" edge>
+  <ion-fab-button mode="ios" color="dark">
+    <ion-icon name="search" (click)="toggleAllFilterComponents(true);"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="end">
+    <ion-fab-button mode="ios" color="light" data-desc="Description 1">
+      <ion-icon name="beer" (click)="displayStyleList(false);"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button mode="ios" color="light">
+      <ion-icon name="storefront" (click)="filterByVenue(false);"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button mode="ios" color="light">
+      <ion-icon name="location" (click)="searchLocation(false);"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button mode="ios" color="light">
+      <ion-icon name="options" (click)="filterByMultiple(false);"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button mode="ios" color="light">
+      <ion-icon name="sunny" (click)="venue_style_rating_sort();"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+<ion-fab horizontal="end" vertical="center" slot="fixed" edge>  
+  <ion-fab-button autofocus='true' #toTopButton [hidden]='hideGoTopButton' color="dark" size="small" (click)="scrollToTop();">
+    <ion-icon name="chevron-up"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<!-- STYLES dropdown search list with multi select -->
+
+<ion-item [hidden]='hideList'> 
+  <ion-label>Select Style</ion-label>
+  <ionic-selectable #styleComponent
+    [isMultiple]="true"
+    [(ngModel)]="selectedStyles"
+    [items]="styleList"
+    itemValueField="id"
+    itemTextField="major"
+    groupValueField="id"
+    groupTextField="patterns_formatted"
+    [canSearch]="true"
+    closeButtonSlot="end"
+    closeButtonText="&#10006;"
+    (onChange)="styleChangeEventTriggered($event)">
+    
+    <!-- customize the footer toolbar buttons-->
+    <ng-template ionicSelectableFooterTemplate>
+      <ion-toolbar>
+        <ion-row >
+          <ion-col class="no-border">
+            <ion-button expand="block" fill="solid" shape="round" color="medium" (click)="toggleItems()">
+              {{styleComponent.itemsToConfirm.length ? 'Deselect' : 'Select'}}
+              All
+            </ion-button>
+          </ion-col>
+          <ion-col class="no-border">
+            <ion-button expand="block" fill="solid" shape="round" color="medium" (click)="confirm()">
+              {{styleComponent.confirmButtonText}}
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ng-template>
+  </ionic-selectable>
+</ion-item>
+
+<!-- The Beer List -->
+  <ion-grid>
+    <!-- Headers -->
+    <ion-row class="header">
+      <ion-col [size]="(i===3)? 2 : null" id="{{ 'col' + i }}" class="column-name-cell" *ngFor="let header of headerList; let i=index;">
+        <span>
+        <ion-label class="center-content" (click)="sortTableEventTriggered(i, header, $event)">
+          {{ header }}
+        </ion-label>
+        </span>
+      </ion-col>
+    </ion-row>
+    <!-- Data  -->
+    <!-- <ion-virtual-scroll [items]="beerList"> -->
+    <ion-row *ngFor="let beer of beerList; let i=index;"  id="{{ 'row' + i }}">
+      <!-- <ion-row #beerRow *virtualItem="let beer; let i=index;"  id="{{ 'row' + i }}"  [hidden]='false'> -->
+      <ion-col id= "{{ beer['venue_id'] }}">
+        {{ beer['venue_name'] }}
+      </ion-col>  
+      <ion-col>
+         <a class="beerlink" target="_blank" href="{{beer['untappd_url']}}" rel="noopener noreferrer"> 
+         {{ beer['brewery_name'] }} / {{ beer['beer_name'] }} 
+         </a>
+      </ion-col>  
+      <ion-col #filterStyle id={{i}} >
+        {{ beer['beer_style'] }} ({{ beer['beer_abv'] | number: '1.1-2'}})
+      </ion-col> 
+      <ion-col [hidden]='true'>
+        {{ beer['beer_name'] }}
+      </ion-col> 
+      <ion-col size="2">
+        {{ beer['rating_score'] | number: '1.2-2' }}
+      </ion-col>  
+      <ion-col [hidden]='true'>
+        {{ beer['beer_abv'] | number: '1.1-2' }}
+      </ion-col>  
+      <ion-col [hidden]='true' wrap>
+        {{ beer['last_seen'] | date: 'short'}}
+      </ion-col> 
+    </ion-row>
+  <!-- </ion-virtual-scroll> -->
+  </ion-grid>
+</ion-content>
+
+<ion-footer [translucent]="true"  >
+  <ion-toolbar class="footer-toolbar"> 
+    <ion-title  style="height:10px" size="small">Last check-ins from {{ oldestCheckin | date: 'mediumDate'}}  to  {{ newestCheckin | date: 'mediumDate'}}  for {{ city }}.</ion-title>
+  </ion-toolbar>
+</ion-footer>
