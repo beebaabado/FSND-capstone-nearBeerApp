@@ -12,6 +12,7 @@ database_filename = "nearbeer"
 database_path = "postgresql://{}@{}/{}".format('postgres','localhost:5432', database_filename)
 
 db = SQLAlchemy()
+migrate = Migrate()
 
 '''
 setup_db(app)
@@ -23,7 +24,7 @@ def setup_db(app):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.app = app
     db.init_app(app)
-    migrate = Migrate(app, db)
+    migrate.init_app(app, db)
 '''
 db_drop_and_create_all()
     drops the database tables and starts fresh
@@ -32,13 +33,13 @@ db_drop_and_create_all()
     uncomment db.drop_all if you want to start with clean db
 '''
 def db_drop_and_create_all():
-    db.drop_all()
-    db.create_all()
-
-
+    ''' drop and create '''
+    #db.drop_all()
+    #db.create_all()
+    
 '''
 Beer
-a persistent beer entity, extends the base SQLAlchemy Model
+   a persistent beer entity, extends the base SQLAlchemy Model
 '''
 class Beer(db.Model):
     __tablename__ = 'beer'

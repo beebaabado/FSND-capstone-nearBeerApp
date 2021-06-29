@@ -77,3 +77,12 @@ from tmp;
 # Transfer temp venue to venue table
 # Note no parens for SELECT fields...leads to syntax error where number of insert items don't match  it could be that if the columns names are exactly the same then you can use parens???
 INSERT into venue ( venue_id, name, slug, lng, lat, city, state, address, country) SELECT  venue_id, venue_name, venue_slug, lng, lat, venue_city, venue_state, venue_address, venue_country from tempvenue;
+
+# using flask migrate
+To create initial migration start with empty database.  I dropped the database and recreated it to clear schema.
+Then ran 
+flask db migrate -m "message"
+check version file under versions folder
+flask db upgrade
+use psql to make sure tables created
+Now each time change db schema run db migrate and db upgrade process
