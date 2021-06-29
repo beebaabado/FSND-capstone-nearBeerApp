@@ -1,0 +1,1940 @@
+{"venues": {
+      "10007229": {
+        "location": {
+          "lat": 40.0218, 
+          "lng": -105.219, 
+          "venue_address": "2209 Central Ave", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 232, 
+        "venue_name": "Wild Provisions Beer Project", 
+        "venue_slug": "wild-provisions-beer-project"
+      }, 
+      "1005048": {
+        "location": {
+          "lat": 40.0215, 
+          "lng": -105.247, 
+          "venue_address": "3550 Frontier Ave Ste A", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 4425, 
+        "venue_name": "Sanitas Brewing Company", 
+        "venue_slug": "sanitas-brewing-company"
+      }, 
+      "1008205": {
+        "location": {
+          "lat": 40.0149, 
+          "lng": -105.263, 
+          "venue_address": "2525 Arapahoe Ave Unit A05", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 189, 
+        "venue_name": "Rincon Argentino", 
+        "venue_slug": "rincon-argentino"
+      }, 
+      "10332": {
+        "location": {
+          "lat": 40.1679, 
+          "lng": -105.102, 
+          "venue_address": "512 Main St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 301, 
+        "venue_name": "Mike O'Shays Restaurant & Ale House", 
+        "venue_slug": "mike-o-shays-restaurant-ale-house"
+      }, 
+      "104541": {
+        "location": {
+          "lat": 40.2284, 
+          "lng": -105.274, 
+          "venue_address": "", 
+          "venue_city": "Lyons", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 60, 
+        "venue_name": "Planet Bluegrass", 
+        "venue_slug": "planet-bluegrass"
+      }, 
+      "10725": {
+        "location": {
+          "lat": 39.9059, 
+          "lng": -105.087, 
+          "venue_address": "8001 Arista Pl", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 215, 
+        "venue_name": "Proto's Pizza-Broomfield", 
+        "venue_slug": "proto-s-pizza-broomfield"
+      }, 
+      "1074913": {
+        "location": {
+          "lat": 40.0517, 
+          "lng": -105.049, 
+          "venue_address": "285 Cheeseman Street", 
+          "venue_city": "Erie", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 633, 
+        "venue_name": "Industrial Revolution Brewing Company", 
+        "venue_slug": "industrial-revolution-brewing-company"
+      }, 
+      "1079": {
+        "location": {
+          "lat": 40.0177, 
+          "lng": -105.281, 
+          "venue_address": "1047 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 733, 
+        "venue_name": "SALT the Bistro", 
+        "venue_slug": "salt-the-bistro"
+      }, 
+      "109356": {
+        "location": {
+          "lat": 39.977, 
+          "lng": -105.133, 
+          "venue_address": "701 B Main St", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 810, 
+        "venue_name": "LuLu's", 
+        "venue_slug": "lulu-s"
+      }, 
+      "1198727": {
+        "location": {
+          "lat": 39.8932, 
+          "lng": -105.083, 
+          "venue_address": "7655 W 108th Ave #600", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1140, 
+        "venue_name": "Westminster Brewing Company", 
+        "venue_slug": "westminster-brewing-company"
+      }, 
+      "120962": {
+        "location": {
+          "lat": 39.9833, 
+          "lng": -105.25, 
+          "venue_address": "657 S Broadway St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 150, 
+        "venue_name": "Murphy's South", 
+        "venue_slug": "murphy-s-south"
+      }, 
+      "121206": {
+        "location": {
+          "lat": 40.0317192, 
+          "lng": -105.2594223, 
+          "venue_address": "3141 28th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 221, 
+        "venue_name": "Outback Saloon", 
+        "venue_slug": "outback-saloon"
+      }, 
+      "12328": {
+        "location": {
+          "lat": 39.9844, 
+          "lng": -105.249, 
+          "venue_address": "627 S Broadway St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 3334, 
+        "venue_name": "Southern Sun Pub & Brewery", 
+        "venue_slug": "southern-sun-pub-brewery"
+      }, 
+      "1233590": {
+        "location": {
+          "lat": 40.0491, 
+          "lng": -105.048, 
+          "venue_address": "500 Briggs St", 
+          "venue_city": "Erie", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1122, 
+        "venue_name": "The Old Mine - Cidery & BBQpub", 
+        "venue_slug": "the-old-mine-cidery-and-bbqpub"
+      }, 
+      "125686": {
+        "location": {
+          "lat": 39.9294891, 
+          "lng": -105.1271515, 
+          "venue_address": "615 Flatiron Marketplace Dr", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 51, 
+        "venue_name": "Buca di Beppo", 
+        "venue_slug": "buca-di-beppo"
+      }, 
+      "1264536": {
+        "location": {
+          "lat": 40.1514, 
+          "lng": -105.153, 
+          "venue_address": "600 S. Airport Road", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 815, 
+        "venue_name": "Cyclhops", 
+        "venue_slug": "cyclhops"
+      }, 
+      "1302723": {
+        "location": {
+          "lat": 39.9944, 
+          "lng": -105.091, 
+          "venue_address": "105 W Emma St", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2753, 
+        "venue_name": "The Post Brewing Company", 
+        "venue_slug": "the-post-brewing-company"
+      }, 
+      "133710": {
+        "location": {
+          "lat": 39.9275, 
+          "lng": -105.119, 
+          "venue_address": "500 Interlocken Blvd", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 690, 
+        "venue_name": "The Tap Room and Terrace Restaurant and Bar", 
+        "venue_slug": "the-tap-room-and-terrace-restaurant-and-bar"
+      }, 
+      "1394785": {
+        "location": {
+          "lat": 40.1599, 
+          "lng": -105.101, 
+          "venue_address": "335 1st Ave, Unit C", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1845, 
+        "venue_name": "300 Suns Brewing", 
+        "venue_slug": "300-suns-brewing"
+      }, 
+      "140060": {
+        "location": {
+          "lat": 40.0195, 
+          "lng": -105.279, 
+          "venue_address": "2115 13th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 302, 
+        "venue_name": "Hotel Boulderado", 
+        "venue_slug": "hotel-boulderado"
+      }, 
+      "1507714": {
+        "location": {
+          "lat": 39.988, 
+          "lng": -105.136, 
+          "venue_address": "585 E South Boulder Rd", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 397, 
+        "venue_name": "Mudrock's Tap & Tavern", 
+        "venue_slug": "mudrock-s-tap-tavern"
+      }, 
+      "153262": {
+        "location": {
+          "lat": 40.017, 
+          "lng": -105.259, 
+          "venue_address": "2720 Canyon Blvd", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 141, 
+        "venue_name": "Aloy Thai Cuisine", 
+        "venue_slug": "aloy-thai-cuisine"
+      }, 
+      "156880": {
+        "location": {
+          "lat": 40.1641617, 
+          "lng": -105.1021042, 
+          "venue_address": "302 Main St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 99, 
+        "venue_name": "Dickens Opera House", 
+        "venue_slug": "dickens-opera-house"
+      }, 
+      "1607215": {
+        "location": {
+          "lat": 39.9064, 
+          "lng": -105.099, 
+          "venue_address": "8855 W 116th Cir", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 6233, 
+        "venue_name": "4 Noses Brewing Company", 
+        "venue_slug": "4-noses-brewing-company"
+      }, 
+      "1629069": {
+        "location": {
+          "lat": 39.9133, 
+          "lng": -105.056, 
+          "venue_address": "5450 W 120th Ave", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2729, 
+        "venue_name": "Wonderland Brewing", 
+        "venue_slug": "wonderland-brewing"
+      }, 
+      "1679558": {
+        "location": {
+          "lat": 39.9095, 
+          "lng": -105.1, 
+          "venue_address": "9009 Metro Airport Ave", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 419, 
+        "venue_name": "The Burns Pub", 
+        "venue_slug": "the-burns-pub"
+      }, 
+      "1699904": {
+        "location": {
+          "lat": 40.1642, 
+          "lng": -105.097, 
+          "venue_address": "250 3rd Ave", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 307, 
+        "venue_name": "Georgia Boys BBQ - The Shack", 
+        "venue_slug": "georgia-boys-bbq-the-shack"
+      }, 
+      "17432": {
+        "location": {
+          "lat": 39.9148, 
+          "lng": -105.055, 
+          "venue_address": "1280 E 1st Ave", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1103, 
+        "venue_name": "Old Chicago - Broomfield", 
+        "venue_slug": "old-chicago-broomfield"
+      }, 
+      "175820": {
+        "location": {
+          "lat": 39.9403, 
+          "lng": -105.125, 
+          "venue_address": "13351 W Midway Blvd", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 87, 
+        "venue_name": "Hyatt House Boulder/Broomfield", 
+        "venue_slug": "hyatt-house-boulder-broomfield"
+      }, 
+      "1762346": {
+        "location": {
+          "lat": 40.0181, 
+          "lng": -105.278, 
+          "venue_address": "1308 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 105, 
+        "venue_name": "Sforno Trattoria Romana", 
+        "venue_slug": "sforno-trattoria-romana"
+      }, 
+      "1832506": {
+        "location": {
+          "lat": 39.906, 
+          "lng": -105.087, 
+          "venue_address": "8001 Arista Place, Suite 110", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2089, 
+        "venue_name": "The Colorado Keg House", 
+        "venue_slug": "the-colorado-keg-house"
+      }, 
+      "1851177": {
+        "location": {
+          "lat": 40.0738, 
+          "lng": -105.202, 
+          "venue_address": "5455 Spine Rd Ste A", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1887, 
+        "venue_name": "Finkel & Garf Brewing Co.", 
+        "venue_slug": "finkel-garf-brewing-co"
+      }, 
+      "1870256": {
+        "location": {
+          "lat": 40.0625, 
+          "lng": -105.205, 
+          "venue_address": "4910 Nautilus Ct N", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 27118, 
+        "venue_name": "Avery Brewing Company", 
+        "venue_slug": "avery-brewing-company"
+      }, 
+      "18817": {
+        "location": {
+          "lat": 40.0149, 
+          "lng": -105.264, 
+          "venue_address": "2319 Arapahoe Ave", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 5467, 
+        "venue_name": "Backcountry Pizza & Tap House", 
+        "venue_slug": "backcountry-pizza-and-tap-house"
+      }, 
+      "1898531": {
+        "location": {
+          "lat": 40.1581, 
+          "lng": -105.108, 
+          "venue_address": "63 S Pratt Pkwy Unit B", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 886, 
+        "venue_name": "Shoes & Brews", 
+        "venue_slug": "shoes-brews"
+      }, 
+      "19086": {
+        "location": {
+          "lat": 40.0244, 
+          "lng": -105.282, 
+          "venue_address": "2543 Broadway St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 354, 
+        "venue_name": "The Hungry Toad", 
+        "venue_slug": "the-hungry-toad"
+      }, 
+      "1964466": {
+        "location": {
+          "lat": 39.9998, 
+          "lng": -105.103, 
+          "venue_address": "297 US-287", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 3618, 
+        "venue_name": "Liquid Mechanics", 
+        "venue_slug": "liquid-mechanics"
+      }, 
+      "20118": {
+        "location": {
+          "lat": 40.2243, 
+          "lng": -105.269, 
+          "venue_address": "303 Main St", 
+          "venue_city": "Lyons", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 5374, 
+        "venue_name": "Oskar Blues Grill & Brew", 
+        "venue_slug": "oskar-blues-grill-brew"
+      }, 
+      "20228": {
+        "location": {
+          "lat": 40.0603, 
+          "lng": -105.206, 
+          "venue_address": "4699 Nautilus Ct S Ste 104", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1814, 
+        "venue_name": "Asher Brewing Company", 
+        "venue_slug": "asher-brewing-company"
+      }, 
+      "2030842": {
+        "location": {
+          "lat": 40.0505, 
+          "lng": -105.048, 
+          "venue_address": "600 Briggs St", 
+          "venue_city": "Erie", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 789, 
+        "venue_name": "Echo Brewing Company", 
+        "venue_slug": "echo-brewing-company"
+      }, 
+      "21054": {
+        "location": {
+          "lat": 40.1586, 
+          "lng": -105.116, 
+          "venue_address": "1265 Boston Ave", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 13130, 
+        "venue_name": "Left Hand Brewing Company", 
+        "venue_slug": "left-hand-brewing-company"
+      }, 
+      "2117038": {
+        "location": {
+          "lat": 40.1544, 
+          "lng": -105.109, 
+          "venue_address": "1025 Delaware Ave, Unit A", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1724, 
+        "venue_name": "Grossen Bart Brewery", 
+        "venue_slug": "grossen-bart-brewery"
+      }, 
+      "2120028": {
+        "location": {
+          "lat": 40.0306, 
+          "lng": -105.258, 
+          "venue_address": "3070 28th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 101, 
+        "venue_name": "Verde", 
+        "venue_slug": "verde"
+      }, 
+      "2133801": {
+        "location": {
+          "lat": 40.1707, 
+          "lng": -105.103, 
+          "venue_address": "600 Longs Peak Ave", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1440, 
+        "venue_name": "Longs Peak Pub & Taphouse", 
+        "venue_slug": "longs-peak-pub-taphouse"
+      }, 
+      "21855": {
+        "location": {
+          "lat": 40.1687, 
+          "lng": -105.102, 
+          "venue_address": "540 Main St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2957, 
+        "venue_name": "Pumphouse Brewery", 
+        "venue_slug": "pumphouse-brewery"
+      }, 
+      "2223869": {
+        "location": {
+          "lat": 40.1671, 
+          "lng": -105.103, 
+          "venue_address": "", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 297, 
+        "venue_name": "Rosalee's Pizzeria", 
+        "venue_slug": "rosalee-s-pizzeria"
+      }, 
+      "231839": {
+        "location": {
+          "lat": 39.8496, 
+          "lng": -105.156, 
+          "venue_address": "8565 Five Parks Dr", 
+          "venue_city": "Arvada", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 178, 
+        "venue_name": "Jack's Bar & Grill", 
+        "venue_slug": "jack-s-bar-grill"
+      }, 
+      "23212": {
+        "location": {
+          "lat": 39.9767, 
+          "lng": -105.131, 
+          "venue_address": "637 Front St", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1620, 
+        "venue_name": "Lucky Pie Pizza & Tap House", 
+        "venue_slug": "lucky-pie-pizza-tap-house"
+      }, 
+      "237157": {
+        "location": {
+          "lat": 39.8913, 
+          "lng": -105.069, 
+          "venue_address": "10710 Westminster Blvd", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 326, 
+        "venue_name": "Bender's Bar & Grill", 
+        "venue_slug": "bender-s-bar-grill"
+      }, 
+      "24109": {
+        "location": {
+          "lat": 40.0188, 
+          "lng": -105.276, 
+          "venue_address": "1447 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 553, 
+        "venue_name": "Illegal Pete's", 
+        "venue_slug": "illegal-pete-s"
+      }, 
+      "253725": {
+        "location": {
+          "lat": 40.0008, 
+          "lng": -105.022, 
+          "venue_address": "3100 Village Vista Dr", 
+          "venue_city": "Erie", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 432, 
+        "venue_name": "Lazy Dog Sports Bar & Grill", 
+        "venue_slug": "lazy-dog-sports-bar-grill"
+      }, 
+      "2550478": {
+        "location": {
+          "lat": 40.0137, 
+          "lng": -105.133, 
+          "venue_address": "2770 Arapahoe Rd", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 74, 
+        "venue_name": "Reelfish Fish & Chips", 
+        "venue_slug": "reelfish-fish-chips"
+      }, 
+      "25713": {
+        "location": {
+          "lat": 40.0178452, 
+          "lng": -105.2808228, 
+          "venue_address": "1117 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 271, 
+        "venue_name": "Hapa Sushi Grill and Sake Bar", 
+        "venue_slug": "hapa-sushi-grill-and-sake-bar"
+      }, 
+      "25929": {
+        "location": {
+          "lat": 39.9145, 
+          "lng": -105.044, 
+          "venue_address": "4381 W 120th Ave", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 379, 
+        "venue_name": "The Old Man", 
+        "venue_slug": "the-old-man"
+      }, 
+      "2670039": {
+        "location": {
+          "lat": 40.1684, 
+          "lng": -105.102, 
+          "venue_address": "", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 906, 
+        "venue_name": "The Roost", 
+        "venue_slug": "the-roost"
+      }, 
+      "267146": {
+        "location": {
+          "lat": 39.8165, 
+          "lng": -105.185, 
+          "venue_address": "6665 Quaker St", 
+          "venue_city": "Arvada", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 72, 
+        "venue_name": "West Woods Golf Club", 
+        "venue_slug": "west-woods-golf-club"
+      }, 
+      "267875": {
+        "location": {
+          "lat": 39.959, 
+          "lng": -105.152, 
+          "venue_address": "", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 86, 
+        "venue_name": "Coal Creek Golf Course", 
+        "venue_slug": "coal-creek-golf-course"
+      }, 
+      "28407": {
+        "location": {
+          "lat": 39.8881, 
+          "lng": -105.074, 
+          "venue_address": "10446 Town Center Drive", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1266, 
+        "venue_name": "BJ's Restaurant & Brewhouse - Westminster", 
+        "venue_slug": "bjs-restaurant-and-brewhouse-westminster"
+      }, 
+      "286081": {
+        "location": {
+          "lat": 40.0169, 
+          "lng": -105.28, 
+          "venue_address": "1175 Walnut St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 241, 
+        "venue_name": "T|ACO", 
+        "venue_slug": "t-aco"
+      }, 
+      "2906": {
+        "location": {
+          "lat": 40.0171, 
+          "lng": -105.283, 
+          "venue_address": "926 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 3396, 
+        "venue_name": "West End Tavern", 
+        "venue_slug": "west-end-tavern"
+      }, 
+      "30874": {
+        "location": {
+          "lat": 40.0193, 
+          "lng": -105.279, 
+          "venue_address": "2115 13th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 446, 
+        "venue_name": "The Corner Bar", 
+        "venue_slug": "the-corner-bar"
+      }, 
+      "315397": {
+        "location": {
+          "lat": 40.0175, 
+          "lng": -105.283, 
+          "venue_address": "1001 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 216, 
+        "venue_name": "Pasta Jay's", 
+        "venue_slug": "pasta-jay-s"
+      }, 
+      "3236419": {
+        "location": {
+          "lat": 39.9777, 
+          "lng": -105.131, 
+          "venue_address": "740 Front St", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 158, 
+        "venue_name": "740 Front", 
+        "venue_slug": "740-front"
+      }, 
+      "33294": {
+        "location": {
+          "lat": 40.0159, 
+          "lng": -105.283, 
+          "venue_address": "900 Walnut St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 264, 
+        "venue_name": "St Julien Hotel & Spa", 
+        "venue_slug": "st-julien-hotel-spa"
+      }, 
+      "3410393": {
+        "location": {
+          "lat": 40.0262, 
+          "lng": -105.244, 
+          "venue_address": "", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1762, 
+        "venue_name": "VisionQuest Brewing", 
+        "venue_slug": "visionquest-brewing"
+      }, 
+      "3414225": {
+        "location": {
+          "lat": 39.9622, 
+          "lng": -105.165, 
+          "venue_address": "585 McCaslin Blvd", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1392, 
+        "venue_name": "Murphy's Tap House", 
+        "venue_slug": "murphys-tap-house"
+      }, 
+      "34658": {
+        "location": {
+          "lat": 40.0168, 
+          "lng": -105.281, 
+          "venue_address": "1101 Walnut St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 504, 
+        "venue_name": "Rio Grande", 
+        "venue_slug": "rio-grande"
+      }, 
+      "3489921": {
+        "location": {
+          "lat": 40.1622, 
+          "lng": -105.1, 
+          "venue_address": "209 Emery Street", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 3118, 
+        "venue_name": "Wibby Brewing Company", 
+        "venue_slug": "wibby-brewing-company"
+      }, 
+      "35088": {
+        "location": {
+          "lat": 39.9991, 
+          "lng": -105.255, 
+          "venue_address": "2922 Baseline Rd", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1561, 
+        "venue_name": "World Famous Dark Horse Bar & Grill", 
+        "venue_slug": "world-famous-dark-horse-bar-grill"
+      }, 
+      "35757": {
+        "location": {
+          "lat": 39.9307, 
+          "lng": -105.135, 
+          "venue_address": "1 W Flatiron Crossing Dr", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1344, 
+        "venue_name": "Gordon Biersch - Broomfield", 
+        "venue_slug": "gordon-biersch-brewery-restaurant"
+      }, 
+      "358494": {
+        "location": {
+          "lat": 40.0073, 
+          "lng": -105.294, 
+          "venue_address": "1138 Flagstaff Rd", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 98, 
+        "venue_name": "Flagstaff House Restaurant", 
+        "venue_slug": "flagstaff-house-restaurant"
+      }, 
+      "3616089": {
+        "location": {
+          "lat": 40.1389, 
+          "lng": -105.122, 
+          "venue_address": "1800 Pike Rd", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2364, 
+        "venue_name": "Oskar Blues Brewery", 
+        "venue_slug": "oskar-blues-brewery"
+      }, 
+      "368276": {
+        "location": {
+          "lat": 39.9761, 
+          "lng": -105.128, 
+          "venue_address": "1150 Pine St, Unit B", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2774, 
+        "venue_name": "Gravity Brewing", 
+        "venue_slug": "gravity-brewing"
+      }, 
+      "369015": {
+        "location": {
+          "lat": 40.0177, 
+          "lng": -105.258, 
+          "venue_address": "1690 28th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1347, 
+        "venue_name": "BJ's Restaurant & Brewhouse - Boulder 29th Street", 
+        "venue_slug": "bjs-restaurant-and-brewhouse-boulder-29th-street"
+      }, 
+      "3978093": {
+        "location": {
+          "lat": 39.9271, 
+          "lng": -105.033, 
+          "venue_address": "12708 Lowell Blvd", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 431, 
+        "venue_name": "North Side Tavern", 
+        "venue_slug": "north-side-tavern"
+      }, 
+      "409384": {
+        "location": {
+          "lat": 40.0179, 
+          "lng": -105.281, 
+          "venue_address": "1125 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 8677, 
+        "venue_name": "West Flanders Brewing Company", 
+        "venue_slug": "west-flanders-brewing-company"
+      }, 
+      "4121971": {
+        "location": {
+          "lat": 39.9617, 
+          "lng": -105.51, 
+          "venue_address": "4 E 1st St", 
+          "venue_city": "Nederland", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 894, 
+        "venue_name": "Crosscut Pizzeria and Taphouse", 
+        "venue_slug": "crosscut-pizzeria-and-taphouse"
+      }, 
+      "4132": {
+        "location": {
+          "lat": 40.1391, 
+          "lng": -105.131, 
+          "venue_address": "1555 Hover Street", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 7985, 
+        "venue_name": "Oskar Blues Home Made Liquids & Solids", 
+        "venue_slug": "oskar-blues-home-made-liquids-solids"
+      }, 
+      "414129": {
+        "location": {
+          "lat": 40.0654678, 
+          "lng": -105.1864243, 
+          "venue_address": "clubhouse dr.", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 81, 
+        "venue_name": "Boulder Country Club", 
+        "venue_slug": "boulder-country-club"
+      }, 
+      "4188": {
+        "location": {
+          "lat": 40.1640434, 
+          "lng": -105.1023026, 
+          "venue_address": "300 Main St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 209, 
+        "venue_name": "The Dickens Tavern", 
+        "venue_slug": "the-dickens-tavern"
+      }, 
+      "425132": {
+        "location": {
+          "lat": 40.0493, 
+          "lng": -105.048, 
+          "venue_address": "", 
+          "venue_city": "Erie", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 234, 
+        "venue_name": "Miner's Tavern", 
+        "venue_slug": "miner-s-tavern"
+      }, 
+      "4357896": {
+        "location": {
+          "lat": 40.1476, 
+          "lng": -105.129, 
+          "venue_address": "1232 S Hover St Ste B300", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 316, 
+        "venue_name": "Bad Daddy's Burger Bar", 
+        "venue_slug": "bad-daddy-s-burger-bar"
+      }, 
+      "44506": {
+        "location": {
+          "lat": 40.0086, 
+          "lng": -105.276, 
+          "venue_address": "1165 13th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1840, 
+        "venue_name": "The Sink", 
+        "venue_slug": "the-sink"
+      }, 
+      "4450997": {
+        "location": {
+          "lat": 40.1443, 
+          "lng": -105.131, 
+          "venue_address": "1232 S Hover Rd", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 861, 
+        "venue_name": "Parry's Pizzeria & Taphouse - Longmont", 
+        "venue_slug": "parrys-pizzeria-and-taphouse-longmont"
+      }, 
+      "44912": {
+        "location": {
+          "lat": 39.9302, 
+          "lng": -105.134, 
+          "venue_address": "1 W Flatiron Drive, Unit 500, Bldg. 5", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 150, 
+        "venue_name": "P.F. Chang's", 
+        "venue_slug": "p-f-chang-s"
+      }, 
+      "463440": {
+        "location": {
+          "lat": 39.8905, 
+          "lng": -105.066, 
+          "venue_address": "10600 Westminster Blvd", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 422, 
+        "venue_name": "Kachina", 
+        "venue_slug": "kachina"
+      }, 
+      "4635474": {
+        "location": {
+          "lat": 40.1637, 
+          "lng": -105.102, 
+          "venue_address": "246 Main St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 199, 
+        "venue_name": "Jefes", 
+        "venue_slug": "jefes"
+      }, 
+      "4898": {
+        "location": {
+          "lat": 40.0205, 
+          "lng": -105.251, 
+          "venue_address": "3201 Walnut St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 7074, 
+        "venue_name": "Twisted Pine Brewing Company", 
+        "venue_slug": "twisted-pine-brewing-company"
+      }, 
+      "4921212": {
+        "location": {
+          "lat": 39.962, 
+          "lng": -105.511, 
+          "venue_address": "", 
+          "venue_city": "Nederland", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 58, 
+        "venue_name": "Ned's Cafe", 
+        "venue_slug": "ned-s-cafe"
+      }, 
+      "4949": {
+        "location": {
+          "lat": 40.0202, 
+          "lng": -105.218, 
+          "venue_address": "1898 S Flatiron Ct", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2135, 
+        "venue_name": "Upslope Brewery", 
+        "venue_slug": "upslope-brewery"
+      }, 
+      "5040377": {
+        "location": {
+          "lat": 40.0295, 
+          "lng": -105.259, 
+          "venue_address": "2775 Valmont Rd, Boulder, CO 80304", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2120, 
+        "venue_name": "The Rayback Collective", 
+        "venue_slug": "the-rayback-collective"
+      }, 
+      "50822": {
+        "location": {
+          "lat": 39.8879, 
+          "lng": -105.074, 
+          "venue_address": "10438 Town Center Dr", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 143, 
+        "venue_name": "Bonefish Grill", 
+        "venue_slug": "bonefish-grill"
+      }, 
+      "52201": {
+        "location": {
+          "lat": 40.1437, 
+          "lng": -105.133, 
+          "venue_address": "2303 Clover Basin Dr", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 332, 
+        "venue_name": "Buffalo Wild Wings", 
+        "venue_slug": "buffalo-wild-wings"
+      }, 
+      "5235663": {
+        "location": {
+          "lat": 39.9084, 
+          "lng": -105.075, 
+          "venue_address": "11625 Reed Ct, Unit B", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1741, 
+        "venue_name": "Rails End Beer Company: Craft Beer & Tap Room", 
+        "venue_slug": "rails-end-beer-company"
+      }, 
+      "5237140": {
+        "location": {
+          "lat": 39.9895, 
+          "lng": -105.091, 
+          "venue_address": "985 S Public Rd", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 753, 
+        "venue_name": "Romero's K9 Club and Taphouse", 
+        "venue_slug": "romero-s-k9-club-and-taphouse"
+      }, 
+      "5288": {
+        "location": {
+          "lat": 40.139, 
+          "lng": -105.122, 
+          "venue_address": "1800 Pike Rd Unit B", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 5074, 
+        "venue_name": "Tasty Weasel", 
+        "venue_slug": "tasty-weasel"
+      }, 
+      "532355": {
+        "location": {
+          "lat": 39.96, 
+          "lng": -105.509, 
+          "venue_address": "20 Lakeview Drive #112", 
+          "venue_city": "Nederland", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1827, 
+        "venue_name": "The Very Nice Brewing Company", 
+        "venue_slug": "the-very-nice-brewing-company"
+      }, 
+      "5345112": {
+        "location": {
+          "lat": 40.0208, 
+          "lng": -105.265, 
+          "venue_address": "2328 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 220, 
+        "venue_name": "River and Woods", 
+        "venue_slug": "river-and-woods"
+      }, 
+      "546527": {
+        "location": {
+          "lat": 39.9847, 
+          "lng": -105.249, 
+          "venue_address": "627 S Broadway St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1186, 
+        "venue_name": "Under The Sun Eatery & Pizzeria", 
+        "venue_slug": "under-the-sun-eatery-pizzeria"
+      }, 
+      "5480785": {
+        "location": {
+          "lat": 40.1445, 
+          "lng": -105.13, 
+          "venue_address": "", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 703, 
+        "venue_name": "The Post Chicken & Beer", 
+        "venue_slug": "the-post-chicken-beer"
+      }, 
+      "5494304": {
+        "location": {
+          "lat": 39.9967, 
+          "lng": -105.09, 
+          "venue_address": "206 S Public Rd", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 513, 
+        "venue_name": "Eat at Community", 
+        "venue_slug": "eat-at-community"
+      }, 
+      "5661": {
+        "location": {
+          "lat": 39.96, 
+          "lng": -105.509, 
+          "venue_address": "20 E. Lakeview Drive #212", 
+          "venue_city": "Nederland", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 433, 
+        "venue_name": "Backcountry Pizza", 
+        "venue_slug": "backcountry-pizza"
+      }, 
+      "5797748": {
+        "location": {
+          "lat": 39.9322, 
+          "lng": -105.134, 
+          "venue_address": "1 W Flatiron Crossing Dr Ste 2156", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 401, 
+        "venue_name": "Bad Daddy's Burger Bar", 
+        "venue_slug": "bad-daddy-s-burger-bar"
+      }, 
+      "5834328": {
+        "location": {
+          "lat": 39.9305, 
+          "lng": -105.034, 
+          "venue_address": "12920 Lowell Blvd", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 512, 
+        "venue_name": "I HOP IPA", 
+        "venue_slug": "i-hop-ipa"
+      }, 
+      "5865655": {
+        "location": {
+          "lat": 40.0269, 
+          "lng": -105.243, 
+          "venue_address": "", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 373, 
+        "venue_name": "Kettle & Spoke Brewery", 
+        "venue_slug": "kettle-spoke-brewery"
+      }, 
+      "58824": {
+        "location": {
+          "lat": 39.8681, 
+          "lng": -105.089, 
+          "venue_address": "8121 W 94th Ave", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 187, 
+        "venue_name": "Cracovia Polish Restaurant and Bar", 
+        "venue_slug": "cracovia-polish-restaurant-and-bar"
+      }, 
+      "5966765": {
+        "location": {
+          "lat": 40.1615, 
+          "lng": -105.106, 
+          "venue_address": "142 Pratt St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1219, 
+        "venue_name": "Bootstrap Brewing", 
+        "venue_slug": "bootstrap-brewing"
+      }, 
+      "6004204": {
+        "location": {
+          "lat": 39.9994, 
+          "lng": -105.091, 
+          "venue_address": "201 N Public Rd", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 378, 
+        "venue_name": "William Oliver's Publick House", 
+        "venue_slug": "william-oliver-s-publick-house"
+      }, 
+      "6312586": {
+        "location": {
+          "lat": 40.0787, 
+          "lng": -105.189, 
+          "venue_address": "7088 Winchester Cir", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1385, 
+        "venue_name": "Gunbarrel Brewing Company", 
+        "venue_slug": "gunbarrel-brewing-company"
+      }, 
+      "6324669": {
+        "location": {
+          "lat": 39.8881, 
+          "lng": -105.071, 
+          "venue_address": "6595 W 104th Ave", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 125, 
+        "venue_name": "Chuy's Tex-Mex", 
+        "venue_slug": "chuy-s-tex-mex"
+      }, 
+      "6551830": {
+        "location": {
+          "lat": 39.9782, 
+          "lng": -105.132, 
+          "venue_address": "", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 236, 
+        "venue_name": "The New Waterloo", 
+        "venue_slug": "the-new-waterloo"
+      }, 
+      "6567698": {
+        "location": {
+          "lat": 39.8414955, 
+          "lng": -105.4198303, 
+          "venue_address": "92 Crawford Gulch Rd", 
+          "venue_city": "Golden", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 77, 
+        "venue_name": "Golden Gate Canyon State Park", 
+        "venue_slug": "golden-gate-canyon-state-park"
+      }, 
+      "66497": {
+        "location": {
+          "lat": 40.0178, 
+          "lng": -105.282, 
+          "venue_address": "1035 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1255, 
+        "venue_name": "Next Door Boulder", 
+        "venue_slug": "next-door-boulder"
+      }, 
+      "6701100": {
+        "location": {
+          "lat": 39.9131, 
+          "lng": -105.043, 
+          "venue_address": "4301 Main Street, Suite 100", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 67, 
+        "venue_name": "Fuzzy's Taco Shop", 
+        "venue_slug": "fuzzy-s-taco-shop"
+      }, 
+      "670248": {
+        "location": {
+          "lat": 40.0187, 
+          "lng": -105.279, 
+          "venue_address": "2017 13th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2688, 
+        "venue_name": "Bohemian Biergarten", 
+        "venue_slug": "bohemian-biergarten"
+      }, 
+      "6703611": {
+        "location": {
+          "lat": 40.1703, 
+          "lng": -105.103, 
+          "venue_address": "", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 95, 
+        "venue_name": "Cheba Hut", 
+        "venue_slug": "cheba-hut"
+      }, 
+      "6750760": {
+        "location": {
+          "lat": 40.0175, 
+          "lng": -105.283, 
+          "venue_address": "921 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 3681, 
+        "venue_name": "Oskar Blues Boulder Taproom", 
+        "venue_slug": "oskar-blues-boulder-taproom"
+      }, 
+      "686129": {
+        "location": {
+          "lat": 40.0203, 
+          "lng": -105.219, 
+          "venue_address": "1898 S Flatiron Ct", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 5845, 
+        "venue_name": "Upslope Brewery", 
+        "venue_slug": "upslope-brewery"
+      }, 
+      "6968226": {
+        "location": {
+          "lat": 40.0188, 
+          "lng": -105.279, 
+          "venue_address": "2027 13th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2034, 
+        "venue_name": "The Post Brewing Company", 
+        "venue_slug": "the-post-brewing-company"
+      }, 
+      "7037616": {
+        "location": {
+          "lat": 40.0259, 
+          "lng": -105.281, 
+          "venue_address": "1265 Alpine Ave", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 81, 
+        "venue_name": "Santo", 
+        "venue_slug": "santo"
+      }, 
+      "7107199": {
+        "location": {
+          "lat": 40.1781, 
+          "lng": -105.117, 
+          "venue_address": "1111 Francis St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 120, 
+        "venue_name": "Longmont Public House", 
+        "venue_slug": "longmont-public-house"
+      }, 
+      "7113577": {
+        "location": {
+          "lat": 40.0651, 
+          "lng": -105.215, 
+          "venue_address": "6035 Longbow Dr, Unit 109", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 714, 
+        "venue_name": "Beyond The Mountain Brewing", 
+        "venue_slug": "beyond-the-mountain-brewing"
+      }, 
+      "7129338": {
+        "location": {
+          "lat": 39.9761, 
+          "lng": -105.132, 
+          "venue_address": "604 Main St", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 491, 
+        "venue_name": "Crystal Springs Downtown Louisville Taproom", 
+        "venue_slug": "crystal-springs-downtown-louisville-taproom"
+      }, 
+      "7402164": {
+        "location": {
+          "lat": 39.9813, 
+          "lng": -105.064, 
+          "venue_address": "1380 Horizon Ave", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 700, 
+        "venue_name": "Acreage By Stem Ciders", 
+        "venue_slug": "acreage-by-stem-ciders"
+      }, 
+      "7406190": {
+        "location": {
+          "lat": 40.0181, 
+          "lng": -105.259, 
+          "venue_address": "2701 Canyon Blvd", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 53, 
+        "venue_name": "Hilton Garden Inn", 
+        "venue_slug": "hilton-garden-inn"
+      }, 
+      "7424276": {
+        "location": {
+          "lat": 40.0161, 
+          "lng": -105.26, 
+          "venue_address": "2550 Canyon Blvd", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 81, 
+        "venue_name": "Residence Inn by Marriott Boulder Canyon Boulevard", 
+        "venue_slug": "residence-inn-by-marriott-boulder-canyon-boulevard"
+      }, 
+      "7556": {
+        "location": {
+          "lat": 40.1688, 
+          "lng": -105.102, 
+          "venue_address": "540 Main St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 345, 
+        "venue_name": "Red Zone", 
+        "venue_slug": "red-zone"
+      }, 
+      "764836": {
+        "location": {
+          "lat": 40.1792, 
+          "lng": -105.146, 
+          "venue_address": "1200 Cornell Dr", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 60, 
+        "venue_name": "Twin Peaks Golf Course", 
+        "venue_slug": "twin-peaks-golf-course"
+      }, 
+      "7727424": {
+        "location": {
+          "lat": 40.0361, 
+          "lng": -105.052, 
+          "venue_address": "615 Mitchell Way", 
+          "venue_city": "Erie", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 74, 
+        "venue_name": "The Rusty Melon", 
+        "venue_slug": "the-rusty-melon"
+      }, 
+      "79537": {
+        "location": {
+          "lat": 39.887, 
+          "lng": -105.075, 
+          "venue_address": "10436 Town Center Dr #100", 
+          "venue_city": "Westminster", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 412, 
+        "venue_name": "Buffalo Wild Wings", 
+        "venue_slug": "buffalo-wild-wings"
+      }, 
+      "8115": {
+        "location": {
+          "lat": 40.0173, 
+          "lng": -105.282, 
+          "venue_address": "950 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 454, 
+        "venue_name": "Centro Latin Kitchen & Refreshment Palace", 
+        "venue_slug": "centro-latin-kitchen-refreshment-palace"
+      }, 
+      "823668": {
+        "location": {
+          "lat": 39.9782, 
+          "lng": -105.132, 
+          "venue_address": "Main Street", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 2423, 
+        "venue_name": "12 Degree Brewing", 
+        "venue_slug": "12-degree-brewing"
+      }, 
+      "833724": {
+        "location": {
+          "lat": 39.9856, 
+          "lng": -105.095, 
+          "venue_address": "400 W South Boulder Rd, #1650", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 1437, 
+        "venue_name": "Front Range Brewing Company", 
+        "venue_slug": "front-range-brewing-company"
+      }, 
+      "83602": {
+        "location": {
+          "lat": 40.0172, 
+          "lng": -105.283, 
+          "venue_address": "928 Pearl St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 226, 
+        "venue_name": "Jax Fish House Boulder", 
+        "venue_slug": "jax-fish-house-boulder"
+      }, 
+      "8500683": {
+        "location": {
+          "lat": 39.9999, 
+          "lng": -105.099, 
+          "venue_address": "778 W Baseline Rd", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 537, 
+        "venue_name": "Cellar West Artisan Ales", 
+        "venue_slug": "cellar-west-artisan-ales"
+      }, 
+      "8672389": {
+        "location": {
+          "lat": 40.1672, 
+          "lng": -105.103, 
+          "venue_address": "475 Main St", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 126, 
+        "venue_name": "Quarters Bar + Arcade", 
+        "venue_slug": "quarters-bar-arcade"
+      }, 
+      "870790": {
+        "location": {
+          "lat": 40.1405869, 
+          "lng": -105.1328583, 
+          "venue_address": "1410 Dry Creek Dr", 
+          "venue_city": "Longmont", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 77, 
+        "venue_name": "Courtyard Boulder Longmont", 
+        "venue_slug": "courtyard-boulder-longmont"
+      }, 
+      "8973598": {
+        "location": {
+          "lat": 39.8644, 
+          "lng": -105.208, 
+          "venue_address": "18148 West 92nd Lane, Suite 100", 
+          "venue_city": "Arvada", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 470, 
+        "venue_name": "Resolute Brewing Tap & Cellar", 
+        "venue_slug": "resolute-brewing-tap-and-cellar"
+      }, 
+      "9092384": {
+        "location": {
+          "lat": 39.9984, 
+          "lng": -105.091, 
+          "venue_address": "103 N Public Rd Unit C", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 51, 
+        "venue_name": "Teocalli", 
+        "venue_slug": "teocalli"
+      }, 
+      "9109203": {
+        "location": {
+          "lat": 39.9637, 
+          "lng": -105.515, 
+          "venue_address": "250 N Caribou Street", 
+          "venue_city": "Nederland", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 901, 
+        "venue_name": "Knotted Root Brewing Company", 
+        "venue_slug": "knotted-root-brewing-company"
+      }, 
+      "9123529": {
+        "location": {
+          "lat": 40.0005, 
+          "lng": -105.008, 
+          "venue_address": "16860 Sheridan Pkwy, Unit 100", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 219, 
+        "venue_name": "Blake's Taphouse", 
+        "venue_slug": "blakes-taphouse"
+      }, 
+      "920005": {
+        "location": {
+          "lat": 39.9984, 
+          "lng": -105.088, 
+          "venue_address": "301 Simpson St", 
+          "venue_city": "Lafayette", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 5844, 
+        "venue_name": "Odd 13 Brewing", 
+        "venue_slug": "odd-13-brewing"
+      }, 
+      "9416107": {
+        "location": {
+          "lat": 39.9616, 
+          "lng": -105.167, 
+          "venue_address": "1132 W Dillon Rd Ste 4", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 184, 
+        "venue_name": "Mother Tucker Brewery", 
+        "venue_slug": "mother-tucker-brewery"
+      }, 
+      "9488776": {
+        "location": {
+          "lat": 40.0168, 
+          "lng": -105.281, 
+          "venue_address": "1109 Walnut St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 58, 
+        "venue_name": "Rosetta Hall", 
+        "venue_slug": "rosetta-hall"
+      }, 
+      "9513425": {
+        "location": {
+          "lat": 39.9107, 
+          "lng": -105.096, 
+          "venue_address": "8851 Destination Dr Suite 115", 
+          "venue_city": "Broomfield", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 146, 
+        "venue_name": "Hops N Drops", 
+        "venue_slug": "hops-n-drops"
+      }, 
+      "9515703": {
+        "location": {
+          "lat": 39.9617, 
+          "lng": -105.509, 
+          "venue_address": "70 East 1st Street", 
+          "venue_city": "Nederland", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 307, 
+        "venue_name": "Busey Brews", 
+        "venue_slug": "busey-brews"
+      }, 
+      "9859251": {
+        "location": {
+          "lat": 40.0163, 
+          "lng": -105.227, 
+          "venue_address": "5460 Conestoga Ct", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 195, 
+        "venue_name": "Uhl's Brewing Co", 
+        "venue_slug": "uhls-brewing-co"
+      }, 
+      "9875003": {
+        "location": {
+          "lat": 40.015, 
+          "lng": -105.246, 
+          "venue_address": "1600 38th St", 
+          "venue_city": "Boulder", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 186, 
+        "venue_name": "Ska Street Brewstillery", 
+        "venue_slug": "ska-street-brewstillery"
+      }, 
+      "99703": {
+        "location": {
+          "lat": 39.9781, 
+          "lng": -105.132, 
+          "venue_address": "809 Main St", 
+          "venue_city": "Louisville", 
+          "venue_country": "United States", 
+          "venue_state": "CO"
+        }, 
+        "total_user_count": 681, 
+        "venue_name": "Waterloo", 
+        "venue_slug": "waterloo"
+      }
+    }
+}
