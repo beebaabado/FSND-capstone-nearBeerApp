@@ -1,0 +1,601 @@
+{"venues": {
+        "104559": {
+          "location": {
+            "lat": 34.4088, 
+            "lng": -119.685, 
+            "venue_address": "230 Stearns Wharf", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 567, 
+          "venue_name": "Santa Barbara Shellfish Co.", 
+          "venue_slug": "santa-barbara-shellfish-co"
+        }, 
+        "10720": {
+          "location": {
+            "lat": 34.4179, 
+            "lng": -119.701, 
+            "venue_address": "117 W DE La Guerra St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 250, 
+          "venue_name": "Elsie's", 
+          "venue_slug": "elsie-s"
+        }, 
+        "1075050": {
+          "location": {
+            "lat": 34.4147, 
+            "lng": -119.69, 
+            "venue_address": "127 Anacapa St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 322, 
+          "venue_name": "Lucky Penny", 
+          "venue_slug": "lucky-penny"
+        }, 
+        "118060": {
+          "location": {
+            "lat": 34.4172, 
+            "lng": -119.696, 
+            "venue_address": "514 State St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 387, 
+          "venue_name": "Sandbar", 
+          "venue_slug": "sandbar"
+        }, 
+        "1374467": {
+          "location": {
+            "lat": 34.4225693, 
+            "lng": -119.7044525, 
+            "venue_address": "1129 A State Street", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 185, 
+          "venue_name": "Armada Wine & Beer Merchant", 
+          "venue_slug": "armada-wine-beer-merchant"
+        }, 
+        "1535013": {
+          "location": {
+            "lat": 34.4235, 
+            "lng": -119.707, 
+            "venue_address": "38 W Victoria St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 555, 
+          "venue_name": "Santa Barbara Public Market", 
+          "venue_slug": "santa-barbara-public-market"
+        }, 
+        "1615501": {
+          "location": {
+            "lat": 34.4235, 
+            "lng": -119.707, 
+            "venue_address": "38 W Victoria St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 74, 
+          "venue_name": "Empty Bowl Gourmet Noodle Bar", 
+          "venue_slug": "empty-bowl-gourmet-noodle-bar"
+        }, 
+        "1621625": {
+          "location": {
+            "lat": 34.4194, 
+            "lng": -119.697, 
+            "venue_address": "26 E Ortega St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 140, 
+          "venue_name": "The Black Sheep", 
+          "venue_slug": "the-black-sheep"
+        }, 
+        "172921": {
+          "location": {
+            "lat": 34.4407, 
+            "lng": -119.829, 
+            "venue_address": "", 
+            "venue_city": "Goleta", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 84, 
+          "venue_name": "Z's Taphouse", 
+          "venue_slug": "z-s-taphouse"
+        }, 
+        "1856545": {
+          "location": {
+            "lat": 34.4233665, 
+            "lng": -119.7046967, 
+            "venue_address": "1201 State St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 325, 
+          "venue_name": "Benchmark Eatery", 
+          "venue_slug": "benchmark-eatery"
+        }, 
+        "2178247": {
+          "location": {
+            "lat": 34.4349, 
+            "lng": -119.725, 
+            "venue_address": "2611 DE La Vina St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 326, 
+          "venue_name": "Yellow Belly", 
+          "venue_slug": "yellow-belly"
+        }, 
+        "2250976": {
+          "location": {
+            "lat": 34.4392, 
+            "lng": -119.852, 
+            "venue_address": "6483 Calle Real Ste D", 
+            "venue_city": "Goleta", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 909, 
+          "venue_name": "Captain Fatty's Craft Brewery", 
+          "venue_slug": "captain-fatty-s-craft-brewery"
+        }, 
+        "2411622": {
+          "location": {
+            "lat": 34.4171, 
+            "lng": -119.696, 
+            "venue_address": "515 State St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 487, 
+          "venue_name": "Patxi's Pizza", 
+          "venue_slug": "patxi-s-pizza"
+        }, 
+        "2443308": {
+          "location": {
+            "lat": 34.4182, 
+            "lng": -119.703, 
+            "venue_address": "205 W Canon Perdido St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 110, 
+          "venue_name": "Barbare\u00f1o", 
+          "venue_slug": "barbareno"
+        }, 
+        "24818": {
+          "location": {
+            "lat": 34.4181252, 
+            "lng": -119.6985168, 
+            "venue_address": "15 W Ortega St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 66, 
+          "venue_name": "Wildcat Lounge", 
+          "venue_slug": "wildcat-lounge"
+        }, 
+        "263398": {
+          "location": {
+            "lat": 34.4032, 
+            "lng": -119.744, 
+            "venue_address": "2981 Cliff Dr", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 370, 
+          "venue_name": "Boathouse at Hendry's Beach", 
+          "venue_slug": "boathouse-at-hendry-s-beach"
+        }, 
+        "32420": {
+          "location": {
+            "lat": 34.412, 
+            "lng": -119.696, 
+            "venue_address": "229 W Montecito St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 1636, 
+          "venue_name": "The Brewhouse", 
+          "venue_slug": "the-brewhouse"
+        }, 
+        "380622": {
+          "location": {
+            "lat": 34.4173, 
+            "lng": -119.696, 
+            "venue_address": "525 State St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 180, 
+          "venue_name": "Baja Sharkeez", 
+          "venue_slug": "baja-sharkeez"
+        }, 
+        "393690": {
+          "location": {
+            "lat": 34.4186, 
+            "lng": -119.7, 
+            "venue_address": "601 Paseo Nuevo", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 1197, 
+          "venue_name": "Eureka! Santa Barbara", 
+          "venue_slug": "eureka-santa-barbara"
+        }, 
+        "416610": {
+          "location": {
+            "lat": 34.4177322, 
+            "lng": -119.6694489, 
+            "venue_address": "1111 E Cabrillo Blvd", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 138, 
+          "venue_name": "Mar Monte - In the Unbound Collection by Hyatt (Mar Monte Hotel - In the Unbound Collection by Hyatt)", 
+          "venue_slug": "mar-monte-in-the-unbound-collection-by-hyatt-mar-monte-hotel-in-the-unbound-collection-by-hyatt"
+        }, 
+        "4262": {
+          "location": {
+            "lat": 34.4295, 
+            "lng": -119.871, 
+            "venue_address": "6980 Market Place Dr", 
+            "venue_city": "Goleta", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 1981, 
+          "venue_name": "Hollister Brewing Company", 
+          "venue_slug": "hollister-brewing-company"
+        }, 
+        "4386262": {
+          "location": {
+            "lat": 34.4142, 
+            "lng": -119.688, 
+            "venue_address": "28 Anacapa St Ste E", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 1414, 
+          "venue_name": "Brass Bear Brewing & Bistro", 
+          "venue_slug": "brass-bear-brewing-bistro"
+        }, 
+        "44163": {
+          "location": {
+            "lat": 34.404, 
+            "lng": -119.693, 
+            "venue_address": "119 Harbor Way", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 757, 
+          "venue_name": "Brophy Bros.", 
+          "venue_slug": "brophy-bros"
+        }, 
+        "4607993": {
+          "location": {
+            "lat": 34.4322, 
+            "lng": -119.876, 
+            "venue_address": "53 Santa Felicia Dr", 
+            "venue_city": "Goleta", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 708, 
+          "venue_name": "Draughtsmen Aleworks", 
+          "venue_slug": "draughtsmen-aleworks"
+        }, 
+        "46346": {
+          "location": {
+            "lat": 34.4103, 
+            "lng": -119.687, 
+            "venue_address": "210 Stearns Wharf", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 441, 
+          "venue_name": "Longboard's Grill", 
+          "venue_slug": "longboard-s-grill"
+        }, 
+        "4654359": {
+          "location": {
+            "lat": 34.4211, 
+            "lng": -119.691, 
+            "venue_address": "406 E Haley St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 1718, 
+          "venue_name": "Third Window Brewery", 
+          "venue_slug": "third-window-brewery"
+        }, 
+        "4760759": {
+          "location": {
+            "lat": 34.4157, 
+            "lng": -119.689, 
+            "venue_address": "116 Santa Barbara St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 2184, 
+          "venue_name": "Lama Dog Tap Room", 
+          "venue_slug": "lama-dog-tap-room"
+        }, 
+        "476991": {
+          "location": {
+            "lat": 34.4093, 
+            "lng": -119.685, 
+            "venue_address": "220 Stearns Wharf", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 325, 
+          "venue_name": "Moby Dick Restaurant", 
+          "venue_slug": "moby-dick-restaurant"
+        }, 
+        "49494": {
+          "location": {
+            "lat": 34.4279366, 
+            "lng": -119.6872635, 
+            "venue_address": "622 N Milpas St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 93, 
+          "venue_name": "La Super-Rica Taqueria", 
+          "venue_slug": "la-super-rica-taqueria"
+        }, 
+        "5147766": {
+          "location": {
+            "lat": 34.4235, 
+            "lng": -119.707, 
+            "venue_address": "38 W Victoria St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 467, 
+          "venue_name": "The Garden", 
+          "venue_slug": "the-garden"
+        }, 
+        "528220": {
+          "location": {
+            "lat": 34.4103, 
+            "lng": -119.687, 
+            "venue_address": "210 Stearns Wharf", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 84, 
+          "venue_name": "Harbor Restaurant", 
+          "venue_slug": "harbor-restaurant"
+        }, 
+        "5556872": {
+          "location": {
+            "lat": 34.4158, 
+            "lng": -119.689, 
+            "venue_address": "120 Santa Barbara St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 1630, 
+          "venue_name": "Topa Topa Brewing Company", 
+          "venue_slug": "topa-topa-brewing-company"
+        }, 
+        "5704691": {
+          "location": {
+            "lat": 34.4007, 
+            "lng": -119.722, 
+            "venue_address": "", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 78, 
+          "venue_name": "Mesa Burger", 
+          "venue_slug": "mesa-burger"
+        }, 
+        "60894": {
+          "location": {
+            "lat": 34.5215, 
+            "lng": -119.84, 
+            "venue_address": "5995 Stagecoach Rd", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 376, 
+          "venue_name": "Cold Spring Tavern", 
+          "venue_slug": "cold-spring-tavern"
+        }, 
+        "61550": {
+          "location": {
+            "lat": 34.4123, 
+            "lng": -119.855, 
+            "venue_address": "928 Embarcadero del Norte", 
+            "venue_city": "Isla Vista", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 505, 
+          "venue_name": "Woodstock's Pizza", 
+          "venue_slug": "woodstock-s-pizza"
+        }, 
+        "6513194": {
+          "location": {
+            "lat": 34.4163361, 
+            "lng": -119.6904831, 
+            "venue_address": "220 Gray Ave", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 101, 
+          "venue_name": "Shalhoob Meat Company", 
+          "venue_slug": "shalhoob-meat-company"
+        }, 
+        "6700928": {
+          "location": {
+            "lat": 34.4347, 
+            "lng": -119.826, 
+            "venue_address": "325 Rutherford St", 
+            "venue_city": "Goleta", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 72, 
+          "venue_name": "Santa Barbara Cider Company", 
+          "venue_slug": "santa-barbara-cider-company"
+        }, 
+        "7437139": {
+          "location": {
+            "lat": 34.4187, 
+            "lng": -119.709, 
+            "venue_address": "15 E Cabrillo Blvd", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 92, 
+          "venue_name": "Bluewater Grill", 
+          "venue_slug": "bluewater-grill"
+        }, 
+        "755052": {
+          "location": {
+            "lat": 34.4147, 
+            "lng": -119.691, 
+            "venue_address": "137 Anacapa St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 5455, 
+          "venue_name": "Figueroa Mountain Brewing Company", 
+          "venue_slug": "figueroa-mountain-brewing-company"
+        }, 
+        "7564435": {
+          "location": {
+            "lat": 34.413, 
+            "lng": -119.69, 
+            "venue_address": "State Street", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 953, 
+          "venue_name": "Finney\u2019s Crafthouse & Kitchen", 
+          "venue_slug": "finney-s-crafthouse-kitchen"
+        }, 
+        "8176405": {
+          "location": {
+            "lat": 34.4179, 
+            "lng": -119.697, 
+            "venue_address": "607 State St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 939, 
+          "venue_name": "Night Lizard Brewing Company", 
+          "venue_slug": "night-lizard-brewing-company"
+        }, 
+        "8329841": {
+          "location": {
+            "lat": 34.4231, 
+            "lng": -119.704, 
+            "venue_address": "1131 State St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 97, 
+          "venue_name": "Draughtsmen Aleworks", 
+          "venue_slug": "draughtsmen-aleworks"
+        }, 
+        "8537608": {
+          "location": {
+            "lat": 34.4168, 
+            "lng": -119.696, 
+            "venue_address": "", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 303, 
+          "venue_name": "The Cruisery", 
+          "venue_slug": "the-cruisery"
+        }, 
+        "8673393": {
+          "location": {
+            "lat": 34.4173, 
+            "lng": -119.696, 
+            "venue_address": "", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 1061, 
+          "venue_name": "Institution Ale Company", 
+          "venue_slug": "institution-ale-company"
+        }, 
+        "9057914": {
+          "location": {
+            "lat": 34.4167, 
+            "lng": -119.695, 
+            "venue_address": "", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 499, 
+          "venue_name": "Modern Times", 
+          "venue_slug": "modern-times"
+        }, 
+        "9061206": {
+          "location": {
+            "lat": 34.4165, 
+            "lng": -119.695, 
+            "venue_address": "418 State St", 
+            "venue_city": "Santa Barbara", 
+            "venue_country": "United States", 
+            "venue_state": "CA"
+          }, 
+          "total_user_count": 792, 
+          "venue_name": "Modern Times Academy of Recreational Sciences", 
+          "venue_slug": "modern-times-academy-of-recreational-sciences"
+        }
+      }
+    }

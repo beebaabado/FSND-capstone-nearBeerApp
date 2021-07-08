@@ -36,7 +36,23 @@ def db_drop_and_create_all():
     ''' drop and create '''
     #db.drop_all()
     #db.create_all()
-    
+
+'''
+BeerVenue
+  association table representing all possible connections between beers and Venues
+'''
+class BeerVenue(db.Model):
+    __tablename__='beervenue'
+    venue_id =  db.Column( db.Integer, db.ForeignKey('venue.id'), primary_key=True)
+    beer_id = db.Column( db.Integer, db.ForeignKey('beer.id'), primary_key=True)
+
+    # Create relationships to beer and venue
+    beer = db.relationship("Beer", back_populates="venues")
+    venue = db.relationship("Venue", back_populates="beers")
+
+    def __repr__(self):
+       return f'<BeerVenue:  {self.venue_id}, {self.beer_id}>'
+
 '''
 Beer
    a persistent beer entity, extends the base SQLAlchemy Model
@@ -55,19 +71,17 @@ class Beer(db.Model):
     major_style = Column(String(80), nullable=False)
     rating = Column(Numeric(3,2),  nullable=False)
     url = Column(String, nullable=False)
-    venue_id = Column(String(25), nullable=False)
-
-    venues = db.relationship ('Venue', backref='beer', lazy=True) #Lazy is default  
-    #venues = db.relationship ('Venue', back_populates='beer')  #Use backref one statement vs back_populates in both child and parent.
-   
+    venue_id = Column(String, nullable=False)
+    # child relationship setup
+    venues = db.relationship ('BeerVenue', back_populates='beer') 
 
     '''
     insert()
-        inserts a new model into a database
-        the model must have a unique name
-        the model must have a unique id or null id
+        inserts a new beer into a database
+        the beer  must have a unique name
+        the beer must have a unique id, cannot be null
         EXAMPLE
-            beer = Beer(name=req_name, venue_blob=req_venue_blob)
+            beer = Beer(name=req_name)
             beer.insert()
     '''
     def insert(self):
@@ -77,8 +91,7 @@ class Beer(db.Model):
 
     '''
     delete()
-        deletes a model into a database
-        the model must exist in the database
+        deletes an exisitng beer from the database
         EXAMPLE
             beer = Beer.query.filter(Beer.id == id).one_or_none()
             beer.delete()
@@ -89,8 +102,7 @@ class Beer(db.Model):
 
     '''
     update()
-        updates a new model into a database
-        the model must exist in the database
+        updates an existing beer in the database
         EXAMPLE
             beer = Beer.query.filter(Beer.id == id).one_or_none()
             beer.name = 'Chocolate Coffee Stout'
@@ -128,17 +140,25 @@ class Venue(db.Model):
     # the venue blob - this stores a lazy json blob for venue menu, optional field
     #  TODO DEFINE the required datatype is [{'venue': string, 'id':string, '???':number}]
     venue_blob =  Column(String(180), nullable=True, default='No Menu Available.')
-    beer_id = Column(Integer, ForeignKey('beer.id'))
-    #beer = db.relationship ('Beer', back_populates='venues')  #Use backref one statement vs back_populates in both child and parent.
 
+    # child relationship setup
+    beers = db.relationship ('BeerVenue', back_populates='venue')  
+    
     '''
     insert()
-        inserts a new model into a database
+        inserts a new venue into the database
         the model must have a unique name
-        the model must have a unique id or null id
+        the model must have a unique id, not null
         EXAMPLE
-            beer = Beer(name=req_name, venue_blob=req_venue_blob)
-            beer.insert()
+            venue = Venue(venue_id=req_venue_id, 
+                          name=venue_name, 
+                          slug=venue_slug,
+                          lng=venue_lng,
+                          lat=venue_lat,
+                          city=venue_city,
+                          state=venue_city,
+                          address=venue_address)
+            venue.insert()
     '''
     def insert(self):
 
@@ -147,11 +167,10 @@ class Venue(db.Model):
 
     '''
     delete()
-        deletes a model into a database
-        the model must exist in the database
+        deletes an exisitn venue from database
         EXAMPLE
-            beer = Beer.query.filter(Beer.id == id).one_or_none()
-            beer.delete()
+            venue = Venue.query.filter(Venue.id == id).one_or_none()
+            venue.delete()
     '''
     def delete(self):
         db.session.delete(self)
@@ -163,7 +182,7 @@ class Venue(db.Model):
         the model must exist in the database
         EXAMPLE
             venue = Venue.query.filter(Venue.id == id).one_or_none()
-            venue.name = 'BBQ RoadHouse & Bar'
+            venue.name = new_venue_name
             venue.update()
     '''
     def update(self):
@@ -172,7 +191,73 @@ class Venue(db.Model):
     def format(self):
         return {
             'id': self.id,
-            'name': self.name
+            'venue_id': self.venue_id,
+            'name': self.name,
+            'slug': self.slug,
+            'lat': str(self.lat),
+            'lng': str(self.lng),
+            'address': self.address,
+            'city': self.city,
+            'state': self.state,
+            'country': self.country,
+            'blob': self.venue_blob
+        }
+        
+    def __repr__(self):
+        return json.dumps(self.format()) 
+
+
+class Style(db.Model):
+    ''' 
+    Representation of beer major style and posbbile sub styles
+    '''
+    __tablename__ = 'style'
+    id = Column(Integer, primary_key=True)
+    major = Column(String(25), unique=True, nullable=False)
+    sub_styles = Column(String, nullable=False)
+    
+    '''
+    insert()
+        inserts a new style into the database
+        the style must have a unique major name
+        the style must have a unique id or null id
+        EXAMPLE
+            style = Style(major=req_major, sub_styles=list_of_sub_styles)
+            style.insert()
+    '''
+    def insert(self):
+        db.session.add(self)
+        db.session.commit()
+
+    '''
+    delete()
+        deletes a style from the database
+        the model must exist in the database
+        EXAMPLE
+            style = Style.query.filter(Style.id == id).one_or_none()
+            style.delete()
+    '''
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
+    '''
+    update()
+        updates exisitng style in the database
+        EXAMPLE
+            style = Style.query.filter(Style.id == id).one_or_none()
+            style.major = 'Sour'
+            style.substyles = 'Sour', 'Gose'
+            style.update()
+    '''
+    def update(self):
+        db.session.commit()
+    
+    def format(self):
+        return {
+            'id': self.id,
+            'major': self.major,
+            'sub_styles': self.sub_styles
         }
         
     def __repr__(self):
