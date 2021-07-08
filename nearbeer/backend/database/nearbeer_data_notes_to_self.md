@@ -39,7 +39,8 @@ select (data->>'id')::int8, data->>'key', data->>'value' from tmp;
 
 # set content variable to venues json data 
 \set content `cat /Users/connie/Desktop/MyProjects/Udacity_coursework/FullStackWebDeveloper/practicecode/udacity-full-stack-web-dev/FSND-capstone-nearBeerApp/nearbeer/backend/database/venues.json`
-#NOTE: ->  operator to extract json, ->> to get text 
+# Extract nexted json data
+# NOTE: ->  operator to extract json, ->> to get text 
 # gives back all key/values for each venue
 SELECT * , tmp.data -> 'venues' -> json_object_keys((tmp.data ->> 'venues')::json) ->> 'venue_name' AS venue
 FROM tmp;
@@ -66,6 +67,7 @@ tmp.data -> 'venues' -> json_object_keys((tmp.data ->> 'venues')::json) -> 'loca
 tmp.data -> 'venues' -> json_object_keys((tmp.data ->> 'venues')::json) -> 'location' ->> 'venue_state' as venue_state,
 tmp.data -> 'venues' -> json_object_keys((tmp.data ->> 'venues')::json) -> 'location' ->> 'venue_address' as venue_address,
 tmp.data -> 'venues' -> json_object_keys((tmp.data ->> 'venues')::json) -> 'location' ->> 'venue_country' as venue_country
+tmp.data -> 'venues' -> json_object_keys((tmp.data ->> 'venues')::josn) -> 'beer_id' ->> '
 FROM tmp;
 
 
@@ -86,3 +88,13 @@ check version file under versions folder
 flask db upgrade
 use psql to make sure tables created
 Now each time change db schema run db migrate and db upgrade process
+
+
+# arrays to strings (note like in json file array to string in postgres)
+create temp table tmp (data json);
+\set content `cat /Users/connie/Desktop/MyProjects/Udacity_coursework/FullStackWebDeveloper/practicecode/udacity-full-stack-web-dev/FSND-capstone-nearBeerApp/nearbeer/backend/database/beerdata/styles.json`
+insert into tmp values (:'content');
+create table tempstyles ( major varchar(25), patterns text array);
+insert into tempstyles select p.* from json_populate_recordset(null::tempstyles, (select data from tmp)) as p;
+insert into style (major, sub_styles) select major, array_to_string(patterns, ',') from tempstyles;
+
