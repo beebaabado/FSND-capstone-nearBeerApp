@@ -30,6 +30,7 @@ def upgrade():
     sa.Column('last_seen', sa.DateTime(), nullable=False),
     sa.Column('major_style', sa.String(length=80), nullable=False),
     sa.Column('rating', sa.Numeric(precision=3, scale=2), nullable=False),
+    sa.Column('user_rating', sa.Numeric(precision=3, scale=2), nullable=True, default=0.00),
     sa.Column('url', sa.String(), nullable=False),
     sa.Column('venue_id', sa.String(length=25), nullable=False),
     sa.PrimaryKeyConstraint('id')

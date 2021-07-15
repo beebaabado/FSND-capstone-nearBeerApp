@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Beer Weather Report - {{ city }}</title>
+    <title>Beer is Near Report - {{ city }}</title>
     <style>
        tr:nth-child(even) {background-color: #f2f2f2;}
        th:hover {
@@ -10,8 +10,11 @@
       }
     </style>
     <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
+    <h1>Beer is Near Report for {{ city }}</h1>
+    <h2>This is a simple public view when user is not logged in.</h2>
     <table id="beerListTable"style="width:100%">
       <!-- <tr> 
         <th onclick="sortTable(0)">Rating</th>
@@ -25,22 +28,17 @@
 
       <tr> 
         <th onclick="sortTable(0)">Rating</th>
-        <th onclick="sortTable(1)">Brewery</th>
-        <th onclick="sortTable(2)">Beer</th>
-        <th><a href="/table/variety">Variety</a></th>
+        <th onclick="sortTable(1)">Brewer/Beer</th>
+        <th><a href="/table/variety">Variety (ABV)</a></th>
         <th onclick="sortTable(4)">Venue</th>
-        <th onclick="sortTable(5)">ABV</th>
         <th onclick="sortTable(6)">Last Seen</th>
       </tr> 
-
       {% for beer in beers %}
           <tr>
-            <td>{{ '%.2f'|format(beer['rating_score']) }}</td>
-            <td>{{ beer['brewery_name'] }}</td>
-            <td>{{ beer['beer_name'] }}</td>
-            <td>{{ beer['beer_style'] }} ({{ beer['major_style'] }})</td>
-            <td>{{ venues[beer['venue_id']]['venue_name'] }}</td>
-            <td>{{ beer['beer_abv'] }}</td>
+            <td>{{ '%.2f'|format(beer['rating']|float) }}</td>
+            <td>{{ beer['brewery_name'] }} / {{ beer['name'] }}</td>
+            <td>{{ beer['style'] }} ({{ beer['major_style'] }}) / ({{ beer['beer_abv'] }})</td>
+            <td>{{ beer['venue']['name'] }}</td>
             <td>{{ beer['last_seen'] }}</td>
           </tr>
       {% endfor %}

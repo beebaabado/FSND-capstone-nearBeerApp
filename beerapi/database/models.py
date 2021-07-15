@@ -8,8 +8,9 @@ import json
 
 #TODO put this in config file
 database_filename = "nearbeer"
-#project_dir = os.path.dirname(os.path.abspath(__file__))  # used if file in project dir
+# #project_dir = os.path.dirname(os.path.abspath(__file__))  # used if file in project dir
 database_path = "postgresql://{}@{}/{}".format('postgres','localhost:5432', database_filename)
+
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -18,10 +19,12 @@ migrate = Migrate()
 setup_db(app)
     binds a flask application and a SQLAlchemy service
 '''
-def setup_db(app):
+def setup_db(app, database_path=""):
     '''Setup db'''
-    app.config["SQLALCHEMY_DATABASE_URI"] = database_path
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    if database_path=="":
+        database_path=app.config["SQLALCHEMY_DATABASE_URI"] 
+    # app.config["SQLALCHEMY_DATABASE_URI"] = database_path
+    # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.app = app
     db.init_app(app)
     migrate.init_app(app, db)
@@ -34,8 +37,8 @@ db_drop_and_create_all()
 '''
 def db_drop_and_create_all():
     ''' drop and create '''
-    #db.drop_all()
-    #db.create_all()
+    db.drop_all()
+    db.create_all()
 
 '''
 BeerVenue
@@ -70,6 +73,7 @@ class Beer(db.Model):
     last_seen = Column(DateTime, nullable=False)
     major_style = Column(String(80), nullable=False)
     rating = Column(Numeric(3,2),  nullable=False)
+    user_rating = Column(Numeric(3,2), nullable=True, default=0.00)
     url = Column(String, nullable=False)
     venue_id = Column(String, nullable=False)
     # child relationship setup
@@ -119,6 +123,7 @@ class Beer(db.Model):
             'url': "https://untappd.com/b" + "/" + self.brewery_slug + self.slug + "/" + self.bid,
             'style': self.style,
             'rating': str(self.rating),
+            'user_rating': str(self.user_rating),
             'venue_id': self.venue_id
         }
         
