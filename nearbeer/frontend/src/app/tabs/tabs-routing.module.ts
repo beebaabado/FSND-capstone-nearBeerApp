@@ -27,15 +27,19 @@ const routes: Routes = [
         path: 'settings',
         loadChildren: () => import('../pages/settings/settings.module').then(m => m.SettingsPageModule)
       },
+     // {
+     //   path: 'filter-options',
+     //   loadChildren: () => import('../pages/filter-options/filter-options.module').then(m => m.FilterOptionsPageModule)
+     // },
       {
-        path: 'filter-options',
-        loadChildren: () => import('../pages/filter-options/filter-options.module').then(m => m.FilterOptionsPageModule)
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/beer',
-        pathMatch: 'full'
+        path: 'login',
+        loadChildren: () => import('../pages/login/login.module').then(m => m.LoginPageModule)
       }
+     // {
+     //   path: '',
+     //   redirectTo: '/tabs/beer',
+     //   pathMatch: 'full'
+     // }
     ]
   },
   {

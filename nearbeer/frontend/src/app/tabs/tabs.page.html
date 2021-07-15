@@ -21,6 +21,12 @@
       <ion-label>Settings</ion-label>
     </ion-tab-button>
 
+    <ion-tab-button tab="login">
+      <ion-icon name="log-in"></ion-icon>
+      <!-- <ion-label>Login</ion-label> -->
+      <ion-label>User {{ auth.user_info?.name }} </ion-label> 
+    </ion-tab-button>
+
     <!-- <ion-tab-button tab="test">
       <ion-icon name="pulse"></ion-icon>
       <ion-label>Testing...</ion-label>
@@ -33,3 +39,5 @@
   </ion-tab-bar>
 
 </ion-tabs>
+
+

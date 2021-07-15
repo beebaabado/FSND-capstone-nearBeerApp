@@ -12,6 +12,7 @@ export class BeerCardComponent implements OnInit {
   beer = new Beer();
   beerItem: any;
   hideCard = false;
+  valid_ratings: [0.00, 0]
 
   //@ViewChild('beerCard', {static: false}) card:  IonCard;
   constructor(public navParams: NavParams) { 

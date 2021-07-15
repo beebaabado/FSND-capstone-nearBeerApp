@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 const { SplashScreen } = Plugins;
+import { AuthService } from './services/auth.service';
+import { Platform } from '@ionic/angular';
 
 SplashScreen.hide();
 
@@ -20,5 +22,18 @@ SplashScreen.hide();
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {};
+  constructor(
+    private auth: AuthService,
+    private platform: Platform
+  ) {
+    this.initializeApp();
+  };
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      // Perform required auth actions
+      this.auth.load_jwts();
+      this.auth.check_token_fragment();
+    });
+  }
 }

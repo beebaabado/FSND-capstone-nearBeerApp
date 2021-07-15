@@ -39,7 +39,7 @@
   <!-------- FAB menu with popout menu  ----->
 
 <!-- fab placed to the (vertical) center and end -->
-<ion-fab horizontal="start" vertical="top" slot="fixed" edge>
+<ion-fab horizontal="start" vertical="top" slot="fixed" edge [hidden]='hideFabMenu'>
   <ion-fab-button mode="ios" color="dark">
     <ion-icon name="search" (click)="toggleAllFilterComponents(true);"></ion-icon>
   </ion-fab-button>
@@ -126,21 +126,21 @@
         {{ beer['venue_name'] }}
       </ion-col>  
       <ion-col>
-         <a class="beerlink" target="_blank" href="{{beer['untappd_url']}}" rel="noopener noreferrer"> 
+         <a class="beerlink" target="_blank" href="{{beer['url']}}" rel="noopener noreferrer"> 
          {{ beer['brewery_name'] }} / {{ beer['beer_name'] }} 
          </a>
       </ion-col>  
       <ion-col #filterStyle id={{i}} >
-        {{ beer['beer_style'] }} ({{ beer['beer_abv'] | number: '1.1-2'}})
+        {{ beer['style'] }} ({{ beer['abv'] | number: '1.1-2'}})
       </ion-col> 
       <ion-col [hidden]='true'>
-        {{ beer['beer_name'] }}
+        {{ beer['name'] }}
       </ion-col> 
       <ion-col size="2">
-        {{ beer['rating_score'] | number: '1.2-2' }}
+        {{ beer['rating'] | number: '1.2-2' }} / {{ beer['user_rating'] | number: '1.2-2' }}
       </ion-col>  
       <ion-col [hidden]='true'>
-        {{ beer['beer_abv'] | number: '1.1-2' }}
+        {{ beer['abv'] | number: '1.1-2' }}
       </ion-col>  
       <ion-col [hidden]='true' wrap>
         {{ beer['last_seen'] | date: 'short'}}

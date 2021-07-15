@@ -76,7 +76,7 @@ export class SettingsPage implements OnInit {
     };
     try {
         const result: NativeGeocoderResult[] = await this.nativeGeocoder.reverseGeocode(this.latitude, this.longitude, options);
-        console.log("RESULT: ", result[0]);
+        console.log("RESULT: NativeGeocoderResult: ", result[0]);
         this.address = result[0];
       } catch(error: any) {
         console.log(error)

@@ -35,7 +35,9 @@ select (data->>'id')::int8, data->>'key', data->>'value' from tmp;
  pg_dump --table=beer --data-only --column-inserts nearbeer > beertabledump.sql
 #restore data
  psql -U postgres -d nearbeer < beertabledump.sql 
-
+# multiple file restore 
+psql -U username -d databasename -q -f file1 -f file2
+psql -U postgres -d nearbeer -q -f beer_with_user_rating_dump.sql -f venuetabledump.sql -f styletabledump.sql -f beervenuetabledump.sql
 
 # set content variable to venues json data 
 \set content `cat /Users/connie/Desktop/MyProjects/Udacity_coursework/FullStackWebDeveloper/practicecode/udacity-full-stack-web-dev/FSND-capstone-nearBeerApp/nearbeer/backend/database/venues.json`
@@ -98,3 +100,8 @@ create table tempstyles ( major varchar(25), patterns text array);
 insert into tempstyles select p.* from json_populate_recordset(null::tempstyles, (select data from tmp)) as p;
 insert into style (major, sub_styles) select major, array_to_string(patterns, ',') from tempstyles;
 
+# RUNNING ionic / angular  in emulator 
+## For Android
+ionic capacitor run android -l --external
+
+# insert data into beervenue association table

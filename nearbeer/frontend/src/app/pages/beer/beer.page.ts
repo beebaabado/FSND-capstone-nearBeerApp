@@ -6,6 +6,7 @@ import { IonicSelectableComponent } from 'ionic-selectable';
 import { IonContent, IonSelect} from '@ionic/angular';
 import { Router } from '@angular/router';
 import { NavparamService } from 'src/app/services/navparam.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-beer',
@@ -15,11 +16,15 @@ import { NavparamService } from 'src/app/services/navparam.service';
 export class BeerPage {
  
   cityList =  [{ id: 0, city_name: 'Boulder',   url_name: 'boulder' },
-               { id: 1, city_name: 'Minneapolis', url_name: 'minneapolis'},
-               { id: 2, city_name: 'Goleta',  url_name: 'goleta'},
-               { id: 3, city_name: 'Granite Shoals', url_name: 'granite_shoals'}];
+               { id: 1, city_name: 'Longmont', url_name: 'longmont'},
+               { id: 2, city_name: 'Lyons',  url_name: 'lyons'},
+               { id: 3, city_name: 'Broomfield', url_name: 'broomfield'},
+               { id: 4, city_name: 'Erie', url_name: 'erie'},
+               { id: 5, city_name: 'Louisville', url_name: 'louisville'},
+               { id: 6, city_name: 'Westminster', url_name: 'westminster'},
+               { id: 7, city_name: 'Lafayette', url_name: 'lafayette'}];
   //headerList = ["Rating", "Brewery", "Beer", "Variety", "Venue", "ABV", "Last Seen"];
-  headerList = [ "Venue",  "Brewery/Beer", "Variety (ABV)", "Rating"];
+  headerList = [ "Venue",  "Brewery/Beer", "Variety (ABV)", "Rating/Your Rating"];
   beerList = [];
   styleList = [];     
   venueList = [];
@@ -47,23 +52,28 @@ export class BeerPage {
   hideSearchList:boolean = true;
   hideSelectCity:boolean = true;
   hideGoTopButton:boolean = true;
-  
+  hideFabMenu:boolean = true;
+  UserLoggedIn = false;
+
   @ViewChild('styleComponent', {static: false}) styleComponent: IonicSelectableComponent;
   @ViewChild('content', {static: false}) content: IonContent;  // static=false because not in ngOnInit()...I think...
   constructor(
     private untappdService: UntappdServerService, 
     private storage: StorageService, 
     private navparamService: NavparamService,
+    private auth: AuthService,
     private router: Router) {
       this.getStyles();
     }   
  
   ionViewWillEnter() {
     console.log("Beerpage ionViewWillEnter");
+    console.log("ionViewWillEnter:Nav param settings", this.navparamService.getNavData("location"));
     this.getStylePropertiesFromStorage();
     this.selectedStyles=this.styleList.slice();
     this.prev_city = this.city;
     if (this.navparamService.getNavData("settings_changed") === true) {
+      console.log("ionViewWillEnter: navparams");
       this.current_location = this.navparamService.getNavData("location");
       this.city = this.current_location['city'];
       this.state = this.current_location['state'];
@@ -71,8 +81,17 @@ export class BeerPage {
       console.log("Beers Page: ionViewWillEnter: State changed: ", this.state);
       this.refreshBeers = true;
     }
-    else
-     this.getLocationPropertiesFromStorage();
+    else {
+      console.log("ionViewWillEnter:getLocationPropertiesFromStorage");
+      this.getLocationPropertiesFromStorage();
+    }
+    
+    // if not logged in hide all controls and limit view
+    if (this.auth.activeJWT()) {
+      this.hideFabMenu = false;
+      this.UserLoggedIn = true;
+    }
+
   }
 
   getStylePropertiesFromStorage() {
@@ -89,7 +108,7 @@ export class BeerPage {
     this.storage.get('current_location').then((val) => {
       if (val) 
         if (val != "Select A City") {
-          //console.log('getPropertiesFromStorage:  From local storage current location (city): ', val);
+          console.log('getPropertiesFromStorage:  From local storage current location (city): ', val);
           this.city = val;
           this.city_url_name = this.cityList.find( ({ city_name }) => city_name === this.city )?.url_name;
         }
@@ -302,14 +321,14 @@ export class BeerPage {
      userSelectedStyles.forEach((selStyle) => {
         console.log("selStyle: ", selStyle);
         listofBeerStyles.forEach((style) => {
-            if (style["major_style"].toLowerCase() == selStyle['major'].toLowerCase()){
+            if (style['major_style'].toLowerCase() == selStyle['major'].toLowerCase()){
                 style.hidden = 0;
                 count +=1;
              }
         });
      }); // User selected styles
 
-      // Might be duplicates  TODO...might not need this...changed how filter worksk above
+      // Might be duplicates  TODO...might not need this...changed how filter works above
       // look at merging this with above loop.
       var deDupedList = [...new Set(listofBeerStyles)];
       deDupedList.forEach((style) => {
@@ -335,13 +354,16 @@ export class BeerPage {
     // unpack beer and venue info
     let tempBeerList = [], venues = {}, venue_id = "";
     const data = beerData[0];
+    console.log(data);
     data['beers'].forEach((beer) => {
         var beerItem={};
         beerItem = beer;
         venue_id = beerItem['venue_id'];
-        beerItem['venue_name'] = data['venues'][venue_id]['venue_name'];   
+        beerItem['venue_name'] = beer['venue']['name'];   
         tempBeerList.push(beerItem);
     });
+
+    console.log (tempBeerList);
     return tempBeerList;
   }            
   
@@ -356,12 +378,19 @@ export class BeerPage {
   private buildStyleList(styles) {
     // add id property to stylelist
     var tempStylesList = [];
-    for (let key in styles) {
-      var styleItem = styles[key];
-      styleItem['patterns_formatted'] = styleItem['patterns'].join(", "); //formatted for ionic-selectable component group text
-      styleItem['id'] = key;  // for ionic-selectable component group text
+    // for (let key in styles) {
+    //   var styleItem = styles[key];
+    //   styleItem['patterns_formatted'] = styleItem['patterns'].join(", "); //formatted for ionic-selectable component group text
+    //   styleItem['id'] = key;  // for ionic-selectable component group text
+    //   tempStylesList.push(styleItem);
+    // }
+    styles.forEach((style) => {
+      var styleItem={};
+      styleItem['patterns_formatted'] = style['sub_styles'];
+      styleItem['id'] = style['major'];
       tempStylesList.push(styleItem);
-    }
+    });
+    console.log(tempStylesList)
     return tempStylesList;
   }
 

@@ -40,3 +40,10 @@ $app-direction: ltr;
     font-family: 'roboto';    
     src: url('/assets/fonts/roboto-regular.ttf');
   }
+
+.banner-image {
+    background-image: url(/assets/imgs/BeerWeatherBeerPageBanner.png);
+    background-size:cover; 
+    width:100%;
+    height: 10%; 
+}
