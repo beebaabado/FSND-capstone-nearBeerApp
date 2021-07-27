@@ -52,13 +52,19 @@ private getApiUrl : string = environment.apiServerUrl; // iOS and browsers
       // future...use lat, long in location instead of city name
       // clear our allBeers
       this.allBeersData=[];
-      const cityUrl = this.getApiUrl + "/beers/"
-      console.log("UntappdServerService:cityUrl: ", cityUrl);
+      let beerUrl = this.getApiUrl + "/beers"
+      console.log("UntappdServerService:cityUrl: ", beerUrl);
       let city = location['city_url_name'];
-      console.log("UntappdServerService:locations: ", cityUrl.concat(city.toString()) + "/");
-      return this.http.get(cityUrl.concat(city.toString()) + "/", this.getHeaders()).pipe(
+      if (this.auth.activeJWT()) {
+        beerUrl = beerUrl.concat('/' + city.toString() + '/') ;
+      }
+      else
+        beerUrl = beerUrl.concat('?city=' + city)
+      
+      console.log("UntappdServerService:locations: ", beerUrl);
+      return this.http.get(beerUrl, this.getHeaders()).pipe(
         tap(data => console.log("UntappdService: Beers/Venues data:  ", data)),                 // interecept stream to print data 
-        map(data=>{this.allBeersData.push(data[0]);  // if you return this line get length only which = 1
+        map(data=>{this.allBeersData.push(data);  // if you return this line get length only which = 1
                    return this.allBeersData;}));  // just return data
   }
   
@@ -67,7 +73,7 @@ private getApiUrl : string = environment.apiServerUrl; // iOS and browsers
     const stylesUrl = this.getApiUrl + "/styles/"
     return this.http.get(stylesUrl, this.getHeaders()).pipe(
       tap(data => console.log("UntappdService: Styles data:  ", data)),                 // interecept stream to print data 
-      map(data=>{this.stylesList.push(data[0]);  // if you return this line get length only which = 1
+      map(data=>{this.stylesList.push(data);  // if you return this line get length only which = 1
                 return this.stylesList;}));  // just return data
   }
 

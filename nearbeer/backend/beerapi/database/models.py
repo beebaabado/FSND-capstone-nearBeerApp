@@ -1,6 +1,5 @@
-from decimal import ConversionSyntax
 import os
-from sqlalchemy import Column, String, Integer, Numeric, DateTime, ForeignKey
+from sqlalchemy import Column, String, Integer, Numeric, DateTime
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import json
@@ -10,8 +9,6 @@ import json
 database_filename = "nearbeer"
 # #project_dir = os.path.dirname(os.path.abspath(__file__))  # used if file in project dir
 database_path = "postgresql://{}@{}/{}".format('postgres','localhost:5432', database_filename)
-
-
 db = SQLAlchemy()
 migrate = Migrate()
 
@@ -40,11 +37,49 @@ def db_drop_and_create_all():
     db.drop_all()
     db.create_all()
 
+''' BeerModel class
+    Use as base class all nearbeer classes
+'''
+class BeerModel(db.Model):
+    __abstract__ = True
+
+    '''
+    insert()
+        inserts a new item into database
+    '''
+    def insert(self):
+        db.session.add(self)
+        db.session.commit()
+
+    '''
+    delete()
+        deletes an exisitng model from the database
+    '''
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
+    '''
+    update()
+        updates an existing model in databaes
+    '''
+    def update(self):
+        db.session.commit()
+    
+    def format(self):
+        return {
+          'error': "must override in child class"
+        }
+        
+    def __repr__(self):
+        return json.dumps(self.format())
+
+
 '''
 BeerVenue
   association table representing all possible connections between beers and Venues
 '''
-class BeerVenue(db.Model):
+class BeerVenue(BeerModel):
     __tablename__='beervenue'
     venue_id =  db.Column( db.Integer, db.ForeignKey('venue.id'), primary_key=True)
     beer_id = db.Column( db.Integer, db.ForeignKey('beer.id'), primary_key=True)
@@ -52,15 +87,18 @@ class BeerVenue(db.Model):
     # Create relationships to beer and venue
     beer = db.relationship("Beer", back_populates="venues")
     venue = db.relationship("Venue", back_populates="beers")
-
-    def __repr__(self):
-       return f'<BeerVenue:  {self.venue_id}, {self.beer_id}>'
+    
+    def format(self):
+        return {
+            'venue_id': self.venue_id,
+            'beer_id': self.beer_id
+        }
 
 '''
 Beer
    a persistent beer entity, extends the base SQLAlchemy Model
 '''
-class Beer(db.Model):
+class Beer(BeerModel):
     __tablename__ = 'beer'
     id = Column(Integer, primary_key=True)
     abv = Column(Numeric(3,1), nullable=False)
@@ -79,58 +117,27 @@ class Beer(db.Model):
     # child relationship setup
     venues = db.relationship ('BeerVenue', back_populates='beer') 
 
-    '''
-    insert()
-        inserts a new beer into a database
-        the beer  must have a unique name
-        the beer must have a unique id, cannot be null
-        EXAMPLE
-            beer = Beer(name=req_name)
-            beer.insert()
-    '''
-    def insert(self):
-
-        db.session.add(self)
-        db.session.commit()
-
-    '''
-    delete()
-        deletes an exisitng beer from the database
-        EXAMPLE
-            beer = Beer.query.filter(Beer.id == id).one_or_none()
-            beer.delete()
-    '''
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
-
-    '''
-    update()
-        updates an existing beer in the database
-        EXAMPLE
-            beer = Beer.query.filter(Beer.id == id).one_or_none()
-            beer.name = 'Chocolate Coffee Stout'
-            beer.update()
-    '''
-    def update(self):
-        db.session.commit()
-    
     def format(self):
         return {
             'id': self.id,
             'name': self.name,
+            'bid' : self.bid,
+            'brewery_name' : self.brewery_name,
+            'brewery_slug' : self.brewery_slug,
             'abv': str(self.abv),
             'url': "https://untappd.com/b" + "/" + self.brewery_slug + self.slug + "/" + self.bid,
             'style': self.style,
+            'major_style' : self.major_style,
             'rating': str(self.rating),
             'user_rating': str(self.user_rating),
+            'last_seen' : self.last_seen,
             'venue_id': self.venue_id
+    
         }
-        
-    def __repr__(self):
-        return json.dumps(self.format())
-
-class Venue(db.Model):
+'''
+Venue
+'''        
+class Venue(BeerModel):
     __tablename__ = 'venue'
     id = Column(Integer, primary_key=True)
     venue_id = Column(String(25), unique=True, nullable=False)
@@ -149,50 +156,6 @@ class Venue(db.Model):
     # child relationship setup
     beers = db.relationship ('BeerVenue', back_populates='venue')  
     
-    '''
-    insert()
-        inserts a new venue into the database
-        the model must have a unique name
-        the model must have a unique id, not null
-        EXAMPLE
-            venue = Venue(venue_id=req_venue_id, 
-                          name=venue_name, 
-                          slug=venue_slug,
-                          lng=venue_lng,
-                          lat=venue_lat,
-                          city=venue_city,
-                          state=venue_city,
-                          address=venue_address)
-            venue.insert()
-    '''
-    def insert(self):
-
-        db.session.add(self)
-        db.session.commit()
-
-    '''
-    delete()
-        deletes an exisitn venue from database
-        EXAMPLE
-            venue = Venue.query.filter(Venue.id == id).one_or_none()
-            venue.delete()
-    '''
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
-
-    '''
-    update()
-        updates a new model into a database
-        the model must exist in the database
-        EXAMPLE
-            venue = Venue.query.filter(Venue.id == id).one_or_none()
-            venue.name = new_venue_name
-            venue.update()
-    '''
-    def update(self):
-        db.session.commit()
-    
     def format(self):
         return {
             'id': self.id,
@@ -207,12 +170,11 @@ class Venue(db.Model):
             'country': self.country,
             'blob': self.venue_blob
         }
-        
-    def __repr__(self):
-        return json.dumps(self.format()) 
 
-
-class Style(db.Model):
+'''
+Style
+'''        
+class Style(BeerModel):
     ''' 
     Representation of beer major style and posbbile sub styles
     '''
@@ -221,49 +183,10 @@ class Style(db.Model):
     major = Column(String(25), unique=True, nullable=False)
     sub_styles = Column(String, nullable=False)
     
-    '''
-    insert()
-        inserts a new style into the database
-        the style must have a unique major name
-        the style must have a unique id or null id
-        EXAMPLE
-            style = Style(major=req_major, sub_styles=list_of_sub_styles)
-            style.insert()
-    '''
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    '''
-    delete()
-        deletes a style from the database
-        the model must exist in the database
-        EXAMPLE
-            style = Style.query.filter(Style.id == id).one_or_none()
-            style.delete()
-    '''
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
-
-    '''
-    update()
-        updates exisitng style in the database
-        EXAMPLE
-            style = Style.query.filter(Style.id == id).one_or_none()
-            style.major = 'Sour'
-            style.substyles = 'Sour', 'Gose'
-            style.update()
-    '''
-    def update(self):
-        db.session.commit()
-    
     def format(self):
         return {
             'id': self.id,
             'major': self.major,
             'sub_styles': self.sub_styles
         }
-        
-    def __repr__(self):
-        return json.dumps(self.format()) 
+ 

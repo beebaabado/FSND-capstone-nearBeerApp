@@ -33,79 +33,97 @@ def create_app(testconfig=None):
     '''
     #db_drop_and_create_all()
 
-    #read beer config file...not app config file
+    # beer config file...not app config file
     filename = os.path.join(os.path.dirname(__file__), 'config_settings.json')
     with open(filename) as f:
-    #with app.open_instance_resource('backend/database/config_settings.json') as f:
         config = json.load(f)
-        #print (config)
     default_city = config['default_location']
-    #print(f'default_city: {default_city} ')
 
-    ''' returns public view of list of beers for particular city using template
+    ''' returns public view of list of beers for particular city using simple jinja2 template no authorization
     '''
-    @app.route("/beers/<city>/", methods=['GET'])
-    def get_city_beer_public_view(city=default_city):
+    @app.route("/beers/template", methods=['GET'])
+    def get_city_beer_public_template_view():
         beers_venue_list = BeerVenue.query.all()
-        #print(beers_venue_list)
         beers_by_city=[]
-    
+        
+        city = request.args.get('city')
+        if city==None:
+            abort(400, "City not specified.")
+
         for beerItem in beers_venue_list:
             venue=Venue.query.filter_by(id=beerItem.venue_id).all()
-            #print(f'Venue city: {venue[0].city}')
             if venue[0].city.lower() == city.lower():
                 tempbeer={}
                 beer=Beer.query.filter_by(id=beerItem.beer_id).all()
-                # Beer class not modifiable so convert to dict and add venue info
-                #tempbeer = row2dict(beer[0]) 
+                # Beer class not modifiable error so convert to dict and add venue info
                 tempbeer = row2dict_lambda(beer[0])
                 tempbeer['venue'] = venue[0].format()
                 beers_by_city.append(tempbeer)
 
-        # return jsonify([{
-        #     "status_code": 200,
-        #     "success": True,
-        #     "current_city": city,
-        #     "beer_count": len(beers_by_city),
-        #     "beers": beers_by_city,
-        #     }])
-
         return render_template('city_list.html', city=city, beers=beers_by_city)  
+ 
+    ''' returns json formatted list of beers public view for front end no authorization
+    '''
+    @app.route("/beers", methods=['GET'])
+    def get_city_beer_public_view():
+        beers_venue_list = BeerVenue.query.all()
+        beers_by_city=[]
+        
+        city = request.args.get('city')
+        if city==None:
+            abort(400, "City not specified.")
 
+        for beerItem in beers_venue_list:
+            venue=Venue.query.filter_by(id=beerItem.venue_id).all()
+            if venue[0].city.lower() == city.lower():
+                tempbeer={}
+                beer=Beer.query.filter_by(id=beerItem.beer_id).all()
+                # Beer class not modifiable so convert to dict and add venue info
+                tempbeer = row2dict_lambda(beer[0])
+                tempbeer['venue'] = venue[0].format()
+                beers_by_city.append(tempbeer)
+
+        if beers_by_city == []:
+            abort(400, f'No beers for city {city}.')
+
+        return jsonify({
+            "status_code": 200,
+            "success": True,
+            "current_city": city,
+            "beer_count": len(beers_by_city),
+            "beers": beers_by_city
+            })
 
     ''' returns list of all beers
         admin view for simple test of api
     '''
     @app.route("/", methods=['GET'])
     @requires_auth('view:simple')
-    #def index(payload): 
-    def index(): 
+    def index(payload): 
         beers = Beer.query.all()
-        #print(beers)
         beers_formatted = [beer.format() for beer in beers]
         return jsonify({
-                    "status": 200,
+                    "status_code": 200,
+                    "success": True,
                     "beers": beers_formatted,
                 })
 
-    ''' returns list of beers
+    ''' 
+        returns list of beers 
+        city defaults to default_location in config_setings.json
     '''
     @app.route("/beers/<city>/", methods=['GET'])
     @requires_auth('get:beers')
     def get_city_beer(payload, city=default_city):
-        print(payload)
         beers_venue_list = BeerVenue.query.all()
-        print(beers_venue_list)
         beers_by_city=[]
     
         for beerItem in beers_venue_list:
             venue=Venue.query.filter_by(id=beerItem.venue_id).all()
-            print(f'Venue city: {venue[0].city}')
             if venue[0].city.lower() == city.lower():
                 tempbeer={}
                 beer=Beer.query.filter_by(id=beerItem.beer_id).all()
                 # Beer class not modifiable so convert to dict and add venue info
-                #tempbeer = row2dict(beer[0]) 
                 tempbeer = row2dict_lambda(beer[0])
                 tempbeer['venue'] = venue[0].format()
                 beers_by_city.append(tempbeer)
@@ -119,33 +137,30 @@ def create_app(testconfig=None):
             })
 
     '''
-    Endpoint GET /beer-details   Detail for one beer specifed by beer id - with 
+    Endpoint GET /beer-details/   Detail for one beer specifed by beer id
     '''
     @app.route('/beer-details/', methods=['GET'])
     @requires_auth('get:beer-details')
     def get_beer_detail(payload):
-    #print(payload)
-        
+     
         body = request.get_json()
         if body==None:
             print("NO BODY")
             abort(400)
         try: 
-            print('BEERID')
             beer = Beer.query.filter(Beer.id==body['beer_id']).one_or_none()
             if beer == None:
-                abort(404) 
+                abort(404, "Beer not found.") 
 
             return jsonify({
                 "status_code": 200,
                 "success": True,
-                "beers": beer.format()
+                "beers": beer.format() 
             }), 200
         except:
             abort(422)
 
-    '''Endpoint GET /styles
-    returns list of styles
+    '''Endpoint GET /styles/ returns list of styles
     '''
     @app.route("/styles/")
     @requires_auth('get:styles')
@@ -153,19 +168,20 @@ def create_app(testconfig=None):
         styles = Style.query.all() 
         formatted_styles = [style.format() for style in styles]
         
-        return jsonify([{
+        return jsonify({
+            "status_code": 200,
+            "success": True,
             "style_count": len(formatted_styles),
             "styles": formatted_styles
-            }])
+            })
 
     '''Endpoint POST /beers 
-    insert new beer object into database
-    Specified venue in new beer object must be valid and exist in Venue table
+       insert new beer object into database
+       Specified venue in new beer object must be valid and exist in Venue table
     '''
     @app.route("/beers/", methods=['POST'])
     @requires_auth('get:beers')
-    def create_beer(payload):
-        
+    def create_beer(payload): 
         body = request.get_json()
         if body==None:
             print("NO BODY")
@@ -173,17 +189,14 @@ def create_app(testconfig=None):
         try: 
 
             # check if beer exists
-            print("check if beer exists.")
-            beer = Beer.query.filter_by(bid = body['bid'], venue_id=body['venue_id']).one_or_none()
+            beer = Beer.query.filter(Beer.bid == body['bid'], Beer.venue_id==body['venue_id']).one_or_none()   
             if beer!=None:
-                abort(422)
-                
-            print("verify venue exists.")      
-            venue = Venue.query.filter(Venue.venue_id == body['venue_id']).one_or_none()
-            if venue==None:
-                abort(400)
+                abort(400, "Create_beer: Beer already exists.")  
 
-            print("Create new beer object")
+            venue = Venue.query.filter(Venue.venue_id == body['venue_id']).one_or_none() 
+            if venue==None:
+                abort(400, "Create_beer: Venue not found.")
+
             new_beer = Beer(
                 bid = body['bid'],
                 name = body['name'],
@@ -194,34 +207,38 @@ def create_app(testconfig=None):
                 last_seen = body['last_seen'],
                 major_style = body['major_style'],
                 rating = body['rating'],
+                user_rating = body['user_rating'],
                 abv = body['abv'],
                 url = body['url'],
                 venue_id = body['venue_id'],
             )
         
-            print ("Insert new beer object)")
             new_beer.insert()
-            
-            print ("return...")
+            new_beervenue = BeerVenue(
+                beer_id = new_beer.id,
+                venue_id = venue.id
+            )
+            new_beervenue.insert()
+    
             return jsonify({
                 "status_code": 200,
                 "success": True,
-                "beer": new_beer.format()
+                "created": new_beer.id
             }), 200
         except:
             abort(422)  
 
 
     '''
-    Endpoint PATCH /beers/<id>
-    Require the 'patch:beers' permission
+    Endpoint PATCH /rating/
+    Require the 'patch:beer-user-rating' permission
     <id> is the existing beer id
     Can only update uwer_rating of existing beer
     Returns update beer with new rating
     '''
-    @app.route('/beers/<int:id>/', methods=['PATCH'])
+    @app.route('/rating/', methods=['PATCH'])
     @requires_auth('patch:beer-user-rating')
-    def update_beer(payload, id):
+    def update_beer(payload):
         
         body = request.get_json()
         if body==None:
@@ -229,24 +246,19 @@ def create_app(testconfig=None):
             abort(400)
         try: 
             # check if beers exists
-            print(f"Verify beer exists.({id})")
-            beer = Beer.query.get(id)
-            print(f'Beer to be updated: {beer}')
+            beer = Beer.query.get(body['id'])
             if beer==None:
-                abort(404)
+                abort(404, "Update beer: beer not found.")
             
-        
             updated_rating = body['user_rating']  
-            print(f'New Rating: {updated_rating}') 
             if updated_rating:
-                print("user rating is valid.")
                 beer.user_rating = updated_rating 
             beer.update()
                 
             return jsonify({
                 "status_code": 200,
                 "success": True,
-                "beer": [beer.format()]
+                "modified": beer.id
             }), 200
         except:
             abort(422) 
@@ -261,31 +273,44 @@ def create_app(testconfig=None):
     @app.route('/beers/<int:id>/', methods=['DELETE'])
     @requires_auth('delete:beers')
     def delete_beer(payload, id):
-        #print(payload)
         # check if beer exists
         beer = Beer.query.filter(Beer.id==id).one_or_none()
 
         if beer==None:
-            abort(404)
+            abort(404, "Delete beer: Beer not found.")
+
+        venue = Venue.query.filter(Venue.venue_id == beer.venue_id).one_or_none()
+        if venue==None:
+            abort(404, "Delete beer: Venue not found.")
+        
+        beervenue = BeerVenue.query.filter(BeerVenue.venue_id == venue.id, BeerVenue.beer_id == beer.id).one_or_none()
+        if beervenue==None:
+            abort(404, "Delete beer: Beer, Venue record not found.")
+        print(f"beer_server::delete_beer::beervenue: { beervenue.beer_id, beervenue.venue_id}")
         try:       
+            
+            beervenue.delete()
             beer.delete()
+            
             return jsonify({
                 "status_code": 200,
                 "success": True,
-                "delete": id
+                "deleted": id
             }), 200
+
+
         except:
             abort(422)  
 
     ''' converts rows to dictionary from list object 
         lambda same as def ...just concise version
     '''
-    row2dict_lambda = lambda r: {c.name: str(getattr(r, c.name)) for c in r.__table__.columns}
-    def row2dict(row):
-        tempdict = {}
-        for column in row.__table__.columns:
-            tempdict[column.name] = str(getattr(row, column.name))
-        return tempdict
+    row2dict_lambda = lambda row: {c.name: str(getattr(row, c.name)) for c in row.__table__.columns}
+    # def row2dict(row):
+    #     tempdict = {}
+    #     for column in row.__table__.columns:
+    #         tempdict[column.name] = str(getattr(row, column.name))
+    #     return tempdict
 
     # --------------------- ERROR handlers ---------------------------------
     @app.errorhandler(404)
@@ -293,7 +318,8 @@ def create_app(testconfig=None):
         return jsonify({
             "success": False,
             "error": 404,
-            "message": "resource not found"
+            "message": "resource not found",
+            "description": error.description
         }), 404
 
     @app.errorhandler(422)
@@ -301,7 +327,8 @@ def create_app(testconfig=None):
         return jsonify({
             "success": False,
             "error": 422,
-            "message": "unprocessable"
+            "message": "unprocessable",
+            "description": error.description
         }), 422
 
     @app.errorhandler(400)
@@ -309,7 +336,8 @@ def create_app(testconfig=None):
         return jsonify({
             "success": False,
             "error": 400,
-            "message": "bad request"
+            "message": "bad request",
+            "description": error.description
         }), 400
 
     @app.errorhandler(405)
@@ -317,7 +345,8 @@ def create_app(testconfig=None):
         return jsonify({
             "success": False,
             "error": 405,
-            "message": "method not allowed"
+            "message": "method not allowed",
+            "description": error.description
         }), 405
 
 
@@ -326,7 +355,8 @@ def create_app(testconfig=None):
         return jsonify({
             "success": False,
             "error": 500,
-            "message": "Internal Server Error"
+            "message": "Internal Server Error",
+            "description": error.description
         }), 500
 
 
