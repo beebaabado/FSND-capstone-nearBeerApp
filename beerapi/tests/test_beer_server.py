@@ -120,12 +120,13 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertTrue(data['beers'])
         self.assertTrue(len(data['beers']))
 
-    def test_get_beers_public_fail(self):
+    def test_get_beers_public_bad_endpoint_fail(self):
         """ Test GET beers endpoint without authentication bad url failure"""
         res = self.client().get('/beers/')
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
         self.assertEqual(res.status_code, 405)
+        self.assertEqual(data['error'], 405)
         self.assertTrue(data['message'], "resource not found")    
 
     def test_get_beers_with_auth(self):
@@ -138,11 +139,12 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertTrue(len(data['beers']))
 
     def test_get_beers_with_auth_fail(self):
-        """ Test GET beers endpoint with authentication...invalid cit failure"""
+        """ Test GET beers endpoint with authentication...invalid city failure"""
         res = self.client().get('/beers/nocity/', headers=self.headers_brewer)
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
         self.assertEqual(res.status_code, 400)
+        self.assertEqual(data['error'], 400)
         self.assertTrue(data['message'], "bad request")
         self.assertTrue(data['description'], "No Beers for city nocity.")
 
@@ -169,6 +171,7 @@ class BeerServerTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
         self.assertEqual(res.status_code, 400)
+        self.assertEqual(data['error'], 400)
         self.assertTrue(data['message'], "bad request")
     
     def test_get_beer_details_with_auth(self):
@@ -208,7 +211,6 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['created'], beer.id)  
         self.beer_to_delete_id = beer.id 
-        print(f'Newly added beer: { self.beer_to_delete_id }')
     
     def test_post_new_beer_already_exists_fail(self):
         """ Test POST new beer already exists failure"""
@@ -216,6 +218,7 @@ class BeerServerTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
         self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['error'], 422)
         self.assertEqual(data['message'], "unprocessable")  
         self.assertEqual(data['error'], 422)
     
@@ -243,7 +246,7 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertEqual(data['deleted'], self.beer_to_delete_id)  
 
     def test_posted_new_beer_delete_beer_fail(self):
-        """ Test DELETE beer with invalid beer id - failure""" 
+        """ Test DELETE beer with invalid beer id failure""" 
         res = self.client().delete('/beers/5000/', headers=self.headers_brewer)
         data = json.loads(res.data)
         self.assertEqual(data['success'], False)
@@ -251,16 +254,24 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertEqual(data['message'], "resource not found")   
         self.assertEqual(data['error'], 404)
     
-    # def test_post_update_rating(self):
-    #     """ Test update beer rating """
-    #     res = self.client().patch('/rating/', headers=self.headers_brewer, json={ 'id':1, 'rating': '4.25'})
-    #     data = json.loads(res.data)
-    #     print (f'DATA:::::{data}')
-    #     beer = Beer.query.filter(Beer.id==data['modified']).one_or_none() 
-    #     self.assertEqual(res.status_code, 200) 
-    #     self.assertEqual(data['modified'], beer.id)
-    #     self.assertEqual(beer.user_rating, "4.25")
-    #     self.assertEqual(data['success'], True)
+    def test_post_update_rating(self):
+        """ Test update beer rating """
+        res = self.client().patch('/rating/', headers=self.headers_brewer, json={ "id":1, "user_rating": "4.25"})
+        data = json.loads(res.data)
+        beer = Beer.query.filter(Beer.id==data['modified']).one_or_none() 
+        self.assertEqual(res.status_code, 200) 
+        self.assertEqual(data['modified'], beer.id)
+        self.assertEqual(beer.user_rating, 4.25)
+        self.assertEqual(data['success'], True)
+    
+    def test_post_update_rating_fail(self):
+        """ Test update beer rating failure """
+        res = self.client().patch('/rating/', headers=self.headers_brewer, json={ "id":1, "rating": "4.25"})
+        data = json.loads(res.data)
+        self.assertEqual(res.status_code, 422) 
+        self.assertEqual(data['error'], 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], "unprocessable")
         
 # Make the tests conveniently executable
 if __name__ == "__main__":
