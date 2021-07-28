@@ -13,8 +13,12 @@ def create_app(testconfig=None):
     #print(f'APP NAME: {__name__}')
     # debug relative imports issue print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))
     app.config.from_pyfile('config.py')
+    if testconfig==True:
+        app.config['TESTING']=True
+    else:
+        app.config['TESTING']=False
     setup_db(app)
-    
+
     # Set up CORS. Allow for all origins.
     CORS(app, resources={r"./*": {"origins": "*"}})
     @app.after_request
@@ -180,7 +184,7 @@ def create_app(testconfig=None):
        Specified venue in new beer object must be valid and exist in Venue table
     '''
     @app.route("/beers/", methods=['POST'])
-    @requires_auth('get:beers')
+    @requires_auth('post:beers')
     def create_beer(payload): 
         body = request.get_json()
         if body==None:
