@@ -23,12 +23,13 @@ class BeerServerTestCase(unittest.TestCase):
     def setUp(self):
         """Define test variables and initialize app."""
         # This function is called before each testcase
+        # pass in testmode = True
+        self.app = create_app(True)
         
-        self.app = create_app()
         self.client = self.app.test_client
-        self.database_name = "nearbeer_test"
-        self.database_path = "postgresql://{}@{}/{}".format('postgres', 'localhost:5432', self.database_name)
-        setup_db(self.app, self.database_path) 
+        #self.database_name = "nearbeer_test"
+        #self.database_path = "postgresql://{}@{}/{}".format('postgres', 'localhost:5432', self.database_name)
+        #setup_db(self.app, self.database_path) 
 
         # binds the app to the current context
         with self.app.app_context():
@@ -38,11 +39,14 @@ class BeerServerTestCase(unittest.TestCase):
             #self.db.create_all()
         
         # auth token from environment
-        test_brewer = self.app.config['TEST_BREWER_AUTH_TOKEN']
+        #test_brewer = self.app.config['TEST_BREWER_AUTH_TOKEN']
+        test_brewer = os.environ.get('TEST_BREWER_AUTH_TOKEN')
         #print(f'BREWER TOKEN: {test_brewer}')
-        test_beer_lover = self.app.config['TEST_BEER_LOVER_AUTH_TOKEN']
+        #test_beer_lover = self.app.config['TEST_BEER_LOVER_AUTH_TOKEN']
+        test_beer_lover = os.environ.get('TEST_BEER_LOVER_AUTH_TOKEN')
         #print(f'BEER LOVER TOKEN: {test_beer_lover}')
-        test_invalid_token = self.app.config['TEST_INVALID_TOKEN']
+        #test_invalid_token = self.app.config['TEST_INVALID_TOKEN']
+        test_invalid_token = os.environ.get('TEST_INVALID_TOKEN')
         # Create authorization token
         self.headers_beer_lover = [
                 ('Content-Type', 'application/json'),
@@ -61,15 +65,26 @@ class BeerServerTestCase(unittest.TestCase):
         # default data
         # get last question in question table for deletion as default
         self.beer_to_delete_id = 0
-    
-        # # Because each test case creates new class we need to set last beer id for deletion
-        # beer = Beer.query.order_by(Beer.id.desc()).first()
-        # if beer:
-        #     self.beer_to_delete_id = beer.id
 
         self.new_beer = {
             "abv": "12.2", 
             "bid": "555555X", 
+            "brewery_name": "Fremont Brewing", 
+            "brewery_slug": "fremont-brewing", 
+            "last_seen": "2021-05-29 04:11:28", 
+            "major_style": "Ale", 
+            "name": "Momo Meow Brew 5000 (2021)", 
+            "rating": "2.75", 
+            "user_rating": "3.00",
+            "slug": "fremont-brewing-brew-5000-2021", 
+            "style": "Barleywine - English", 
+            "url": "https://untappd.com/b/fremont-brewingfremont-brewing-brew-5000-2021/4246950", 
+            "venue_id": "5480785"
+        }
+
+        self.new_beer2 = {
+            "abv": "12.2", 
+            "bid": "XXXXXXX", 
             "brewery_name": "Fremont Brewing", 
             "brewery_slug": "fremont-brewing", 
             "last_seen": "2021-05-29 04:11:28", 
@@ -91,7 +106,10 @@ class BeerServerTestCase(unittest.TestCase):
     """
     Test cases run in order of function name
     """
-    
+
+    """
+    Public endpoint test cases
+    """
     def test_get_beers_public_template(self):
         """ Test GET beers public template endpoint """
         res = self.client().get('/beers/template?city=boulder/')
@@ -128,7 +146,10 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 405)
         self.assertEqual(data['error'], 405)
         self.assertTrue(data['message'], "resource not found")    
-
+    
+    """
+    Endpoint test cases requiring authorization header
+    """
     def test_get_beers_with_auth(self):
         """ Test GET beers endpoint with authentication"""
         res = self.client().get('/beers/boulder/', headers=self.headers_brewer)
@@ -157,7 +178,7 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertTrue(data['message'], "bad request")
 
     def test_get_styles_with_auth(self):
-        """ Test  GET styles endpoint with authentication"""
+        """ Test GET styles endpoint with authentication"""
         res = self.client().get('/styles/', headers=self.headers_brewer)
         data = json.loads(res.data)
         self.assertEqual(data['success'], True)
@@ -220,7 +241,6 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 422)
         self.assertEqual(data['error'], 422)
         self.assertEqual(data['message'], "unprocessable")  
-        self.assertEqual(data['error'], 422)
     
     def test_post_new_beer_no_data_fail(self):
         """ Test POST new beer no data failure"""
@@ -272,7 +292,37 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertEqual(data['error'], 422)
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], "unprocessable")
-        
+
+    """
+    Auth0 Role Beer-lover access control test cases
+    """
+    def test_1_post_new_beer_role_beer_lover_no_permissions_fail(self):
+        """ Test POST new beer no permissions role beer_lover failure"""
+        res = self.client().post('/beers/', headers=self.headers_beer_lover, json=self.new_beer2)
+        data = json.loads(res.data)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(res.status_code, 401)
+        self.assertEqual(data['error'], 401)
+        self.assertEqual(data['message'], "Permissions not found.")      
+    
+    def test_2_get_beers_role_beer_lover(self):
+        """ Test GET beers role beer_lover"""
+        res = self.client().get('/beers/boulder/', headers=self.headers_beer_lover)
+        data = json.loads(res.data)
+        self.assertEqual(data['success'], True)
+        self.assertEqual(res.status_code, 200)
+        self.assertTrue(data['beers'])
+        self.assertTrue(len(data['beers']))
+
+    def test_3_get_beer_details_role_beer_lover(self):
+        """ Test GET beer detail role beer_lover"""
+        res = self.client().get('/beer-details/', headers=self.headers_beer_lover, json={"beer_id": 2})
+        data = json.loads(res.data)
+        self.assertEqual(data['success'], True)
+        self.assertEqual(res.status_code, 200)
+        self.assertTrue(data['beers'])
+        self.assertTrue(len(data['beers']))    
+         
 # Make the tests conveniently executable
 if __name__ == "__main__":
     unittest.main()

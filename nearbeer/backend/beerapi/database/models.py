@@ -6,9 +6,10 @@ import json
 
 
 #TODO put this in config file
-database_filename = "nearbeer"
-# #project_dir = os.path.dirname(os.path.abspath(__file__))  # used if file in project dir
-database_path = "postgresql://{}@{}/{}".format('postgres','localhost:5432', database_filename)
+# database_filename = "nearbeer"
+# # #project_dir = os.path.dirname(os.path.abspath(__file__))  # used if file in project dir
+#database_path = "postgresql://{}@{}/{}".format('postgres','localhost:5432', database_filename)
+database_path = ""
 db = SQLAlchemy()
 migrate = Migrate()
 
@@ -19,9 +20,13 @@ setup_db(app)
 def setup_db(app, database_path=""):
     '''Setup db'''
     if database_path=="":
-        database_path=app.config["SQLALCHEMY_DATABASE_URI"] 
-    # app.config["SQLALCHEMY_DATABASE_URI"] = database_path
-    # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+        if app.config['TESTING'] == True:
+            database_path= app.config['DATABASE_URI_TEST']
+            #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI_TEST']}")
+        else:
+            database_path = app.config["DATABASE_URI"]
+            #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI']}")
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_path        
     db.app = app
     db.init_app(app)
     migrate.init_app(app, db)
