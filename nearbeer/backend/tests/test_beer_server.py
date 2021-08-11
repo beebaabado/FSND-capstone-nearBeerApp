@@ -14,8 +14,8 @@ import unittest
 import json
 from flask_sqlalchemy import SQLAlchemy
 # for debugging relative imports print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))
-from ..beer_server import create_app, setup_db
-from ..database.models import Beer, Venue, BeerVenue, Style
+from ..beer_server import create_app
+from ..database.models import Beer
 
 class BeerServerTestCase(unittest.TestCase):
     """This class represents the near bear server test case"""
