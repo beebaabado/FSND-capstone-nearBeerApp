@@ -1,8 +1,12 @@
-import json, os
-from flask import request
+'''
+'''
+import json
+import os
 from functools import wraps
-from jose import jwt
 from urllib.request import urlopen
+from flask import request
+from jose import jwt
+
 
 # Get environment variables
 # AUTH0_DOMAIN = 'product-demos.us.auth0.com'
@@ -12,12 +16,11 @@ AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
 ALGORITHMS = [os.environ.get('ALGORITHMS')]
 API_AUDIENCE = os.environ.get('API_AUDIENCE')
 print(f"AUTHO VARS:  {AUTH0_DOMAIN}  {ALGORITHMS}  {API_AUDIENCE}")
-## AuthError Exception
-'''
-AuthError Exception
-A standardized way to communicate auth failure modes
-'''
+
+# AuthError Exception
 class AuthError(Exception):
+    ''' AuthError Exception - standardized way to communicate auth failure modes
+    '''
     def __init__(self, error, status_code):
         self.error = error
         self.status_code = status_code
@@ -141,7 +144,7 @@ def verify_decode_jwt(token):
                 'description': 'Unable to find the appropriate key.'
             }, 401)
 
-## requires_auth    
+## requires_auth
 '''
    get_token_auth_header method to get the token
    verify_decode_jwt method to decode the jwt

@@ -1,15 +1,16 @@
+'''
+'''
 import os
+import json
 from sqlalchemy import Column, String, Integer, Numeric, DateTime
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import json
 
-
-#TODO put this in config file
+# TODO put this in config file
 # database_filename = "nearbeer"
 # # #project_dir = os.path.dirname(os.path.abspath(__file__))  # used if file in project dir
 #database_path = "postgresql://{}@{}/{}".format('postgres','localhost:5432', database_filename)
-database_path = ""
+#database_path = ""
 db = SQLAlchemy()
 migrate = Migrate()
 
@@ -17,16 +18,16 @@ migrate = Migrate()
 setup_db(app)
     binds a flask application and a SQLAlchemy service
 '''
-def setup_db(app, database_path=""):
+def setup_db(app, db_path=""):
     '''Setup db'''
-    if database_path=="":
-        if app.config['TESTING'] == True:
-            database_path= app.config['DATABASE_URI_TEST']
+    if db_path=="":
+        if app.config['TESTING'] is True:
+            db_path= app.config['DATABASE_URI_TEST']
             #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI_TEST']}")
         else:
-            database_path = app.config["DATABASE_URI"]
+            db_path = app.config["DATABASE_URI"]
             #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI']}")
-    app.config["SQLALCHEMY_DATABASE_URI"] = database_path        
+    app.config["SQLALCHEMY_DATABASE_URI"] = db_path   
     db.app = app
     db.init_app(app)
     migrate.init_app(app, db)
