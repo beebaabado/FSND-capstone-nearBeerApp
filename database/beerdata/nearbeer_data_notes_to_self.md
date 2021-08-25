@@ -105,3 +105,16 @@ insert into style (major, sub_styles) select major, array_to_string(patterns, ',
 ionic capacitor run android -l --external
 
 # insert data into beervenue association table
+
+
+
+# sending access token in url example
+https://base.url?access_token=f4f4994a875f461ca4d7708b9e027df4
+
+# using curl
+curl -X GET \
+  'https://baseurl/endpoint/' \
+  -H 'authorization: Basic dXNlcm5hbWU6MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MA==' 
+
+
+# run setup.sh to put token into environment variables

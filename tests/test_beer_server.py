@@ -6,10 +6,11 @@
 # for testing capstone project API used by Udacity by custom Beer is Near app
 # 
 # uses temporary auth0 bearer token in config.py 
-# must run from package root in folder backend  using command line:
-# python -m beerapi.tests.test_beer_server --verbose
+# must run from package root in folder nearbeer using command line:
+# python -m backend.tests.test_beer_server --verbose
 
-import os, sys
+import os
+import sys
 import unittest
 import json
 from flask_sqlalchemy import SQLAlchemy
