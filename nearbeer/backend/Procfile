@@ -1,1 +1,1 @@
-web: gunicorn beer_server:app
+web: sh setup.sh && gunicorn beer_server:app
