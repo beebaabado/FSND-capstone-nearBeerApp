@@ -1,1 +1,1 @@
-web: gunicorn beer_server.py:beer_server
+web: gunicorn beer_server:app
