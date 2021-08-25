@@ -56,6 +56,13 @@ To run unit test cases.  Start in parent directory (in nearbeer directory) run:
  python -m backend.tests.test_beer_server --verbose
 ```
 
+
+# HEROKU
+# Make sure to run this from the top level of the tree:
+git subtree push --prefix nearbeer/backend heroku main
+git push using:  heroku main
+
+
 # Acknowledgements
 
 The data stored in the NearBear Postgres database was obtained via the untappd API [untappd.com].  There is a separate REST API that I created to pull beer data from Untappd.  This other API was left out of this project because it involves a limited number of user requests to the untappd server.  Therefore, for testing purposes of the NearBeer API, I chose to query the Untappd server once and use static data in my NearBeer project.
