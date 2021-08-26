@@ -3,8 +3,7 @@
 # Environment variables for FSND Capstone project NearBear.
 # export FLASK_APP='beer_server.py'  # for local testing
 # export FLASK_ENV='development'     # for local testing
-export POSTGRES_DATABASE_URL='postgresql://postgres@localhost:5432/nearbeer'  
-export EXCITED='true'
+# export POSTGRES_DATABASE_URL='postgresql://postgres@localhost:5432/nearbeer'  
 export AUTH0_DOMAIN='product-demos.us.auth0.com'
 export ALGORITHMS='RS256'
 export API_AUDIENCE='beernear'
