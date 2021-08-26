@@ -4,6 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
+    "ionic:build:prod": "ionic-app-scripts build -- --prod",
+    "heroku-postbuild": "npm run ionic:build:prod",
+    "npm-start": "node server.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

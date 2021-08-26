@@ -1,17 +1,13 @@
 .DS_Store
 .DS_Store?
 __pycache__/
-<<<<<<< HEAD
 backend/__pycache__/
 backend/node_modules/
-=======
->>>>>>> 69d3d39ff5e545cb5fbc9abefd2ffcb1f49c15c0
 venv
 *.log
 log.txt
 npm-debug.log*
 .idea
-<<<<<<< HEAD
 .vscode
 nearbeer/frontend/node_modules
 nearbeer/frontend/www   
@@ -19,6 +15,3 @@ nearbeer/frontend/android
 fnearbeer/rontend/ios
 nearbeer/frontend/e2e
 nearbeer/.pylintrc
-=======
-.vscode
->>>>>>> 69d3d39ff5e545cb5fbc9abefd2ffcb1f49c15c0
