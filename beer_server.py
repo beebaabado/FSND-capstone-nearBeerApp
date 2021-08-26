@@ -12,8 +12,8 @@ def create_app(testconfig=None):
   app = Flask(__name__)
 
   # debug relative imports issue
-  print(f'APP NAME: {__name__}')
-  print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))
+  #print(f'APP NAME: {__name__}')
+  #print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))
   app.config.from_pyfile('config.py')
   if testconfig:
     app.config['TESTING'] = True
