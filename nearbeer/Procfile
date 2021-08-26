@@ -1,2 +1,0 @@
-web: sh backend/setup.sh && gunicorn backend/beer_server:app
-web: npm npm-start
