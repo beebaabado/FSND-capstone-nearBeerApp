@@ -27,7 +27,7 @@ def setup_db(app, db_path=""):
         else:
             db_path = app.config["DATABASE_URI"]
             #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI']}")
-    app.config["SQLALCHEMY_DATABASE_URI"] = db_path   
+    app.config["SQLALCHEMY_DATABASE_URI"] = db_path
     db.app = app
     db.init_app(app)
     migrate.init_app(app, db)
