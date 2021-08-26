@@ -2,7 +2,7 @@
   "name": "beer-weather",
   "version": "0.0.1",
   "engines": {
-    "node": "12.x"
+    "node": "12.18.4"
   },
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
