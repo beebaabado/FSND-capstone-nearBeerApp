@@ -7,3 +7,4 @@ log.txt
 npm-debug.log*
 .idea
 .vscode
+database/beerdata/nearbeer_data_notes_to_self.md

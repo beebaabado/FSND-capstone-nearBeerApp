@@ -125,5 +125,20 @@ curl -X GET \
 curl -X GET  'https://capstone-nearbeer-full-app.herokuapp.com/' -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldIdHhPZnhSeUZTYWw1TTJjN2lPeSJ9.eyJpc3MiOiJodHRwczovL3Byb2R1Y3QtZGVtb3MudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZTg4NWJlNTMwODA5MDA2OGZmZjU0MiIsImF1ZCI6WyJiZWVybmVhciIsImh0dHBzOi8vcHJvZHVjdC1kZW1vcy51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjI5ODY4MTg2LCJleHAiOjE2Mjk5NTQ1ODYsImF6cCI6InppUjNDdXczU1dtRmhrUFdmVGhGOUxEejdna1huTUg2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpiZWVycyIsImdldDpiZWVyLWRldGFpbHMiLCJnZXQ6YmVlcnMiLCJnZXQ6c3R5bGVzIiwicGF0Y2g6YmVlci11c2VyLXJhdGluZyIsInBvc3Q6YmVlcnMiLCJ2aWV3OnNpbXBsZSJdfQ.Ya_Z4-JQzN6Qyb8qQDofonR-Lr1qknVYk7ADJZmQQPTNXAHvWHge0QyFtuTCMPQMYiBju-U6xyC74cZvtUnIeOaWwqB1C1PPNUmsC-COsHYi5jai8hRmmVftyK7wXCklkA3sdpho0Tre_FFeVNh4JtCgwu-DX6ZSzkhZQ92sqbrz6B-G1BVJnWdX697_y0QuVOXpiiGmXzFQmOnIKw_JppzhgAEgOO6OGSuc2b9XntJvNCEhfog3Fq5fmdCW-FyEsoo_-3I24PMtruQ5VmGaO1nKeltJhxMkLI08lYxIa4hUbyygbdny5LiWLhz8YDoRA-u8l-LjIBRP1vzOxvPrqg'  
 
 
-# run setup.sh to put token into environment variables
 
+# To run the server, execute:
+# Run in same venv as app, in backend directory to export Auth0 variables (domain, audience, algorithms, tokens/secrets):
+# run setup.sh to put token into environment variables
+```bash
+ . ./setup.sh 
+```
+
+```bash
+flask run --reload
+```
+
+
+
+# updating frontend for heroku  use subtree for frontend app
+git subtree push --prefix nearbeer/frontend heroku-frontend main
+git commit -am "update Procfile for frontend with correct startup command yet...try again"
