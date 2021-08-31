@@ -10,6 +10,7 @@
   "scripts": {
     "ionic-clean": "ionic-app-scripts clean",
     "ionic-build": "ionic-app-scripts build",
+    "ionic-serve": "ionic serve",
     "heroku-postbuild": "npm run ionic:build:prod",
     "npm-start": "node server.js",
     "ng": "ng",

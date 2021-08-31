@@ -1,1 +1,1 @@
-web: ionic serve --port 8100
+web: npm ionic-serve --port 8100
