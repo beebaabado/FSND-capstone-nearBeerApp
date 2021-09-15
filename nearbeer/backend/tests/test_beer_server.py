@@ -5,7 +5,7 @@
 # Full Stack Web Developer Nanodegree Nearbeer API Backend unittests
 # for testing capstone project API used by Udacity by custom Beer is Near app
 # 
-# uses temporary auth0 bearer token in config.py 
+# uses temporary auth0 bearer token ENV vars
 # must run from package root in folder nearbeer using command line:
 # python -m backend.tests.test_beer_server --verbose
 

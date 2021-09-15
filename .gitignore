@@ -2,6 +2,7 @@
 .DS_Store?
 __pycache__/
 nearbeer/backend/__pycache__/
+nearbeer/backend/database/beerdata
 venv
 *.log
 log.txt
