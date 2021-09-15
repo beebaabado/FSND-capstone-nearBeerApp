@@ -1,8 +1,7 @@
 .DS_Store
 .DS_Store?
 __pycache__/
-backend/__pycache__/
-backend/node_modules/
+nearbeer/backend/__pycache__/
 venv
 *.log
 log.txt
@@ -15,3 +14,4 @@ nearbeer/frontend/android
 fnearbeer/rontend/ios
 nearbeer/frontend/e2e
 nearbeer/.pylintrc
+node_modules/
