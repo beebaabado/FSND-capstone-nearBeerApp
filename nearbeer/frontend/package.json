@@ -4,8 +4,8 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "engines": {
-    "node": "16.8.0",
-    "npm": "7.23.0"
+    "node": "16.x",
+    "npm": "7.x"
   },
   "scripts": {
     "ng": "ng",
@@ -13,11 +13,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --aot --prod "
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/build-angular": "^12.2.5",
     "@angular/common": "~12.1.1",
     "@angular/core": "~12.1.1",
     "@angular/forms": "~12.1.1",
@@ -38,6 +38,7 @@
     "@ionic/storage-angular": "^3.0.6",
     "@types/google.maps": "^3.45.6",
     "ionic-selectable": "^4.9.0",
+    "@angular-devkit/build-angular": "^12.2.5",
     "rxjs": "~6.6.0",
     "sass": "^1.41.0",
     "tslib": "^2.2.0",

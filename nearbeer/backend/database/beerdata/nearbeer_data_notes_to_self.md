@@ -140,5 +140,8 @@ flask run --reload
 
 
 # updating frontend for heroku  use subtree for frontend app
-git subtree push --prefix nearbeer/frontend heroku-frontend main
 git commit -am "update Procfile for frontend with correct startup command yet...try again"
+git subtree push --prefix nearbeer/frontend heroku-frontend main
+
+
+# running heroku session in bash
