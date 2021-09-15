@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BeerCardComponent } from './beer-card.component'
 
@@ -9,6 +9,7 @@ import { BeerCardComponent } from './beer-card.component'
   ],
   exports: [
     BeerCardComponent,
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class BeerCardComponentModule { }

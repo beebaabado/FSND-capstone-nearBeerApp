@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-import { Plugins } from '@capacitor/core';
-const { SplashScreen } = Plugins;
+import { SplashScreen } from '@capacitor/splash-screen';
 import { AuthService } from './services/auth.service';
 import { Platform } from '@ionic/angular';
 
 SplashScreen.hide();
 
-  SplashScreen.show({
+SplashScreen.show({
      autoHide: false
-  });
+});
   
-  SplashScreen.show({
-    showDuration: 5000,
-    autoHide: true
-  });
+SplashScreen.show({
+  showDuration: 5000,
+  autoHide: true
+});
 
 
 @Component({

@@ -30,7 +30,8 @@ export class MapPage implements AfterViewInit {
     mapTypeControl: false,
     zoomControl: true,
     zoomControlOptions: {
-      style: google.maps.ZoomControlStyle.SMALL 
+      //style: google.maps.ZoomControlStyle.SMALL   I think does not exist in updated API
+      position: google.maps.ControlPosition.RIGHT_TOP
     },
     streetViewControl: false,
   };

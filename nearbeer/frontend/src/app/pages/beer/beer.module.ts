@@ -19,6 +19,7 @@ import { BeerRoutingModule } from './beer-routing.module';
     BeerRoutingModule,
    
   ],
+  //schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [BeerPage]
 })
 export class BeerPageModule {}

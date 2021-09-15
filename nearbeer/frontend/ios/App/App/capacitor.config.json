@@ -1,16 +1,6 @@
 {
-  "appId": "cool.beerweather.app",
-  "appName": "Beer Weather",
-  "bundledWebRuntime": false,
-  "allowMixedContent": true,
-  "npmClient": "npm",
-  "webDir": "www",
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 5000,
-      "launchAutoHide": false,
-      "backgroundColor": "#FF808080"
-    }
-  },
-  "cordova": {}
+	"appId": "io.ionic.starter",
+	"appName": "near-beer",
+	"webDir": "www",
+	"bundledWebRuntime": false
 }

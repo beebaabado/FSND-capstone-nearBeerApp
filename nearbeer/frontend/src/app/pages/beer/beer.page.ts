@@ -282,12 +282,9 @@ export class BeerPage {
  *  Triggered when city selection changes 
  *  Also triggers when page loads and ion-select options are populated with city choices
  * 
- *  TODO:  There is a "bug/feature" that ion-select event gets triggered when options are loaded but none are selected.  value = undefined. 
+ *  TODO:  There is a "bug/behavior" that ion-select event gets triggered when options are loaded but none are selected.  value = undefined. 
  */
-  setCityEventTriggered(event: {
-    component: IonSelect,
-    value: any
-  }) { 
+  setCityEventTriggered(_event: any) { 
      console.log("setCityEventTriggered   Entering...");      
      // event triggered again reset 
      if (!this.refreshBeers){
@@ -321,7 +318,8 @@ export class BeerPage {
      userSelectedStyles.forEach((selStyle) => {
         console.log("selStyle: ", selStyle);
         listofBeerStyles.forEach((style) => {
-            if (style['major_style'].toLowerCase() == selStyle['major'].toLowerCase()){
+            console.log("style: ", style);
+            if (style['major_style'].toLowerCase() == selStyle['id'].toLowerCase()){
                 style.hidden = 0;
                 count +=1;
              }
@@ -579,7 +577,6 @@ export class BeerPage {
   
   // filter beerlist by column 
   filterbyColSearchEventTriggered() {
-     
      // build search list to sync with beerlist
      this.buildSearchList();
     

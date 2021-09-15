@@ -1,5 +1,5 @@
 {
-  "name": "Beer Weather",
+  "name": "near-beer",
   "integrations": {
     "capacitor": {}
   },

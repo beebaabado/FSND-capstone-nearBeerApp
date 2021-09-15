@@ -31,7 +31,7 @@ ion-icon {
   line-height: 1;
   text-rendering: auto;
   text-transform: none;
-  speak: none;
+  //speak: none;
 
   @include rtl() {
     &[aria-label^="arrow"]::before,

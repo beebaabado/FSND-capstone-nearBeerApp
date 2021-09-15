@@ -9,6 +9,7 @@ export class Beer {
     abv:number = 0.0;
     last_seen: string = "";   
     untappd_page: string = "www.untappd.com";
+    user_rating: number = 0.0;
 
     constructor (
         fields?: {
@@ -21,13 +22,11 @@ export class Beer {
         abv?: number,
         last_seen?: string,
         untappd_page?: string,
+        user_rating?: number,
        }) {
          
        if (fields) Object.assign(this, fields);
        this.printToLog();
-      
-
-
     }
   
     printToLog(){ 
@@ -40,6 +39,7 @@ export class Beer {
       console.log("abv:  ", this.abv);
       console.log("last_seen: ", this.last_seen);
       console.log("untappd_page: ", this.untappd_page);
+      console.log("user_raring:", this.user_rating);
     }
 
     setValues(
@@ -53,7 +53,7 @@ export class Beer {
             abv?: number,
             last_seen?: string,
             untappd_page?: string //Date formatted as 'mediumDate',
-
+            user_rating?: number,
            }) {
              
            if (fields) Object.assign(this, fields);

@@ -1,6 +1,6 @@
 {
   "appId": "cool.beerweather.app",
-  "appName": "Beer Weather",
+  "appName": "near-beer",
   "bundledWebRuntime": false,
   "allowMixedContent": true,
   "npmClient": "npm",

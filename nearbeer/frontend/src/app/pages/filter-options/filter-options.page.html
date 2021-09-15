@@ -51,7 +51,7 @@
         <ion-label class="ion-text-wrap">Selected rating:</ion-label>
         <ion-label class="selected-rating-label">{{ selectedRating |  number: '1.2-2' }}</ion-label>
         <ion-range name="selectRating" class="range-pin range-knob-handle" #ratingRange min="0.00" max="5.00" step="0.25" snaps="true" 
-                   [(ngModel)]="selectedRating"  (ionChange)="selectedRatingChanged($event)">
+                   [(ngModel)]="selectedRating"  ionChange="selectedRatingChanged($event)">
           <ion-icon size="small" slot="start" name="beer"></ion-icon>
           <ion-icon slot="end" name="beer"></ion-icon>
         </ion-range>

@@ -3,7 +3,7 @@ import { NavParams } from '@ionic/angular'
 import { Beer } from '../../types/beer'
 
 @Component({
-  selector: 'app-beer-card',
+  selector: 'app-beer-card.component',
   templateUrl: './beer-card.component.html',
   styleUrls: ['./beer-card.component.scss'],
 })
