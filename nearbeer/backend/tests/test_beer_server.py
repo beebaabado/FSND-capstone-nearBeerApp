@@ -6,17 +6,16 @@
 # for testing capstone project API used by Udacity by custom Beer is Near app
 # 
 # uses temporary auth0 bearer token ENV vars
+# Issue with relative imports..still debugging so 
 # must run from package root in folder nearbeer using command line:
 # python -m backend.tests.test_beer_server --verbose
 
 import os
-import sys
 import unittest
 import json
 from flask_sqlalchemy import SQLAlchemy
-# for debugging relative imports print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))
-from ..beer_server import create_app
-from ..database.models import Beer
+from beer_server import create_app
+from database.models import Beer
 
 class BeerServerTestCase(unittest.TestCase):
     """This class represents the near bear server test case"""
@@ -26,11 +25,7 @@ class BeerServerTestCase(unittest.TestCase):
         # This function is called before each testcase
         # pass in testmode = True
         self.app = create_app(True)
-        
         self.client = self.app.test_client
-        #self.database_name = "nearbeer_test"
-        #self.database_path = "postgresql://{}@{}/{}".format('postgres', 'localhost:5432', self.database_name)
-        #setup_db(self.app, self.database_path) 
 
         # binds the app to the current context
         with self.app.app_context():
@@ -39,7 +34,7 @@ class BeerServerTestCase(unittest.TestCase):
             # create all tables
             #self.db.create_all()
         
-        # auth token from environment
+        # auth token from environment vars
         #test_brewer = self.app.config['TEST_BREWER_AUTH_TOKEN']
         test_brewer = os.environ.get('TEST_BREWER_AUTH_TOKEN')
         #print(f'BREWER TOKEN: {test_brewer}')
@@ -170,7 +165,7 @@ class BeerServerTestCase(unittest.TestCase):
         self.assertTrue(data['message'], "bad request")
         self.assertTrue(data['description'], "No Beers for city nocity.")
 
-    def test_get_beers_with_auth_fail(self):
+    def test_get_beers_with_auth_invalidtoken_fail(self):
         """ Test GET beers endpoint with authentication...invalid auth token failure"""
         res = self.client().get('/beers/nocity/', headers=self.headers_invalid)
         data = json.loads(res.data)
@@ -228,7 +223,7 @@ class BeerServerTestCase(unittest.TestCase):
         """ Test POST new beer """
         res = self.client().post('/beers/', headers=self.headers_brewer, json=self.new_beer)
         data = json.loads(res.data)
-        beer = Beer.query.filter(Beer.id==data['created']).one_or_none()  
+        beer = Beer.query.filter(Beer.id==data['created']).one_or_none()
         self.assertEqual(data['success'], True)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['created'], beer.id)  

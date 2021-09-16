@@ -45,16 +45,9 @@ def create_app(testconfig=None):
     config = json.load(config_settings_file)
   default_city = config['default_location']
 
-  @app.route("/beers/template", methods=['GET'])
-  def get_city_beer_public_template_view():
-    """ returns public view of list of beers for particular city using simple jinja2 template no authorization
-    """
+  def getBeers(city):
     beers_venue_list = BeerVenue.query.all()
     beers_by_city = []
-
-    city = request.args.get('city')
-    if city is None:
-      abort(400, "City not specified.")
 
     for beer_item in beers_venue_list:
       venue = Venue.query.filter_by(id=beer_item.venue_id).all()
@@ -65,7 +58,26 @@ def create_app(testconfig=None):
         tempbeer = row2dict(beer[0])
         tempbeer['venue'] = venue[0].format()
         beers_by_city.append(tempbeer)
+      
+    return beers_by_city
 
+
+  @app.route("/beers/template", methods=['GET'])
+  def get_city_beer_public_template_view():
+    """ returns public view of list of beers for particular city using simple jinja2 template no authorization
+    """
+    # beers_venue_list = BeerVenue.query.all()
+    # beers_by_city = []
+
+    city = request.args.get('city')
+    if city is None:
+      abort(400, "City not specified.")
+   
+    beers_by_city = getBeers(city)      
+
+    if beers_by_city == []:
+        return render_template('errorMsg.html', city=city, message=f'Sorry, no beers for city {city}.')
+    
     return render_template('city_list.html', city=city, beers=beers_by_city)
 
   @app.route("/beers", methods=['GET'])
@@ -79,18 +91,9 @@ def create_app(testconfig=None):
     if city is None:
       abort(400, "City not specified.")
 
-    for beer_item in beers_venue_list:
-      venue = Venue.query.filter_by(id=beer_item.venue_id).all()
-      if venue[0].city.lower() == city.lower():
-        tempbeer = {}
-        beer = Beer.query.filter_by(id=beer_item.beer_id).all()
-        # Beer class not modifiable so convert to dict and add venue info
-        tempbeer = row2dict(beer[0])
-        tempbeer['venue'] = venue[0].format()
-        beers_by_city.append(tempbeer)
-
-      if beers_by_city == []:
-        abort(400, f'No beers for city {city}.')
+    beers_by_city = getBeers(city)
+    if beers_by_city == []:
+      abort(400, f'No beers for city {city}.')
 
     return jsonify({
       "status_code": 200,
@@ -103,7 +106,7 @@ def create_app(testconfig=None):
   @app.route("/", methods=['GET'])
   @requires_auth('view:simple')
   def index(payload):
-    """ returns list of all beers.  This is admin view for simple test of api
+    """ returns list of all beers.  This is admin view for simple test of api (e.g. use curl to pass auth header)
     """
     beers = Beer.query.all()
     beers_formatted = [beer.format() for beer in beers]

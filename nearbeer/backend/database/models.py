@@ -23,6 +23,7 @@ def setup_db(app, db_path=""):
     if db_path=="":
         if app.config['TESTING'] is True:
             db_path= app.config['DATABASE_URI_TEST']
+            print(f"DATABASE:  {app.config['DATABASE_URI_TEST']}")
             #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI_TEST']}")
         else:
             db_path = app.config["DATABASE_URI"]

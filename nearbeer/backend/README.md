@@ -56,6 +56,16 @@ To run unit test cases.  Start in parent directory (in nearbeer directory) run:
  python -m backend.tests.test_beer_server --verbose
 ```
 
+# Role Based Authentication/access control defined in Auth0
+
+Role: Brewer
+Permissions:
+
+delete:beers      allows user to delete beer from nearbeer database
+get:beer-details  
+
+
+
 # HEROKU
 
 
