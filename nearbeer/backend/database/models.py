@@ -139,7 +139,6 @@ class Beer(BeerModel):
             'user_rating': str(self.user_rating),
             'last_seen' : self.last_seen,
             'venue_id': self.venue_id
-    
         }
 '''
 Venue

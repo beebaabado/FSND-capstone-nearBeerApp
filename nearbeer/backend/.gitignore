@@ -8,5 +8,5 @@ npm-debug.log*
 .idea
 .vscode
 nearbeer/backend/__pycache__/
-nearbeer/backend/database/beerdata/
+#nearbeer/backend/database/beerdata/
 database/beerdata/nearbeer_data_notes_to_self.md

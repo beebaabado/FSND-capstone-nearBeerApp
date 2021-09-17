@@ -114,6 +114,7 @@ def create_app(testconfig=None):
       "status_code": 200,
       "success": True,
       "beers": beers_formatted,
+      "beer_count": len(beers_formatted)
     })
 
   @app.route("/beers/<city>/", methods=['GET'])
@@ -200,11 +201,12 @@ def create_app(testconfig=None):
       # check if beer exists
       beer = Beer.query.filter(Beer.bid == body['bid'], Beer.venue_id == body['venue_id']).one_or_none()
       if beer is not None:
-        abort(400, "Create_beer: Beer already exists.")
+        abort(400, "Create_beer: Beer already exists. New beer record not inserted.")
 
       venue = Venue.query.filter(Venue.venue_id == body['venue_id']).one_or_none()
-      if venue is not None:
-        abort(400, "Create_beer: Venue not found.")
+
+      if venue is None:
+        abort(400, "Create_beer: Venue not found. New beer record not inserted.")
 
       new_beer = Beer(
         bid=body['bid'],
@@ -221,7 +223,6 @@ def create_app(testconfig=None):
         url=body['url'],
         venue_id=body['venue_id'],
         )
-
       new_beer.insert()
       new_beervenue = BeerVenue(
         beer_id=new_beer.id,
@@ -235,7 +236,7 @@ def create_app(testconfig=None):
         "created": new_beer.id
         }), 200
     except:
-      abort(422)
+      abort(422, "Was not able to insert new beer record!")
 
   @app.route('/rating/', methods=['PATCH'])
   @requires_auth('patch:beer-user-rating')
@@ -291,20 +292,18 @@ def create_app(testconfig=None):
 
     beervenue = BeerVenue.query.filter(BeerVenue.venue_id == venue.id, BeerVenue.beer_id == beer.id).one_or_none()
     if beervenue is None:
-      abort(404, "Delete beer: Beer, Venue record not found.")
-    print(f"beer_server::delete_beer::beervenue: { beervenue.beer_id, beervenue.venue_id}")
+      abort(404, f"Delete beer: Beer, Venue record not found. Unable to delete beer with id {beer_id}.")
+    #print(f"beer_server::delete_beer::beervenue: { beervenue.beer_id, beervenue.venue_id}")
     try:
       beervenue.delete()
       beer.delete()
-
       return jsonify({
         "status_code": 200,
         "success": True,
-        "deleted": id
+        "deleted": beer_id
         }), 200
-
     except:
-      abort(422)
+      abort(422, f"Unable to delete beer with id {beer_id}")
 
   # row2dict_lambda = lambda row: {c.name: str(getattr(row, c.name)) for c in row.__table__.columns}
   def row2dict(row):

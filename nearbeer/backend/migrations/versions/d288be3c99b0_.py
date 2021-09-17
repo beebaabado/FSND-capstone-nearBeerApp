@@ -1,4 +1,4 @@
-"""empty message
+"""Initial Migration of nearbeer database
 
 Revision ID: d288be3c99b0
 Revises: 

@@ -7,7 +7,7 @@
 # run locally with local postgresql database
 # uses temporary auth0 bearer token ENV vars
 # Issue with relative imports..still debugging so 
-# must run from package root in folder nearbeer using command line:
+# must run from package root in folder nearbeer using command line without the .py extension:
 # python -m backend.tests.test_beer_server --verbose
 
 import os
@@ -159,11 +159,9 @@ class BeerServerTestCase(unittest.TestCase):
         """ Test GET beers endpoint with authentication...invalid city failure"""
         res = self.client().get('/beers/nocity/', headers=self.headers_brewer)
         data = json.loads(res.data)
-        self.assertEqual(data['success'], False)
-        self.assertEqual(res.status_code, 400)
-        self.assertEqual(data['error'], 400)
-        self.assertTrue(data['message'], "bad request")
-        self.assertTrue(data['description'], "No Beers for city nocity.")
+        self.assertEqual(data['success'], True)
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['beer_count'], 0)
 
     def test_get_beers_with_auth_invalidtoken_fail(self):
         """ Test GET beers endpoint with authentication...invalid auth token failure"""
