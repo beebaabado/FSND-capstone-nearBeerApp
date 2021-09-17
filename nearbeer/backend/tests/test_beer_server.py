@@ -2,9 +2,9 @@
 # author:  modified by Connie Compos
 # date: 07/12/2021
 # version number: n/a
-# Full Stack Web Developer Nanodegree Nearbeer API Backend unittests
+# Full Stack Web Developer Nanodegree Nearbeer API Backend unittests 
 # for testing capstone project API used by Udacity by custom Beer is Near app
-# 
+# run locally with local postgresql database
 # uses temporary auth0 bearer token ENV vars
 # Issue with relative imports..still debugging so 
 # must run from package root in folder nearbeer using command line:
