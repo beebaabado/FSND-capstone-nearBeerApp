@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Environment variables for FSND Capstone project NearBear.
+# following exports commented out for heroku deployment
 # export FLASK_APP='beer_server.py'  # for local testing
 # export FLASK_ENV='development'     # for local testing
 # export POSTGRES_DATABASE_URL='postgresql://postgres@localhost:5432/nearbeer'  

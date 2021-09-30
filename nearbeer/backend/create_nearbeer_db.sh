@@ -8,7 +8,7 @@ psql -U postgres -c "DROP DATABASE nearbeer"
 psql -U postgres -c "CREATE DATABASE nearbeer"
 
 # run migrations to create tables in database
-export FLASK_APP='beer_server.py'
+
 flask db upgrade
 
 # insert test data
