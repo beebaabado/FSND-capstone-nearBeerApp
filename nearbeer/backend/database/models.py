@@ -22,8 +22,8 @@ def setup_db(app, db_path=""):
     '''Setup db'''
     if db_path=="":
         if app.config['TESTING'] is True:
-            db_path= app.config['DATABASE_URI_TEST']
-            #db_path = os.environ.get('DATABASE_URI_TEST')
+            #db_path= app.config['DATABASE_URI_TEST']
+            db_path = os.environ.get('DATABASE_URI_TEST')
             print(f"MODELS::DATABASE_TEST:  {db_path}")   
         else:
             if os.environ.get('NEAR_BEER_ENV') == 'local':

@@ -63,6 +63,35 @@ Permissions:
 - post:beers	Add a new beer	
 - view:simple	Simple table view for admin use
 
+User with role Brewer sample JWT: 
+```json
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldIdHhPZnhSeUZTYWw1TTJjN2lPeSJ9.eyJpc3MiOiJodHRwczovL3Byb2R1Y3QtZGVtb3MudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZTg4NWJlNTMwODA5MDA2OGZmZjU0MiIsImF1ZCI6WyJiZWVybmVhciIsImh0dHBzOi8vcHJvZHVjdC1kZW1vcy51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNTIyMDIyLCJleHAiOjE2MzM2MDg0MjIsImF6cCI6InppUjNDdXczU1dtRmhrUFdmVGhGOUxEejdna1huTUg2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpiZWVycyIsImdldDpiZWVyLWRldGFpbHMiLCJnZXQ6YmVlcnMiLCJnZXQ6c3R5bGVzIiwicGF0Y2g6YmVlci11c2VyLXJhdGluZyIsInBvc3Q6YmVlcnMiLCJ2aWV3OnNpbXBsZSJdfQ.ZrzhVG5hO_1MviO4H759eUBzMCQkH7CttOKzXhqa00y9lDpwTjn9lJ-gRV5wnZcQSLXdmHHdgYAFQEqPI9aYuX-yjt3zClynk8WyQ7eaVTxaiEoOwCUXQ6ikh0TJcknT0FagHXU1BNb2mNx67UMX0hML4kYz1GG4KZrezBF2L1vQDCD036UD0PCE5ee0X2-mxKHo0h8xvbjIQm2IcUz20NhtrAchxs-f5SF3oxRsAT75rBlM8soLnbe6iYAaW-ojf3BSyDwFaV85H6-J93-RhBA15hUNN-VwZHTtk3ot4kmBypiemq58Q0rkrJx5R57N-Ol8Sqmd0UDz7JIzp_X_Ow
+```
+JWT Payload:
+```json
+{
+  "iss": "https://product-demos.us.auth0.com/",
+  "sub": "auth0|60e885be5308090068fff542",
+  "aud": [
+    "beernear",
+    "https://product-demos.us.auth0.com/userinfo"
+  ],
+  "iat": 1633522022,
+  "exp": 1633608422,
+  "azp": "ziR3Cuw3SWmFhkPWfThF9LDz7gkXnMH6",
+  "scope": "openid profile email",
+  "permissions": [
+    "delete:beers",
+    "get:beer-details",
+    "get:beers",
+    "get:styles",
+    "patch:beer-user-rating",
+    "post:beers",
+    "view:simple"
+  ]
+}
+```
+
 
 Role: Beer-lover  
 Description: Beer enthusiast can view beers and update user ratings on beers.
@@ -72,9 +101,34 @@ Permissions:
 - get:beers	Retrieve list of beers
 - patch:beer-user-rating	Update user rating for one beer
 
+User with role Beer-lover sample JWT:
+```json
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldIdHhPZnhSeUZTYWw1TTJjN2lPeSJ9.eyJpc3MiOiJodHRwczovL3Byb2R1Y3QtZGVtb3MudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZTg4NTFjYTg1MjJhMDA2OTEyODhkYyIsImF1ZCI6WyJiZWVybmVhciIsImh0dHBzOi8vcHJvZHVjdC1kZW1vcy51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNDcxOTY1LCJleHAiOjE2MzM1NTgzNjUsImF6cCI6InppUjNDdXczU1dtRmhrUFdmVGhGOUxEejdna1huTUg2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImdldDpiZWVyLWRldGFpbHMiLCJnZXQ6YmVlcnMiLCJwYXRjaDpiZWVyLXVzZXItcmF0aW5nIl19.13vX9Mw9eVY9XAvNg7I0yiD7Bi8_ytOD1tRHIqgSndD68QVb9CHkTgvRF-XcwpwfKwe1SkgpDw6HEBQhykKiEoaLuTCt2KIMEgU2_07yBgAaRVq6kcf7ZqSKNwpe9xmXJJHUM-QVsfTqybA-oP46oXleOxDpuhHn9msnR5MAsXA3a36a2tD9-9AU8j3AZESfCH4j-Zo9GVXzd1TsGeXUmRAZCS6-IR7FyFYdkNrBegBU32O2CJsM5U8diLwpzJpHa-z3dRr9R-AvKIMvKNLzyhhD6ignpEM2YMsshRCdD7OqKVHLuHcAp6UOotw7aosPqHFfaP2O5xrvclZnTIhWXQ
+```
+JWT Payload:
+```json
+{
+  "iss": "https://product-demos.us.auth0.com/",
+  "sub": "auth0|60e8851ca8522a00691288dc",
+  "aud": [
+    "beernear",
+    "https://product-demos.us.auth0.com/userinfo"
+  ],
+  "iat": 1633471965,
+  "exp": 1633558365,
+  "azp": "ziR3Cuw3SWmFhkPWfThF9LDz7gkXnMH6",
+  "scope": "openid profile email",
+  "permissions": [
+    "get:beer-details",
+    "get:beers",
+    "patch:beer-user-rating"
+  ]
+}
+```
+
 ### Getting valid JWT tokens for backend testing
 
-Refer to frontend app README [here](../frontend/README.md) for procedure to get valid JWT tokens.  Update backend/setup_local.sh file with valid tokens. 
+Refer to frontend app README [here](../frontend/README.md) for procedure to get valid JWT tokens.  Update backend/setup_local.sh file with valid tokens for environment variables:
 
 - TEST_BREWER_AUTH_TOKEN
 - TEST_BEER_LOVER_AUTH_TOKEN
@@ -101,7 +155,7 @@ flask run --reload
 ```
 Note:  Use http for localhost or curl command will fail
 ```bash
-curl -X GET  'http://localhost:5000/beers/template?city=Boulder' -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldIdHhPZnhSeUZTYWw1TTJjN2lPeSJ9.eyJpc3MiOiJodHRwczovL3Byb2R1Y3QtZGVtb3MudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZTg4NWJlNTMwODA5MDA2OGZmZjU0MiIsImF1ZCI6WyJiZWVybmVhciIsImh0dHBzOi8vcHJvZHVjdC1kZW1vcy51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNTIyMDIyLCJleHAiOjE2MzM2MDg0MjIsImF6cCI6InppUjNDdXczU1dtRmhrUFdmVGhGOUxEejdna1huTUg2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpiZWVycyIsImdldDpiZWVyLWRldGFpbHMiLCJnZXQ6YmVlcnMiLCJnZXQ6c3R5bGVzIiwicGF0Y2g6YmVlci11c2VyLXJhdGluZyIsInBvc3Q6YmVlcnMiLCJ2aWV3OnNpbXBsZSJdfQ.ZrzhVG5hO_1MviO4H759eUBzMCQkH7CttOKzXhqa00y9lDpwTjn9lJ-gRV5wnZcQSLXdmHHdgYAFQEqPI9aYuX-yjt3zClynk8WyQ7eaVTxaiEoOwCUXQ6ikh0TJcknT0FagHXU1BNb2mNx67UMX0hML4kYz1GG4KZrezBF2L1vQDCD036UD0PCE5ee0X2-mxKHo0h8xvbjIQm2IcUz20NhtrAchxs-f5SF3oxRsAT75rBlM8soLnbe6iYAaW-ojf3BSyDwFaV85H6-J93-RhBA15hUNN-VwZHTtk3ot4kmBypiemq58Q0rkrJx5R57N-Ol8Sqmd0UDz7JIzp_X_Ow'
+curl -X GET  'http://localhost:5000/' -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldIdHhPZnhSeUZTYWw1TTJjN2lPeSJ9.eyJpc3MiOiJodHRwczovL3Byb2R1Y3QtZGVtb3MudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYwZTg4NWJlNTMwODA5MDA2OGZmZjU0MiIsImF1ZCI6WyJiZWVybmVhciIsImh0dHBzOi8vcHJvZHVjdC1kZW1vcy51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjMzNTIyMDIyLCJleHAiOjE2MzM2MDg0MjIsImF6cCI6InppUjNDdXczU1dtRmhrUFdmVGhGOUxEejdna1huTUg2Iiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpiZWVycyIsImdldDpiZWVyLWRldGFpbHMiLCJnZXQ6YmVlcnMiLCJnZXQ6c3R5bGVzIiwicGF0Y2g6YmVlci11c2VyLXJhdGluZyIsInBvc3Q6YmVlcnMiLCJ2aWV3OnNpbXBsZSJdfQ.ZrzhVG5hO_1MviO4H759eUBzMCQkH7CttOKzXhqa00y9lDpwTjn9lJ-gRV5wnZcQSLXdmHHdgYAFQEqPI9aYuX-yjt3zClynk8WyQ7eaVTxaiEoOwCUXQ6ikh0TJcknT0FagHXU1BNb2mNx67UMX0hML4kYz1GG4KZrezBF2L1vQDCD036UD0PCE5ee0X2-mxKHo0h8xvbjIQm2IcUz20NhtrAchxs-f5SF3oxRsAT75rBlM8soLnbe6iYAaW-ojf3BSyDwFaV85H6-J93-RhBA15hUNN-VwZHTtk3ot4kmBypiemq58Q0rkrJx5R57N-Ol8Sqmd0UDz7JIzp_X_Ow'
 ```
 
 ### TESTING THE BACKEND app

@@ -68,9 +68,6 @@ def create_app(testconfig=None):
   def get_city_beer_public_template_view():
     """ returns public view of list of beers for particular city using simple jinja2 template no authorization
     """
-    # beers_venue_list = BeerVenue.query.all()
-    # beers_by_city = []
-
     city = request.args.get('city')
     if city is None:
       abort(400, "City not specified.")
@@ -122,9 +119,7 @@ def create_app(testconfig=None):
   @app.route("/beers/<city>/", methods=['GET'])
   @requires_auth('get:beers')
   def get_city_beer(payload, city=default_city):
-    """
-    returns list of beers
-    city defaults to default_location in config_setings.json
+    """returns json formatted list of beers, city defaults to default_location in config_setings.json
     """
     beers_venue_list = BeerVenue.query.all()
     beers_by_city = []
@@ -150,8 +145,7 @@ def create_app(testconfig=None):
   @app.route('/beer-details/', methods=['GET'])
   @requires_auth('get:beer-details')
   def get_beer_detail(payload):
-    """
-    Endpoint GET /beer-details/   Detail for one beer specifed by beer id
+    """returns json formatted detail for one beer specifed by beer id
     """
     body = request.get_json()
     if body is None:
@@ -174,8 +168,7 @@ def create_app(testconfig=None):
   @app.route("/styles/")
   @requires_auth('get:styles')
   def get_styles(payload):
-    """
-    Endpoint GET /styles/ returns list of styles
+    """returns json formatted list of styles
     """
     styles = Style.query.all()
     formatted_styles = [style.format() for style in styles]
@@ -190,17 +183,13 @@ def create_app(testconfig=None):
   @app.route("/beers/", methods=['POST'])
   @requires_auth('post:beers')
   def create_beer(payload):
-    """
-    Endpoint POST /beers
-    insert new beer object into database
-    Specified venue in new beer object must be valid and exist in Venue table
+    """Inserts new beer object into database. Specified venue in new beer object must be valid and exist in Venue table
     """
     body = request.get_json()
     if body is None:
       print("NO BODY")
       abort(400)
     try:
-      # check if beer exists
       beer = Beer.query.filter(Beer.bid == body['bid'], Beer.venue_id == body['venue_id']).one_or_none()
       if beer is not None:
         abort(400, "Create_beer: Beer already exists. New beer record not inserted.")
@@ -243,19 +232,13 @@ def create_app(testconfig=None):
   @app.route('/rating/', methods=['PATCH'])
   @requires_auth('patch:beer-user-rating')
   def update_beer(payload):
-    """
-    Endpoint PATCH /rating/
-    Require the 'patch:beer-user-rating' permission
-    <id> is the existing beer id
-    Can only update uwer_rating of existing beer
-    Returns update beer with new rating
+    """ Can only update uwer_rating of existing beer. Returns updated beer id.
     """
     body = request.get_json()
     if body is None:
       print("NO BODY")
       abort(400)
     try:
-      # check if beers exists
       beer = Beer.query.get(body['id'])
       if beer is None:
         abort(404, "Update beer: beer not found.")
@@ -276,15 +259,9 @@ def create_app(testconfig=None):
   @app.route('/beers/<int:beer_id>/', methods=['DELETE'])
   @requires_auth('delete:beers')
   def delete_beer(payload, beer_id):
+    """Removes beer if beer id exists in database. Returns deleted beer id
     """
-    Endpoint DELETE /beers/<id>
-    require the 'delete:beers' permission
-    <id> is the existing beer id
-    returns deleted beer id
-    """
-    # check if beer exists
     beer = Beer.query.filter(Beer.id == beer_id).one_or_none()
-
     if beer is None:
       abort(404, "Delete beer: Beer not found.")
 
@@ -309,8 +286,7 @@ def create_app(testconfig=None):
 
   # row2dict_lambda = lambda row: {c.name: str(getattr(row, c.name)) for c in row.__table__.columns}
   def row2dict(row):
-    """ converts rows to dictionary from list object
-        lambda same as def ...just concise version
+    """ Converts rows to dictionary from list object lambda same as def ...just concise version
     """
     tempdict = {}
     for column in row.__table__.columns:
