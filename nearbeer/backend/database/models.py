@@ -26,12 +26,15 @@ def setup_db(app, db_path=""):
             #db_path = os.environ.get('DATABASE_URI_TEST')
             print(f"MODELS::DATABASE_TEST:  {db_path}")   
         else:
-            db_path = app.config["DATABASE_URI"]
-            #db_path = os.environ.get('DATABASE_URI')
+            if os.environ.get('NEAR_BEER_ENV') == 'local':
+              db_path = os.environ.get('DATABASE_URI')
+            else:
+              db_path = app.config["DATABASE_URI"]
             print(f"MODELS::DATABASE_PROD:  {db_path}")   
-            #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI']}")
+            
         
     app.config["SQLALCHEMY_DATABASE_URI"] = db_path
+    #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI']}")
     db.app = app
     db.init_app(app)
     migrate.init_app(app, db)

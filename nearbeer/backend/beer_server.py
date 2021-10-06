@@ -17,8 +17,10 @@ def create_app(testconfig=None):
   app.config.from_pyfile('config.py')
   if testconfig:
     app.config['TESTING'] = True
+    print("BEER_SERVER::TESTMODE")
   else:
     app.config['TESTING'] = False
+    print("BEER_SERVER::PRODMODE")
   setup_db(app)
 
   # Set up CORS. Allow for all origins.
