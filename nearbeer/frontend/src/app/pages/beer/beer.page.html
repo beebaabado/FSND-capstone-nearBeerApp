@@ -136,7 +136,21 @@
         {{ beer['name'] }}
       </ion-col> 
       <ion-col size="2">
-        {{ beer['rating'] | number: '1.2-2' }} / {{ beer['user_rating'] | number: '1.2-2' }}
+        <ion-item>
+          <ion-label 
+             (click)="displayUserRating(false)">
+             {{ beer['rating'] | number: '1.2-2' }} / {{ beer['user_rating'] | number: '1.2-2' }}
+          </ion-label>
+           <!------- user rating ------->
+          <ion-input [hidden]='hideUserRating'
+              id="set-user-rating" 
+              type="number"
+              placeholder="0.00" 
+              value="0.00"
+              [(ngModel)]="user_rating" 
+              (ionChange)="setUserRatingEventTriggered($event)">
+          </ion-input>
+        </ion-item> 
       </ion-col>  
       <ion-col [hidden]='true'>
         {{ beer['abv'] | number: '1.1-2' }}

@@ -1,4 +1,5 @@
 '''
+  database models for nearbeer project
 '''
 import os
 import json
@@ -6,7 +7,6 @@ from sqlalchemy import Column, String, Integer, Numeric, DateTime
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-# TODO put this in config file
 # database_filename = "nearbeer"
 # # #project_dir = os.path.dirname(os.path.abspath(__file__))  # used if file in project dir
 #database_path = "postgresql://{}@{}/{}".format('postgres','localhost:5432', database_filename)
@@ -22,12 +22,13 @@ def setup_db(app, db_path=""):
     '''Setup db'''
     if db_path=="":
         if app.config['TESTING'] is True:
-            db_path= app.config['DATABASE_URI_TEST']
-            print(f"DATABASE:  {app.config['DATABASE_URI_TEST']}")
-            #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI_TEST']}")
+            #db_path= app.config['DATABASE_URI_TEST']
+            db_path = os.environ.get('DATABASE_URI_TEST')
         else:
-            db_path = app.config["DATABASE_URI"]
+            #db_path = app.config["DATABASE_URI"]
+            db_path = os.environ.get('DATABASE_URI')
             #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI']}")
+    print(f"MODELS::DATABASE:  {db_path}")        
     app.config["SQLALCHEMY_DATABASE_URI"] = db_path
     db.app = app
     db.init_app(app)

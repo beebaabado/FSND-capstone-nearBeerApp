@@ -5,10 +5,11 @@
 # Full Stack Web Developer Nanodegree Nearbeer API Backend unittests 
 # for testing capstone project API used by Udacity by custom Beer is Near app
 # run locally with local postgresql database
-# uses temporary auth0 bearer token ENV vars
+# uses temporary auth0 bearer token ENV vars - must run 
+#       . ./setup.sh from backend directory
 # Issue with relative imports..still debugging so 
-# must run from package root in folder nearbeer using command line without the .py extension:
-# python -m backend.tests.test_beer_server --verbose
+# must run from parent folder nearbeer/backend using command line without the .py extension:
+#      python -m tests.test_beer_server --verbose
 
 import os
 import unittest

@@ -11,6 +11,7 @@ export const environment = {
     audience: 'beernear', // the audience set for the auth0 app
     clientId: 'ziR3Cuw3SWmFhkPWfThF9LDz7gkXnMH6', // the client id generated for the auth0 app
     callbackURL: 'https://capstone-nearbeer-front.herokuapp.com', //'http://localhost:8080', // the base url of the running ionic application. 
+    //callbackURL: 'http://localhost:8080', // the base url of the running ionic application. 
   }
 };
 

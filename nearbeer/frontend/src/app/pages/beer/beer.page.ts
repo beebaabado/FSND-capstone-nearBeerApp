@@ -46,6 +46,7 @@ export class BeerPage {
   state:string = "";
   current_location = {};
   city_url_name:string = "";
+  user_rating:string = "0.00"
   headerWithFocus = 2;  // default is filter on variety aka style
   hideList = true;
   prevScrollTop:number = 0;   //assume we start at top of page
@@ -53,6 +54,7 @@ export class BeerPage {
   hideSelectCity:boolean = true;
   hideGoTopButton:boolean = true;
   hideFabMenu:boolean = true;
+  hideUserRating:boolean = true;
   UserLoggedIn = false;
 
   @ViewChild('styleComponent', {static: false}) styleComponent: IonicSelectableComponent;
@@ -121,7 +123,6 @@ export class BeerPage {
 
   }
 
-
   scrollingTriggered(event) { 
     // Check direction of scrolling to determine if goToTop button should be hidden
     let currentScrollTop = event.detail.scrollTop;
@@ -155,6 +156,12 @@ export class BeerPage {
 
   }
   
+  displayUserRating(hideIt){
+    this.toggleAllFilterComponents(true);
+    this.hideUserRating = hideIt;
+    console.log("HERE IN displayUserRating...");
+  }
+
   filterByVenue(hideIt) {
    this.toggleAllFilterComponents(true);
    this.hideSearchList = hideIt;
@@ -198,7 +205,6 @@ export class BeerPage {
   }
    
    console.log(listByVenues); 
-
    this.navparamService.setNavData("listByVenues", listByVenues);
    this.router.navigate(['/tabs/filter-options']);
    
@@ -260,7 +266,6 @@ export class BeerPage {
 
   }
   
-
   setStyle(event){
     console.log(event.srcElement.value);
   }
@@ -342,6 +347,11 @@ export class BeerPage {
        //TODO:  REMOVE THESE
       console.log("COUNT: ", count); // to keep track if all beers show up / manually tally counts for each category.  
   }
+
+  setUserRatingEventTriggered(event: any) {
+    console.log ("USER RATING: ", this.user_rating);
+  }
+
 
 /**
  * Summary. 
