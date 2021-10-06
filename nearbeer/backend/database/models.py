@@ -24,11 +24,13 @@ def setup_db(app, db_path=""):
         if app.config['TESTING'] is True:
             #db_path= app.config['DATABASE_URI_TEST']
             db_path = os.environ.get('DATABASE_URI_TEST')
+            print(f"MODELS::DATABASE:  {db_path}")   
         else:
             #db_path = app.config["DATABASE_URI"]
             db_path = os.environ.get('DATABASE_URI')
+            print(f"MODELS::DATABASE:  {db_path}")   
             #print(f"DATABASE:  {app.config['SQLALCHEMY_DATABASE_URI']}")
-    print(f"MODELS::DATABASE:  {db_path}")        
+        
     app.config["SQLALCHEMY_DATABASE_URI"] = db_path
     db.app = app
     db.init_app(app)
