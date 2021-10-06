@@ -10,7 +10,7 @@ export API_AUDIENCE='beernear'
     
 export FLASK_APP='beer_server.py'
 export FLASK_ENV='development'
-export POSTGRES_DATABASE_URL='postgresql://postgres@localhost:5432/nearbeer'  
+#export POSTGRES_DATABASE_URL='postgresql://postgres@localhost:5432/nearbeer'  
 export SQLALCHEMY_DATABASE_URI='postgresql://postgres@localhost:5432/nearbeer'
 export DATABASE_URI='postgresql://postgres@localhost:5432/nearbeer'
 export DATABASE_URI_TEST='postgresql://postgres@localhost:5432/nearbeer'
