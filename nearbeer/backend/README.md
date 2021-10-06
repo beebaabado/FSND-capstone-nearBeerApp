@@ -95,7 +95,7 @@ export FLASK_APP=beer_server.py;
 Run in same venv as app, in backend directory to export Auth0 variables (domain, audience, algorithms, tokens/secrets):
 
 ```bash
- . ./setup.sh 
+ . ./setup_local.sh 
 ```
 Setup nearbeer database (seeded with test data).  Assumes that Postgresql server is properly installed and running. Script creates a nearbeer database, then uses flask migrattion to create needed tables. Test data is then inserted into the database.
 
