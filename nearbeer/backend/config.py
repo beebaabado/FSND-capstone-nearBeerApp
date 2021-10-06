@@ -14,7 +14,7 @@ TESTING = False
 
 # Connect to the database
 # COMPLETED IMPLEMENT DATABASE URL and set other options for SQLAlchemy
-SQLALCHEMY_DATABASE_URI = os.environ.get['DATABASE_URI']
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
 # DATABASE_URI='postgresql://postgres@localhost:5432/nearbeer'
 
 # HEROKU database
