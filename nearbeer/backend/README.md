@@ -1,4 +1,7 @@
 # The NearBeer Backend App
+##### by Connie Compos 2021
+
+This is the backend for 
 
 ## General Information
 
@@ -51,6 +54,7 @@ This will install the following key dependencies
 - [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
 
 ## AUTH0 ROLE BASED Authentication/access control
+The backend auth.py api handles authentication with endpoints.  Depending upon the role (permissions) of user logged in, auth.py checks to see if the payload contains the correct permissions to access endpoints.
 
 Role: Brewer  
 Description: Admin for Near Beer site.  Able to view/add/delete/update beers, styles, user ratings

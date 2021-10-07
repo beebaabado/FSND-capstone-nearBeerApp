@@ -1,7 +1,7 @@
 # The NearBeer Frontend Ionic App
 ##### by Connie Compos 2021
 
-This is the frontend for the Full Stack Nano Degree Capstone project Nearbeer project.  This is a tab based application which allows the user to login to authenticate with Auth0 credentials and access the nearbeer database with a menu system.  This is a demo application thus not all tabs are fully functional. 
+This is the frontend for the Full Stack Nano Degree Capstone project Nearbeer project.  This is a tab based application which allows the user to login to authenticate with Auth0 credentials and access the nearbeer database with a menu system.  This is a demo application and not all tabs are fully functional. 
 
 ### Requires nearbeer backend app to be up and running
 
@@ -27,16 +27,11 @@ Once your virtual environment is setup and running, change directories to the `/
 ```bash
 npm install
 ```
-
-This will install the following key dependencies
-
-##### Key Dependencies
-
-- [link title](actual link)
-
-- []() 
   
 ## AUTH0 ROLE BASED Authentication/access control
+Authentication is handled by the Auth0.  The authenticatiion service used by this app is found in `./src/app/services/auth.service.ts`.  This service redirects users to the Auth0 login page, manages the JWT on successful login, and sets/gets JWT from local storage.
+
+Authorization 
 
 ### Role: Brewer  
 Description: Admin for Near Beer site.  Able to view/add/delete/update beers, styles, user ratings
