@@ -1,5 +1,7 @@
 # NEAR BEER Demo app  
-This applications is a tool to help users find the highest rated beers near their current location.  I am creating an app to run on android and iOs devices with filtering options, maps with venue locations and listings of beers. For the purposes of this capstone project,  I have simplified the front end to display lists of beers.  Other features are not implemented.
+##### by Connie Compos 2021  
+
+This applications is a proof of concept tool to help users find the highest rated beers near their current location.  I am creating an app to run on android and iOs devices with filtering options, maps with venue locations and listings of beers. For the purposes of this capstone project,  I have simplified the front end to display lists of beers.  Other features are not implemented.  
 
 ## HEROKU
 Near beer front and backends are depolyed on Heroku.  You can access the app at [https://capstone-nearbeer-front.herokuapp.com/tabs/home](https://capstone-nearbeer-front.herokuapp.com/tabs/home)
@@ -28,7 +30,10 @@ Password: Demob33rdrinker
 Once you are logged in, a valid JWT token is displayed on the screen for backend unit testing purposes and also to demonstrate that the user was logged in correctly.
 
 ### Get beers for city
-Now you can use the app to find beers for a specific set of ciites.  The beer data used for this demo application is static and is not current.  I chose to not have it update in real time for this project due to constraints on number of API calls I can make to the untappd API.  Navigate to the Beers page. Click the Search menu (uppper left side). Select the location icon. Select a city from the dropdown menu (upper right side).  The page should update with list of beers for that city.  There is a bit of delay if the Heroku dynos for this app (front and back) are shutdown due to inactivity; they will be restarted automatically.   Sometimes it can take a few seconds for the page to refresh.
+Now you can use the app to find beers for a specific set of ciites.  The beer data used for this demo application is static and is not current.  I chose to not have it update in real time for this project due to constraints on number of API calls I can make to the untappd API.  Navigate to the Beers page. Click the Search menu (uppper left side). Select the location icon. Select a city from the dropdown menu (upper right side).  The page should update with list of beers for that city.  There is a bit of delay if the Heroku dynos for this app (front and back) are shutdown due to inactivity; they will be restarted automatically.   It might take a few seconds for site to load.
+
+### Limited functinality
+It is not possible to test all backend endpoints with the frontend (deletion and adding of beers is not available).  You can update a user rating by clicking on cell in rating column.  Simple popover appears but inputs are not validated.
 
 ## FRONTEND
 For specifics on frontend refer to the frontend app README [here](frontend/README.md)

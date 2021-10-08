@@ -1,4 +1,6 @@
-# Beer Server API documentation (NOT COMPLETE)
+# Beer Server API documentation (in progress)
+##### by Connie Compos 2021  
+
 The beer server application provides access to information on beers (venues, breweries, ratings, ABV, and more)in certain localities.  It utilizes the untappd api.
 
 This is a REST API that returns encoded JSON responses and uses standard HTTP response codes (success and error codes) and verbs (GET, POST, and DELETE).  You may create, retrieve, and delete API objects through this simple interface.  

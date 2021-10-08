@@ -1,5 +1,5 @@
 # The NearBeer Frontend Ionic App
-##### by Connie Compos 2021
+##### by Connie Compos 2021  
 
 This is the frontend for the Full Stack Nano Degree Capstone project Nearbeer project.  This is a tab based application which allows the user to login to authenticate with Auth0 credentials and access the nearbeer database with a menu system.  This is a demo application and not all tabs are fully functional. 
 
