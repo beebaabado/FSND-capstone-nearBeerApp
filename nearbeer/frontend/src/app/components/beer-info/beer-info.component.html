@@ -1,0 +1,26 @@
+<ion-header [translucent] mode="ios" class="banner-image">
+  <ion-toolbar class="header-toolbar1">
+    <ion-title size="small">Your beer rating:</ion-title>  
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <!------- user rating ------->
+    <ion-input
+      id="set-user-rating" 
+      type="text"
+      maxlength="4"
+      min="0.00"
+      max="5.00"
+      autofocus="true"
+      placeholder="0.00" 
+      value="user_rating"
+      [(ngModel)]="user_rating" 
+      (ionChange)="setUserRatingEventTriggered($event)">
+     </ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-button (click)="onSave()">Update Rating</ion-button>
+    <ion-button (click)="onCancel()">Cancel</ion-button>
+  </ion-item>
+</ion-content>
