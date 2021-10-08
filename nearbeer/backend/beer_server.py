@@ -1,19 +1,22 @@
-""" This module exposes endpoints for the NearBeer API."""
-#!/usr/bin/python3
+''' This module exposes endpoints for the NearBeer API. '''
+# !/usr/bin/python3
 import os
 import json
 from flask import Flask, render_template, jsonify, abort, request
 from flask_cors import CORS
-from database.models import Beer, Venue, BeerVenue, Style, db_drop_and_create_all, setup_db
+from database.models import Beer, Venue, BeerVenue, \
+     Style, db_drop_and_create_all, setup_db
 from auth.auth import AuthError, requires_auth
+
 
 def create_app(testconfig=None):
   """ NearBeer App """
   app = Flask(__name__)
 
   # debug relative imports issue
-  #print(f'APP NAME: {__name__}')
-  #print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))
+  # print(f'APP NAME: {__name__}')
+  # print('__file__={0:<35} | __name__={1:<20} | \
+  #  __package__={2:<20}'.format(__file__,__name__,str(__package__)))
   app.config.from_pyfile('config.py')
   if testconfig:
     app.config['TESTING'] = True
@@ -60,9 +63,8 @@ def create_app(testconfig=None):
         tempbeer = row2dict(beer[0])
         tempbeer['venue'] = venue[0].format()
         beers_by_city.append(tempbeer)
-      
-    return beers_by_city
 
+    return beers_by_city
 
   @app.route("/beers/template", methods=['GET'])
   def get_city_beer_public_template_view():
@@ -71,12 +73,12 @@ def create_app(testconfig=None):
     city = request.args.get('city')
     if city is None:
       abort(400, "City not specified.")
-   
-    beers_by_city = getBeers(city)      
+
+    beers_by_city = getBeers(city)
 
     if beers_by_city == []:
         return render_template('errorMsg.html', city=city, message=f'Sorry, no beers for city {city}.')
-    
+
     return render_template('city_list.html', city=city, beers=beers_by_city)
 
   @app.route("/beers", methods=['GET'])
@@ -272,7 +274,7 @@ def create_app(testconfig=None):
     beervenue = BeerVenue.query.filter(BeerVenue.venue_id == venue.id, BeerVenue.beer_id == beer.id).one_or_none()
     if beervenue is None:
       abort(404, f"Delete beer: Beer, Venue record not found. Unable to delete beer with id {beer_id}.")
-    #print(f"beer_server::delete_beer::beervenue: { beervenue.beer_id, beervenue.venue_id}")
+    # print(f"beer_server::delete_beer::beervenue: { beervenue.beer_id, beervenue.venue_id}")
     try:
       beervenue.delete()
       beer.delete()
@@ -355,7 +357,7 @@ def create_app(testconfig=None):
 
   return app
 
+
 app = create_app()
 if __name__ == '__main__':
-  app.run(debug=True) 
-
+  app.run(debug=True)
