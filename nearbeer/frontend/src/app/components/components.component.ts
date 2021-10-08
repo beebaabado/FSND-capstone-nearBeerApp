@@ -7,11 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentsComponent implements OnInit {
  
-  
-
-
   constructor(title: string) {
-      console.log ("Beer card title: ", title; )
+      console.log ("Beer card title: ", title);
    }
 
   ngOnInit() {}

@@ -1,12 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { map } from 'rxjs/operators'
 import { UntappdServerService } from '../../services/untappd-server.service';
 import { StorageService } from '../../services/storage.service';
 import { IonicSelectableComponent } from 'ionic-selectable';
-import { IonContent, IonSelect} from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { NavparamService } from 'src/app/services/navparam.service';
 import { AuthService } from '../../services/auth.service';
+import { PopoverController } from '@ionic/angular';
+import { BeerInfoComponent } from 'src/app/components/beer-info/beer-info.component';
+
+
 
 @Component({
   selector: 'app-beer',
@@ -55,16 +59,22 @@ export class BeerPage {
   hideGoTopButton:boolean = true;
   hideFabMenu:boolean = true;
   hideUserRating:boolean = true;
-  UserLoggedIn = false;
+  hideRatings:boolean = false;
+  hideMessage:boolean = true;
+  UserLoggedIn:boolean = false;
+  //errorMessage:string = "";
 
   @ViewChild('styleComponent', {static: false}) styleComponent: IonicSelectableComponent;
-  @ViewChild('content', {static: false}) content: IonContent;  // static=false because not in ngOnInit()...I think...
+  @ViewChild('content', {static: false}) content: IonContent;  // static=false because not in ngOnInit()
+  //@ViewChild('errorMessage', {static: false}) errorMessage: ElementRef; 
+   
   constructor(
     private untappdService: UntappdServerService, 
     private storage: StorageService, 
     private navparamService: NavparamService,
     private auth: AuthService,
-    private router: Router) {
+    private router: Router,
+    private popoverController: PopoverController) {
       this.getStyles();
     }   
  
@@ -93,7 +103,65 @@ export class BeerPage {
       this.hideFabMenu = false;
       this.UserLoggedIn = true;
     }
+  }
+  
+  loadMessage(error) {
+    console.log(error);
+    this.hideMessage = false;
+    //this.errorMessage.nativeElement.innterHTML = error;  //not working???
+    document.getElementById('errorMessage').innerHTML = error.statusText;
+  }
+  
+  dismissMessage() {
+    this.hideMessage = true;
+    //this.errorMessage.nativeElement.innterHTML = "";  //not working???
+    document.getElementById('errorMessage').innerHTML = ""
+  }
+  
+  async userRatingsPopover(ev: any, user_rating: any, beer_id: any) {
+   // const beerInfo = { 'Your rating':rating};
+    const popover = await this.popoverController.create({
+      component: BeerInfoComponent,
+      event: ev,
+      cssClass: 'my-custom-popover',
+      componentProps: {
+        beer_id: beer_id,
+        user_rating:user_rating
+      },
+      translucent: true
+    });
+    await popover.present();
 
+    popover.onDidDismiss().then((result) => {
+      //update date beer list??? with new rating
+      this.setUserRating(result["data"]["user_rating"], result["data"]['id']);
+    });
+    return await popover.present();
+  }
+  
+  setUserRating(rating: any, beer_id: any) {
+    console.log ("setUserRating: ", this.user_rating, beer_id);
+    
+    if (this.auth.can('patch:beer-user-rating')) {    
+      this.untappdService.setUserRating(beer_id, rating).pipe(
+         map(result=>{  
+          return [result[0]['modified']];
+         }))  
+         .subscribe(result=>{   
+           console.log("Rating set for beer: ", result);
+           var ratingText = document.getElementById(beer_id).innerHTML
+           console.log("rating innerhtml: ", ratingText);
+           var re = /[^\/]+$/;
+           var newText = ratingText.replace(re, " " + rating);
+           console.log("new rating: " , newText); 
+           document.getElementById(beer_id).innerHTML = newText;
+          },
+          error => this.loadMessage(error)
+          );
+    } 
+    else {
+      this.loadMessage("You do not have update permissions.");
+    }
   }
 
   getStylePropertiesFromStorage() {
@@ -159,7 +227,9 @@ export class BeerPage {
   displayUserRating(hideIt){
     this.toggleAllFilterComponents(true);
     this.hideUserRating = hideIt;
+    this.hideRatings = !hideIt;
     console.log("HERE IN displayUserRating...");
+    alert("USER RATING clicked")
   }
 
   filterByVenue(hideIt) {
@@ -347,11 +417,6 @@ export class BeerPage {
        //TODO:  REMOVE THESE
       console.log("COUNT: ", count); // to keep track if all beers show up / manually tally counts for each category.  
   }
-
-  setUserRatingEventTriggered(event: any) {
-    console.log ("USER RATING: ", this.user_rating);
-  }
-
 
 /**
  * Summary. 

@@ -20,6 +20,7 @@ headers: this.headers
 
 private allBeersData=[];
 private stylesList=[];
+private apiResult=[];
 //private getApiUrl : string = "http://10.0.2.2:5000/"; // to work with android emulator and devices
 private getApiUrl : string = environment.apiServerUrl; // iOS and browsers
 
@@ -43,11 +44,13 @@ private getApiUrl : string = environment.apiServerUrl; // iOS and browsers
     const header = {
       headers: new HttpHeaders()
         .set('Authorization',  `Bearer ${this.auth.activeJWT()}`)
+        .set('Content-Type', `application/json`)
+        .set('Accept', `application/json`)
     };
     console.log("auth0 JWT token: ", this.auth.activeJWT());
+    this.httpOptions=header;
     return header;
   }
-  
   getBeerList(location:any){
       // future...use lat, long in location instead of city name
       // clear our allBeers
@@ -77,6 +80,17 @@ private getApiUrl : string = environment.apiServerUrl; // iOS and browsers
                 return this.stylesList;}));  // just return data
   }
 
+  setUserRating(beer_id:any, user_rating:any) {
+    this.apiResult = [];
+    console.log("untappd service: - set user rating ", beer_id, user_rating);
+    const body = {"id":beer_id, "user_rating":user_rating}
+    const ratingURL = this.getApiUrl + "/rating/"
+    return this.http.patch(ratingURL, body, this.getHeaders()).pipe(
+      tap(data => console.log("UntappdService: update beer user rating:  ", data)),                 // interecept stream to print data 
+      map(data=>{this.apiResult.push(data);  // if you return this line get length only which = 1
+                return this.apiResult;}));  // just return data
+  }
+    
   //TODO...make a real error handler
   private handleError(error: any) {
     console.log (error);

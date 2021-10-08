@@ -12,7 +12,12 @@
       <ion-title  size="small">Beers near you: <span class="ion-text-capitalize">{{ city }}</span></ion-title>
     </ion-toolbar>
   </ion-header>
-
+  
+  <ion-item [hidden]='hideMessage'>
+    <ion-textarea class="error-message" id="errorMessage" #errorMessage value=""></ion-textarea>
+    <ion-button (click)="dismissMessage()">Dismiss</ion-button>
+  </ion-item>
+  
   <!--------   Searchbar  ----->
   <ion-item [hidden]='hideSearchList'>
     <ion-label>Search Venues</ion-label>
@@ -136,21 +141,12 @@
         {{ beer['name'] }}
       </ion-col> 
       <ion-col size="2">
-        <ion-item>
-          <ion-label 
-             (click)="displayUserRating(false)">
+          <ion-label
+             id="{{ beer['id'] }}"
+             class="center-content"
+             (click)="userRatingsPopover($event, beer['user_rating'], beer['id'])">
              {{ beer['rating'] | number: '1.2-2' }} / {{ beer['user_rating'] | number: '1.2-2' }}
           </ion-label>
-           <!------- user rating ------->
-          <ion-input [hidden]='hideUserRating'
-              id="set-user-rating" 
-              type="number"
-              placeholder="0.00" 
-              value="0.00"
-              [(ngModel)]="user_rating" 
-              (ionChange)="setUserRatingEventTriggered($event)">
-          </ion-input>
-        </ion-item> 
       </ion-col>  
       <ion-col [hidden]='true'>
         {{ beer['abv'] | number: '1.1-2' }}

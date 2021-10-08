@@ -232,9 +232,12 @@ def create_app(testconfig=None):
   @app.route('/rating/', methods=['PATCH'])
   @requires_auth('patch:beer-user-rating')
   def update_beer(payload):
-    """ Can only update uwer_rating of existing beer. Returns updated beer id.
+    """ Can only update user_rating of existing beer. Returns updated beer id.
     """
     body = request.get_json()
+
+    print(body['user_rating'])
+
     if body is None:
       print("NO BODY")
       abort(400)

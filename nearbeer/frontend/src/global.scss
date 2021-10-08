@@ -47,3 +47,19 @@ $app-direction: ltr;
     width:100%;
     height: 10%; 
 }
+
+.my-custom-popover .popover-content {
+  --min-width: 200px !important;
+  --min-height: 100px !important;
+  --ion-background-color: orange;
+  --ion-text-color: black;
+  background-color: orange;
+}
+
+.center-content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
+}

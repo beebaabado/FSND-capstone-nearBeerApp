@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 //import { JwtModule} from "@auth0/angular-jwt"
 import { UntappdServerService } from './services/untappd-server.service';
 import { StorageService } from './services/storage.service';
-//import { ComponentsModule } from  './components/components.module';
+import { ComponentsModule } from  './components/components.module';
 import { IonicSelectableModule } from 'ionic-selectable';
 import { IonicStorageModule} from '@ionic/storage-angular';  // angular has its own lib...other will use @ionic/storage
 import { NavparamService } from './services/navparam.service'
@@ -24,7 +24,7 @@ import { JwtHelperService, JWT_OPTIONS} from '@auth0/angular-jwt';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, 
-            //ComponentsModule,
+            ComponentsModule,
             IonicModule.forRoot(), 
             AppRoutingModule,
             HttpClientModule,
