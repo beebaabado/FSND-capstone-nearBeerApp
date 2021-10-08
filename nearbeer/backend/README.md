@@ -168,10 +168,10 @@ curl -X GET  'http://localhost:5000/' -H 'authorization: Bearer eyJhbGciOiJSUzI1
 You can run test_beer_server.py to run suite of tests for each end point in beer_server.py  You will need to 
 setup local database and load data using provided sql files
 
-To run unit test cases.  Start in parent directory (in nearbeer directory) run:
+To run unit test cases.  Start in backend directory, run:
 
 ```bash
- python -m backend.tests.test_beer_server --verbose
+ python -m tests.test_beer_server --verbose
 ```
 
 #### HEROKU
